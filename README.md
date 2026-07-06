@@ -116,6 +116,49 @@ python generate.py --checkpoint checkpoints/ckpt.pt --prompt "The lighthouse" \
 - `--top_k` — restricts sampling to the k most likely next tokens at each
   step; omit or set to a large value to sample from the full distribution.
 
+## Run it in the browser (Vercel demo)
+
+The `web/` directory is a zero-dependency static site that runs the model
+**entirely client-side** — no server, no API. `web/gpt.js` is a hand port of
+the PyTorch forward pass (`src/model/gpt.py`) to plain JavaScript over
+`Float32Array`, using an incremental KV cache so generation is fast. The
+trained weights ship as `web/model.json`.
+
+Regenerate the weights after training your own model:
+
+```bash
+python train.py --out_dir web_ckpt --block_size 256 --n_embd 128 --n_layer 4 --max_steps 3000
+python export_web.py --checkpoint web_ckpt/ckpt.pt --out web/model.json
+```
+
+Check that the JS port still matches PyTorch (compares logits against a baked-in
+reference in `model.json`):
+
+```bash
+node web/verify.mjs
+```
+
+Preview locally:
+
+```bash
+cd web && python -m http.server 8000   # then open http://localhost:8000
+```
+
+### Deploying to Vercel
+
+The repo ships a `vercel.json` that serves the `web/` directory as a static
+site with no build step. Two ways to deploy:
+
+- **Dashboard:** import the repo at [vercel.com/new](https://vercel.com/new).
+  The included `vercel.json` sets the output directory to `web/`, so you can
+  accept the defaults and deploy.
+- **CLI:** `npm i -g vercel && vercel` from the repo root, then
+  `vercel --prod`.
+
+Because everything runs in the browser, the deploy is just static files
+(`index.html`, `app.js`, `gpt.js`, `model.json`) — it works on Vercel's free
+tier with no environment variables or backend.
+
 ## Notes on scale
 
 Default hyperparameters (4 layers, 4 heads, 128-dim embeddings, 128-token

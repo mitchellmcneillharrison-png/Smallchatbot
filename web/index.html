@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tiny GPT — from scratch, in your browser</title>
+    <style>
+      :root {
+        --bg: #0f1117;
+        --panel: #171a23;
+        --panel-2: #1e222d;
+        --border: #2a2f3d;
+        --text: #e6e8ee;
+        --muted: #8b93a7;
+        --accent: #7c9cff;
+        --accent-2: #4ade80;
+        --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: radial-gradient(1200px 600px at 50% -10%, #1a1f2e 0%, var(--bg) 60%);
+        color: var(--text);
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.55;
+        min-height: 100vh;
+      }
+      .wrap { max-width: 860px; margin: 0 auto; padding: 40px 20px 80px; }
+      header h1 { font-size: 1.9rem; margin: 0 0 6px; letter-spacing: -0.02em; }
+      header h1 .dim { color: var(--muted); font-weight: 500; }
+      header p { color: var(--muted); margin: 0 0 4px; }
+      .badges { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 28px; }
+      .badge {
+        font-family: var(--mono); font-size: 0.72rem; color: var(--muted);
+        background: var(--panel-2); border: 1px solid var(--border);
+        padding: 4px 10px; border-radius: 999px;
+      }
+      .badge b { color: var(--accent); font-weight: 600; }
+      .panel {
+        background: var(--panel); border: 1px solid var(--border);
+        border-radius: 14px; padding: 20px; margin-bottom: 20px;
+      }
+      label { display: block; font-size: 0.8rem; color: var(--muted); margin-bottom: 6px; }
+      textarea {
+        width: 100%; background: var(--bg); color: var(--text);
+        border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px;
+        font-family: var(--mono); font-size: 0.9rem; resize: vertical; min-height: 68px;
+      }
+      textarea:focus, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+      .controls { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 18px; }
+      @media (max-width: 640px) { .controls { grid-template-columns: 1fr; } }
+      .ctrl .row { display: flex; justify-content: space-between; align-items: baseline; }
+      .ctrl output { font-family: var(--mono); color: var(--accent); font-size: 0.85rem; }
+      input[type="range"] { width: 100%; accent-color: var(--accent); }
+      .actions { display: flex; gap: 12px; margin-top: 22px; align-items: center; }
+      button {
+        font: inherit; font-weight: 600; border-radius: 10px; padding: 11px 20px;
+        border: 1px solid var(--border); background: var(--panel-2); color: var(--text);
+        cursor: pointer; transition: transform 0.05s ease, background 0.15s ease;
+      }
+      button:hover:not(:disabled) { background: #262b38; }
+      button:active:not(:disabled) { transform: translateY(1px); }
+      button.primary { background: var(--accent); color: #0b0e16; border-color: transparent; }
+      button.primary:hover:not(:disabled) { background: #93adff; }
+      button:disabled { opacity: 0.45; cursor: default; }
+      .status { color: var(--muted); font-size: 0.82rem; }
+      .status.err { color: #ff8080; }
+      #output {
+        white-space: pre-wrap; word-break: break-word; font-family: var(--mono);
+        font-size: 0.92rem; background: var(--bg); border: 1px solid var(--border);
+        border-radius: 10px; padding: 16px; min-height: 160px; margin-top: 4px;
+      }
+      #output .prompt { color: var(--accent-2); }
+      #output .caret { color: var(--accent); animation: blink 1s step-end infinite; }
+      @keyframes blink { 50% { opacity: 0; } }
+      footer { color: var(--muted); font-size: 0.8rem; text-align: center; margin-top: 32px; }
+      a { color: var(--accent); }
+      details { margin-top: 18px; }
+      summary { cursor: pointer; color: var(--muted); font-size: 0.85rem; }
+      details p { color: var(--muted); font-size: 0.86rem; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <h1>Tiny GPT <span class="dim">— from scratch, in your browser</span></h1>
+        <p>
+          A decoder-only Transformer with every component hand-written — tokenizer, attention,
+          LayerNorm, the works. Trained in PyTorch, then its forward pass re-implemented in plain
+          JavaScript so it runs <b>entirely on your device</b>. No server, no API calls.
+        </p>
+      </header>
+
+      <div class="badges" id="badges">
+        <span class="badge">loading model…</span>
+      </div>
+
+      <div class="panel">
+        <label for="prompt">Prompt</label>
+        <textarea id="prompt" spellcheck="false">The lighthouse</textarea>
+
+        <div class="controls">
+          <div class="ctrl">
+            <div class="row"><label for="temp">Temperature</label><output id="tempOut">0.80</output></div>
+            <input type="range" id="temp" min="0.1" max="1.5" step="0.05" value="0.8" />
+          </div>
+          <div class="ctrl">
+            <div class="row"><label for="topk">Top-k</label><output id="topkOut">40</output></div>
+            <input type="range" id="topk" min="1" max="46" step="1" value="40" />
+          </div>
+          <div class="ctrl">
+            <div class="row"><label for="len">Max new tokens</label><output id="lenOut">240</output></div>
+            <input type="range" id="len" min="20" max="240" step="10" value="240" />
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="primary" id="go" disabled>Generate</button>
+          <button id="stop" disabled>Stop</button>
+          <span class="status" id="status">Loading weights…</span>
+        </div>
+      </div>
+
+      <label>Output</label>
+      <div id="output"></div>
+
+      <details>
+        <summary>What am I looking at?</summary>
+        <p>
+          This is a <b>character-level</b> model with only a few hundred thousand parameters,
+          trained on a single short story. At that scale it mostly learns the <i>texture</i> of the
+          text — plausible letter and word patterns — rather than real meaning, so expect
+          dream-like fragments, not coherent prose. That's the point: it's small enough to read the
+          entire implementation and watch every matrix multiply that turns a prompt into text.
+          Lower the temperature for safer, more repetitive output; raise it for more surprising
+          (and more garbled) results.
+        </p>
+      </details>
+
+      <footer>
+        Runs 100% client-side. Source, training loop, and the PyTorch model are in the repository.
+      </footer>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

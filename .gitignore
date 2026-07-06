@@ -7,3 +7,7 @@ venv/
 # trained checkpoints are large binary artifacts; keep the folder, not the weights
 checkpoints/*.pt
 !checkpoints/.gitkeep
+
+# scratch dir for the browser-demo checkpoint (the exported web/model.json is
+# what gets deployed and committed, not the raw .pt)
+web_ckpt/
