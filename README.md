@@ -11,6 +11,21 @@ layers, layer normalization, residual connections, the training loop,
 checkpointing, and text generation — is implemented by hand and commented so
 you can read the code as a companion to the theory.
 
+The repo has two things you can train with the **same** hand-built model:
+
+1. A **story text generator** (character-level) — the classic "train a tiny GPT
+   on some text and watch it babble" demo (`train.py` / `generate.py`).
+2. A **closed-domain chatbot** (word-level) that actually answers questions —
+   arithmetic, greetings, and a hand-picked set of facts (`train_chat.py` /
+   `chat.py`). This is what the browser demo deploys.
+
+> **Honest expectations for the chatbot:** it is *tiny* and trained *only* on the
+> small dataset in `build_chat_data.py`. It genuinely answers questions from that
+> dataset and close rewordings of them, but it has no general knowledge or
+> reasoning — ask anything outside its training world and it will confidently
+> make something up. It demonstrates the *architecture and training recipe*, not
+> intelligence.
+
 ## Architecture
 
 ```
@@ -50,11 +65,15 @@ TransformerBlock:
 
 ```
 .
-├── data/sample.txt        # small original text corpus for a quick demo
+├── data/
+│   ├── sample.txt         # small original text corpus for the story demo
+│   └── chat.jsonl         # generated Q&A pairs for the chatbot (build_chat_data.py)
 ├── src/
 │   ├── config.py          # GPTConfig dataclass (architecture hyperparameters)
-│   ├── tokenizer.py        # CharTokenizer (from scratch)
-│   ├── dataset.py          # sliding-window next-token-prediction dataset
+│   ├── tokenizer.py        # CharTokenizer (story demo, from scratch)
+│   ├── chat_tokenizer.py   # WordTokenizer + special tokens (chatbot)
+│   ├── dataset.py          # sliding-window next-token dataset (story)
+│   ├── chat_dataset.py     # instruction dataset w/ answer-only loss masking (chatbot)
 │   ├── utils.py            # seeding, device selection, LR schedule
 │   └── model/
 │       ├── layers.py       # LayerNorm, FeedForward
@@ -62,8 +81,13 @@ TransformerBlock:
 │       ├── attention.py    # CausalSelfAttention
 │       ├── block.py        # TransformerBlock (attention + FFN + residuals)
 │       └── gpt.py          # full GPT model, forward() and generate()
-├── train.py                # training loop with checkpointing
-├── generate.py              # load a checkpoint and sample text
+├── train.py                # story training loop
+├── generate.py              # sample text from the story model
+├── build_chat_data.py       # generate the chatbot's Q&A dataset
+├── train_chat.py            # chatbot training loop (instruction tuning)
+├── chat.py                  # talk to the trained chatbot (CLI)
+├── export_web.py / export_chat_web.py  # export weights to web/model.json
+├── web/                     # in-browser demo (static, deploys to Vercel)
 └── requirements.txt
 ```
 
@@ -116,27 +140,54 @@ python generate.py --checkpoint checkpoints/ckpt.pt --prompt "The lighthouse" \
 - `--top_k` — restricts sampling to the k most likely next tokens at each
   step; omit or set to a large value to sample from the full distribution.
 
-## Run it in the browser (Vercel demo)
+## Train the chatbot
 
-The `web/` directory is a zero-dependency static site that runs the model
-**entirely client-side** — no server, no API. `web/gpt.js` is a hand port of
-the PyTorch forward pass (`src/model/gpt.py`) to plain JavaScript over
-`Float32Array`, using an incremental KV cache so generation is fast. The
-trained weights ship as `web/model.json`.
-
-> **What it is (and isn't):** the deployed demo is a ~0.8M-parameter,
-> character-level model trained on a single short story. It is a **text
-> continuer, not a chatbot** — give it the start of a sentence and it extends
-> it in the story's style. It cannot answer questions, hold a conversation, or
-> do arithmetic; at this scale those abilities simply aren't there. The point
-> is to make the whole GPT architecture small enough to read and run.
-
-Regenerate the weights after training your own model (the shipped `model.json`
-was produced with these settings):
+The chatbot uses the **same model** as the story demo, but with a word-level
+tokenizer and instruction-style training data. Generate the data, then train:
 
 ```bash
-python train.py --out_dir web_ckpt --block_size 128 --n_embd 128 --n_layer 4 --max_steps 2000
-python export_web.py --checkpoint web_ckpt/ckpt.pt --out web/model.json
+python build_chat_data.py     # writes data/chat.jsonl (Q&A pairs)
+python train_chat.py          # instruction-tunes the model (~a few minutes on CPU)
+```
+
+`train_chat.py` formats each example as `<user> question <bot> answer <eos>` and
+**masks the loss to the answer only**, so the model is rewarded purely for
+producing correct answers. It prints sample answers to a few probe questions at
+every eval step so you can watch it learn. The checkpoint is saved to
+`checkpoints/chat.pt`.
+
+Then talk to it:
+
+```bash
+python chat.py                                  # interactive REPL
+python chat.py --question "what is 7 plus 8?"   # single question
+```
+
+Teach it new things by editing the `FACTS` list in `build_chat_data.py` and
+re-running both scripts.
+
+## Run it in the browser (Vercel demo)
+
+The `web/` directory is a zero-dependency static site that runs the **chatbot**
+model **entirely client-side** — no server, no API. `web/gpt.js` is a hand port
+of the PyTorch forward pass (`src/model/gpt.py`) to plain JavaScript over
+`Float32Array`, using an incremental KV cache so generation is fast;
+`web/tokenizer.js` is a matching port of the word-level tokenizer. The trained
+weights and vocabulary ship as `web/model.json`.
+
+> **What it is (and isn't):** the deployed demo is a ~2M-parameter chatbot that
+> genuinely answers questions **within its small training world** (arithmetic
+> over small numbers, greetings, and the facts in `build_chat_data.py`). Ask it
+> something outside that world and it will confidently make something up — it
+> has no general knowledge or reasoning. It's a demo of the architecture and
+> training recipe, not a real assistant.
+
+Regenerate `web/model.json` after (re)training the chatbot:
+
+```bash
+python build_chat_data.py
+python train_chat.py
+python export_chat_web.py --checkpoint checkpoints/chat.pt --out web/model.json
 ```
 
 Check that the JS port still matches PyTorch (compares logits against a baked-in
@@ -145,6 +196,10 @@ reference in `model.json`):
 ```bash
 node web/verify.mjs
 ```
+
+(To instead deploy the character-level *story* generator, train it and run
+`python export_web.py --checkpoint web_ckpt/ckpt.pt --out web/model.json` — but
+the shipped `web/` UI is the chatbot.)
 
 Preview locally:
 
@@ -164,14 +219,15 @@ site with no build step. Two ways to deploy:
   `vercel --prod`.
 
 Because everything runs in the browser, the deploy is just static files
-(`index.html`, `app.js`, `gpt.js`, `model.json`) — it works on Vercel's free
-tier with no environment variables or backend.
+(`index.html`, `app.js`, `gpt.js`, `tokenizer.js`, `model.json`) — it works on
+Vercel's free tier with no environment variables or backend.
 
 ## Notes on scale
 
-Default hyperparameters (4 layers, 4 heads, 128-dim embeddings, 128-token
-context) make this runnable on a laptop CPU in a couple of minutes. It is
-intentionally tiny — the point is to see every matrix multiplication that
-makes up a GPT, not to produce fluent long-form text. Bump `--n_layer`,
-`--n_embd`, `--block_size`, and train on more data to see meaningfully better
-generations.
+These models are intentionally tiny (a few hundred thousand to a couple million
+parameters) so the whole thing trains on a laptop CPU in minutes and every
+matrix multiply is readable. That small size is also the ceiling: the chatbot
+can memorize and generalize across its little dataset, but real open-domain Q&A
+and reasoning are emergent properties of models many orders of magnitude larger
+trained on far more data. The goal here is to understand the machine, not to
+rival a production assistant.

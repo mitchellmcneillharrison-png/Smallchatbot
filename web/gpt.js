@@ -90,8 +90,6 @@ function softmaxInPlace(arr, len) {
 export class TinyGPT {
   constructor(model) {
     this.config = model.config;
-    this.itos = model.itos;
-    this.stoi = model.stoi;
 
     // Convert every weight from a plain JSON number[] into a Float32Array once,
     // up front, so the hot generation loop touches only typed arrays.
@@ -113,19 +111,6 @@ export class TinyGPT {
     }
 
     this.resetCache();
-  }
-
-  encode(text) {
-    return Array.from(text).map((ch) => {
-      const id = this.stoi[ch];
-      if (id === undefined)
-        throw new Error(`Character not in vocabulary: ${JSON.stringify(ch)}`);
-      return id;
-    });
-  }
-
-  decode(ids) {
-    return ids.map((i) => this.itos[i]).join("");
   }
 
   resetCache() {
@@ -258,13 +243,16 @@ export class TinyGPT {
     return n - 1;
   }
 
-  // Warm the cache with a prompt, then autoregressively generate. Calls
-  // `onToken(id)` for each newly generated token so callers can stream output.
-  async generate(prompt, { maxNewTokens = 200, temperature = 0.8, topK = 40, onToken, rng } = {}) {
+  // Warm the KV cache with the prompt token ids, then autoregressively generate.
+  // Stops when `stopToken` (e.g. <eos>) is sampled or the budget runs out.
+  // Calls `onToken(id)` for each newly generated token so callers can stream.
+  async generateIds(
+    promptIds,
+    { maxNewTokens = 60, temperature = 0.8, topK = 40, stopToken = null, onToken, rng } = {}
+  ) {
     this.resetCache();
-    let promptIds = this.encode(prompt.length ? prompt : "\n");
-    // Keep room to generate at least one token: this simplified KV cache does
-    // not slide its window, so the prompt must fit within block_size - 1.
+    // This simplified KV cache does not slide its window, so the prompt must
+    // leave room for at least one generated token within block_size.
     if (promptIds.length > this.config.block_size - 1) {
       promptIds = promptIds.slice(-(this.config.block_size - 1));
     }
@@ -276,11 +264,11 @@ export class TinyGPT {
     const budget = Math.min(maxNewTokens, this.config.block_size - this.pos);
     for (let i = 0; i < budget; i++) {
       const nextId = this.sample(logits, temperature, topK, rng);
+      if (nextId === stopToken) break;
       generated.push(nextId);
       if (onToken) {
         onToken(nextId);
-        // Yield to the event loop so the browser can paint each token.
-        if (i % 4 === 0) await new Promise((r) => setTimeout(r, 0));
+        if (i % 2 === 0) await new Promise((r) => setTimeout(r, 0)); // let the UI paint
       }
       logits = this.stepToken(nextId);
     }

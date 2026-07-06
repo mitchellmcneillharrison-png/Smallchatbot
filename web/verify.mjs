@@ -13,6 +13,10 @@ const path = process.argv[2] || new URL("./model.json", import.meta.url).pathnam
 const model = JSON.parse(readFileSync(path, "utf-8"));
 const gpt = new TinyGPT(model);
 
+// itos lives under model.tokenizer for the chat model (or top-level for the
+// older char model); used only for a friendly print of the argmax token.
+const itos = model.tokenizer?.itos || model.itos || [];
+
 const { input_ids, last_logits } = model.self_check;
 
 // Feed the exact input through the cached forward; keep the final logits.
@@ -33,7 +37,7 @@ const pyArg = argmax(last_logits);
 
 console.log(`positions fed:   ${input_ids.length}`);
 console.log(`max |Δ logit|:   ${maxAbsDiff.toExponential(3)}`);
-console.log(`argmax JS / PT:  ${jsArg} / ${pyArg} (${gpt.itos[jsArg]==='\n'?'\\n':gpt.itos[jsArg]})`);
+console.log(`argmax JS / PT:  ${jsArg} / ${pyArg} (${JSON.stringify(itos[jsArg])})`);
 
 // Small numeric differences are expected (float32 order-of-operations, the erf
 // approximation in GELU). A few thousandths is well within tolerance.

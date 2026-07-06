@@ -1,0 +1,1598 @@
+{"q": "what is 0 plus 0?", "a": "0 plus 0 equals 0."}
+{"q": "what is 0 + 0?", "a": "0 plus 0 equals 0."}
+{"q": "what's 0 plus 0?", "a": "0 plus 0 equals 0."}
+{"q": "0 plus 0", "a": "0 plus 0 equals 0."}
+{"q": "add 0 and 0", "a": "0 plus 0 equals 0."}
+{"q": "calculate 0 + 0", "a": "0 plus 0 equals 0."}
+{"q": "what is 0 minus 0?", "a": "0 minus 0 equals 0."}
+{"q": "what is 0 - 0?", "a": "0 minus 0 equals 0."}
+{"q": "0 minus 0", "a": "0 minus 0 equals 0."}
+{"q": "subtract 0 from 0", "a": "0 minus 0 equals 0."}
+{"q": "what is 0 times 0?", "a": "0 times 0 equals 0."}
+{"q": "what is 0 * 0?", "a": "0 times 0 equals 0."}
+{"q": "0 times 0", "a": "0 times 0 equals 0."}
+{"q": "multiply 0 and 0", "a": "0 times 0 equals 0."}
+{"q": "what is 0 plus 1?", "a": "0 plus 1 equals 1."}
+{"q": "what is 0 + 1?", "a": "0 plus 1 equals 1."}
+{"q": "what's 0 plus 1?", "a": "0 plus 1 equals 1."}
+{"q": "0 plus 1", "a": "0 plus 1 equals 1."}
+{"q": "add 0 and 1", "a": "0 plus 1 equals 1."}
+{"q": "calculate 0 + 1", "a": "0 plus 1 equals 1."}
+{"q": "what is 0 times 1?", "a": "0 times 1 equals 0."}
+{"q": "what is 0 * 1?", "a": "0 times 1 equals 0."}
+{"q": "0 times 1", "a": "0 times 1 equals 0."}
+{"q": "multiply 0 and 1", "a": "0 times 1 equals 0."}
+{"q": "what is 0 plus 2?", "a": "0 plus 2 equals 2."}
+{"q": "what is 0 + 2?", "a": "0 plus 2 equals 2."}
+{"q": "what's 0 plus 2?", "a": "0 plus 2 equals 2."}
+{"q": "0 plus 2", "a": "0 plus 2 equals 2."}
+{"q": "add 0 and 2", "a": "0 plus 2 equals 2."}
+{"q": "calculate 0 + 2", "a": "0 plus 2 equals 2."}
+{"q": "what is 0 times 2?", "a": "0 times 2 equals 0."}
+{"q": "what is 0 * 2?", "a": "0 times 2 equals 0."}
+{"q": "0 times 2", "a": "0 times 2 equals 0."}
+{"q": "multiply 0 and 2", "a": "0 times 2 equals 0."}
+{"q": "what is 0 plus 3?", "a": "0 plus 3 equals 3."}
+{"q": "what is 0 + 3?", "a": "0 plus 3 equals 3."}
+{"q": "what's 0 plus 3?", "a": "0 plus 3 equals 3."}
+{"q": "0 plus 3", "a": "0 plus 3 equals 3."}
+{"q": "add 0 and 3", "a": "0 plus 3 equals 3."}
+{"q": "calculate 0 + 3", "a": "0 plus 3 equals 3."}
+{"q": "what is 0 times 3?", "a": "0 times 3 equals 0."}
+{"q": "what is 0 * 3?", "a": "0 times 3 equals 0."}
+{"q": "0 times 3", "a": "0 times 3 equals 0."}
+{"q": "multiply 0 and 3", "a": "0 times 3 equals 0."}
+{"q": "what is 0 plus 4?", "a": "0 plus 4 equals 4."}
+{"q": "what is 0 + 4?", "a": "0 plus 4 equals 4."}
+{"q": "what's 0 plus 4?", "a": "0 plus 4 equals 4."}
+{"q": "0 plus 4", "a": "0 plus 4 equals 4."}
+{"q": "add 0 and 4", "a": "0 plus 4 equals 4."}
+{"q": "calculate 0 + 4", "a": "0 plus 4 equals 4."}
+{"q": "what is 0 times 4?", "a": "0 times 4 equals 0."}
+{"q": "what is 0 * 4?", "a": "0 times 4 equals 0."}
+{"q": "0 times 4", "a": "0 times 4 equals 0."}
+{"q": "multiply 0 and 4", "a": "0 times 4 equals 0."}
+{"q": "what is 0 plus 5?", "a": "0 plus 5 equals 5."}
+{"q": "what is 0 + 5?", "a": "0 plus 5 equals 5."}
+{"q": "what's 0 plus 5?", "a": "0 plus 5 equals 5."}
+{"q": "0 plus 5", "a": "0 plus 5 equals 5."}
+{"q": "add 0 and 5", "a": "0 plus 5 equals 5."}
+{"q": "calculate 0 + 5", "a": "0 plus 5 equals 5."}
+{"q": "what is 0 times 5?", "a": "0 times 5 equals 0."}
+{"q": "what is 0 * 5?", "a": "0 times 5 equals 0."}
+{"q": "0 times 5", "a": "0 times 5 equals 0."}
+{"q": "multiply 0 and 5", "a": "0 times 5 equals 0."}
+{"q": "what is 0 plus 6?", "a": "0 plus 6 equals 6."}
+{"q": "what is 0 + 6?", "a": "0 plus 6 equals 6."}
+{"q": "what's 0 plus 6?", "a": "0 plus 6 equals 6."}
+{"q": "0 plus 6", "a": "0 plus 6 equals 6."}
+{"q": "add 0 and 6", "a": "0 plus 6 equals 6."}
+{"q": "calculate 0 + 6", "a": "0 plus 6 equals 6."}
+{"q": "what is 0 times 6?", "a": "0 times 6 equals 0."}
+{"q": "what is 0 * 6?", "a": "0 times 6 equals 0."}
+{"q": "0 times 6", "a": "0 times 6 equals 0."}
+{"q": "multiply 0 and 6", "a": "0 times 6 equals 0."}
+{"q": "what is 0 plus 7?", "a": "0 plus 7 equals 7."}
+{"q": "what is 0 + 7?", "a": "0 plus 7 equals 7."}
+{"q": "what's 0 plus 7?", "a": "0 plus 7 equals 7."}
+{"q": "0 plus 7", "a": "0 plus 7 equals 7."}
+{"q": "add 0 and 7", "a": "0 plus 7 equals 7."}
+{"q": "calculate 0 + 7", "a": "0 plus 7 equals 7."}
+{"q": "what is 0 times 7?", "a": "0 times 7 equals 0."}
+{"q": "what is 0 * 7?", "a": "0 times 7 equals 0."}
+{"q": "0 times 7", "a": "0 times 7 equals 0."}
+{"q": "multiply 0 and 7", "a": "0 times 7 equals 0."}
+{"q": "what is 0 plus 8?", "a": "0 plus 8 equals 8."}
+{"q": "what is 0 + 8?", "a": "0 plus 8 equals 8."}
+{"q": "what's 0 plus 8?", "a": "0 plus 8 equals 8."}
+{"q": "0 plus 8", "a": "0 plus 8 equals 8."}
+{"q": "add 0 and 8", "a": "0 plus 8 equals 8."}
+{"q": "calculate 0 + 8", "a": "0 plus 8 equals 8."}
+{"q": "what is 0 times 8?", "a": "0 times 8 equals 0."}
+{"q": "what is 0 * 8?", "a": "0 times 8 equals 0."}
+{"q": "0 times 8", "a": "0 times 8 equals 0."}
+{"q": "multiply 0 and 8", "a": "0 times 8 equals 0."}
+{"q": "what is 0 plus 9?", "a": "0 plus 9 equals 9."}
+{"q": "what is 0 + 9?", "a": "0 plus 9 equals 9."}
+{"q": "what's 0 plus 9?", "a": "0 plus 9 equals 9."}
+{"q": "0 plus 9", "a": "0 plus 9 equals 9."}
+{"q": "add 0 and 9", "a": "0 plus 9 equals 9."}
+{"q": "calculate 0 + 9", "a": "0 plus 9 equals 9."}
+{"q": "what is 0 times 9?", "a": "0 times 9 equals 0."}
+{"q": "what is 0 * 9?", "a": "0 times 9 equals 0."}
+{"q": "0 times 9", "a": "0 times 9 equals 0."}
+{"q": "multiply 0 and 9", "a": "0 times 9 equals 0."}
+{"q": "what is 0 plus 10?", "a": "0 plus 10 equals 10."}
+{"q": "what is 0 + 10?", "a": "0 plus 10 equals 10."}
+{"q": "what's 0 plus 10?", "a": "0 plus 10 equals 10."}
+{"q": "0 plus 10", "a": "0 plus 10 equals 10."}
+{"q": "add 0 and 10", "a": "0 plus 10 equals 10."}
+{"q": "calculate 0 + 10", "a": "0 plus 10 equals 10."}
+{"q": "what is 0 times 10?", "a": "0 times 10 equals 0."}
+{"q": "what is 0 * 10?", "a": "0 times 10 equals 0."}
+{"q": "0 times 10", "a": "0 times 10 equals 0."}
+{"q": "multiply 0 and 10", "a": "0 times 10 equals 0."}
+{"q": "what is 1 plus 0?", "a": "1 plus 0 equals 1."}
+{"q": "what is 1 + 0?", "a": "1 plus 0 equals 1."}
+{"q": "what's 1 plus 0?", "a": "1 plus 0 equals 1."}
+{"q": "1 plus 0", "a": "1 plus 0 equals 1."}
+{"q": "add 1 and 0", "a": "1 plus 0 equals 1."}
+{"q": "calculate 1 + 0", "a": "1 plus 0 equals 1."}
+{"q": "what is 1 minus 0?", "a": "1 minus 0 equals 1."}
+{"q": "what is 1 - 0?", "a": "1 minus 0 equals 1."}
+{"q": "1 minus 0", "a": "1 minus 0 equals 1."}
+{"q": "subtract 0 from 1", "a": "1 minus 0 equals 1."}
+{"q": "what is 1 times 0?", "a": "1 times 0 equals 0."}
+{"q": "what is 1 * 0?", "a": "1 times 0 equals 0."}
+{"q": "1 times 0", "a": "1 times 0 equals 0."}
+{"q": "multiply 1 and 0", "a": "1 times 0 equals 0."}
+{"q": "what is 1 plus 1?", "a": "1 plus 1 equals 2."}
+{"q": "what is 1 + 1?", "a": "1 plus 1 equals 2."}
+{"q": "what's 1 plus 1?", "a": "1 plus 1 equals 2."}
+{"q": "1 plus 1", "a": "1 plus 1 equals 2."}
+{"q": "add 1 and 1", "a": "1 plus 1 equals 2."}
+{"q": "calculate 1 + 1", "a": "1 plus 1 equals 2."}
+{"q": "what is 1 minus 1?", "a": "1 minus 1 equals 0."}
+{"q": "what is 1 - 1?", "a": "1 minus 1 equals 0."}
+{"q": "1 minus 1", "a": "1 minus 1 equals 0."}
+{"q": "subtract 1 from 1", "a": "1 minus 1 equals 0."}
+{"q": "what is 1 times 1?", "a": "1 times 1 equals 1."}
+{"q": "what is 1 * 1?", "a": "1 times 1 equals 1."}
+{"q": "1 times 1", "a": "1 times 1 equals 1."}
+{"q": "multiply 1 and 1", "a": "1 times 1 equals 1."}
+{"q": "what is 1 plus 2?", "a": "1 plus 2 equals 3."}
+{"q": "what is 1 + 2?", "a": "1 plus 2 equals 3."}
+{"q": "what's 1 plus 2?", "a": "1 plus 2 equals 3."}
+{"q": "1 plus 2", "a": "1 plus 2 equals 3."}
+{"q": "add 1 and 2", "a": "1 plus 2 equals 3."}
+{"q": "calculate 1 + 2", "a": "1 plus 2 equals 3."}
+{"q": "what is 1 times 2?", "a": "1 times 2 equals 2."}
+{"q": "what is 1 * 2?", "a": "1 times 2 equals 2."}
+{"q": "1 times 2", "a": "1 times 2 equals 2."}
+{"q": "multiply 1 and 2", "a": "1 times 2 equals 2."}
+{"q": "what is 1 plus 3?", "a": "1 plus 3 equals 4."}
+{"q": "what is 1 + 3?", "a": "1 plus 3 equals 4."}
+{"q": "what's 1 plus 3?", "a": "1 plus 3 equals 4."}
+{"q": "1 plus 3", "a": "1 plus 3 equals 4."}
+{"q": "add 1 and 3", "a": "1 plus 3 equals 4."}
+{"q": "calculate 1 + 3", "a": "1 plus 3 equals 4."}
+{"q": "what is 1 times 3?", "a": "1 times 3 equals 3."}
+{"q": "what is 1 * 3?", "a": "1 times 3 equals 3."}
+{"q": "1 times 3", "a": "1 times 3 equals 3."}
+{"q": "multiply 1 and 3", "a": "1 times 3 equals 3."}
+{"q": "what is 1 plus 4?", "a": "1 plus 4 equals 5."}
+{"q": "what is 1 + 4?", "a": "1 plus 4 equals 5."}
+{"q": "what's 1 plus 4?", "a": "1 plus 4 equals 5."}
+{"q": "1 plus 4", "a": "1 plus 4 equals 5."}
+{"q": "add 1 and 4", "a": "1 plus 4 equals 5."}
+{"q": "calculate 1 + 4", "a": "1 plus 4 equals 5."}
+{"q": "what is 1 times 4?", "a": "1 times 4 equals 4."}
+{"q": "what is 1 * 4?", "a": "1 times 4 equals 4."}
+{"q": "1 times 4", "a": "1 times 4 equals 4."}
+{"q": "multiply 1 and 4", "a": "1 times 4 equals 4."}
+{"q": "what is 1 plus 5?", "a": "1 plus 5 equals 6."}
+{"q": "what is 1 + 5?", "a": "1 plus 5 equals 6."}
+{"q": "what's 1 plus 5?", "a": "1 plus 5 equals 6."}
+{"q": "1 plus 5", "a": "1 plus 5 equals 6."}
+{"q": "add 1 and 5", "a": "1 plus 5 equals 6."}
+{"q": "calculate 1 + 5", "a": "1 plus 5 equals 6."}
+{"q": "what is 1 times 5?", "a": "1 times 5 equals 5."}
+{"q": "what is 1 * 5?", "a": "1 times 5 equals 5."}
+{"q": "1 times 5", "a": "1 times 5 equals 5."}
+{"q": "multiply 1 and 5", "a": "1 times 5 equals 5."}
+{"q": "what is 1 plus 6?", "a": "1 plus 6 equals 7."}
+{"q": "what is 1 + 6?", "a": "1 plus 6 equals 7."}
+{"q": "what's 1 plus 6?", "a": "1 plus 6 equals 7."}
+{"q": "1 plus 6", "a": "1 plus 6 equals 7."}
+{"q": "add 1 and 6", "a": "1 plus 6 equals 7."}
+{"q": "calculate 1 + 6", "a": "1 plus 6 equals 7."}
+{"q": "what is 1 times 6?", "a": "1 times 6 equals 6."}
+{"q": "what is 1 * 6?", "a": "1 times 6 equals 6."}
+{"q": "1 times 6", "a": "1 times 6 equals 6."}
+{"q": "multiply 1 and 6", "a": "1 times 6 equals 6."}
+{"q": "what is 1 plus 7?", "a": "1 plus 7 equals 8."}
+{"q": "what is 1 + 7?", "a": "1 plus 7 equals 8."}
+{"q": "what's 1 plus 7?", "a": "1 plus 7 equals 8."}
+{"q": "1 plus 7", "a": "1 plus 7 equals 8."}
+{"q": "add 1 and 7", "a": "1 plus 7 equals 8."}
+{"q": "calculate 1 + 7", "a": "1 plus 7 equals 8."}
+{"q": "what is 1 times 7?", "a": "1 times 7 equals 7."}
+{"q": "what is 1 * 7?", "a": "1 times 7 equals 7."}
+{"q": "1 times 7", "a": "1 times 7 equals 7."}
+{"q": "multiply 1 and 7", "a": "1 times 7 equals 7."}
+{"q": "what is 1 plus 8?", "a": "1 plus 8 equals 9."}
+{"q": "what is 1 + 8?", "a": "1 plus 8 equals 9."}
+{"q": "what's 1 plus 8?", "a": "1 plus 8 equals 9."}
+{"q": "1 plus 8", "a": "1 plus 8 equals 9."}
+{"q": "add 1 and 8", "a": "1 plus 8 equals 9."}
+{"q": "calculate 1 + 8", "a": "1 plus 8 equals 9."}
+{"q": "what is 1 times 8?", "a": "1 times 8 equals 8."}
+{"q": "what is 1 * 8?", "a": "1 times 8 equals 8."}
+{"q": "1 times 8", "a": "1 times 8 equals 8."}
+{"q": "multiply 1 and 8", "a": "1 times 8 equals 8."}
+{"q": "what is 1 plus 9?", "a": "1 plus 9 equals 10."}
+{"q": "what is 1 + 9?", "a": "1 plus 9 equals 10."}
+{"q": "what's 1 plus 9?", "a": "1 plus 9 equals 10."}
+{"q": "1 plus 9", "a": "1 plus 9 equals 10."}
+{"q": "add 1 and 9", "a": "1 plus 9 equals 10."}
+{"q": "calculate 1 + 9", "a": "1 plus 9 equals 10."}
+{"q": "what is 1 times 9?", "a": "1 times 9 equals 9."}
+{"q": "what is 1 * 9?", "a": "1 times 9 equals 9."}
+{"q": "1 times 9", "a": "1 times 9 equals 9."}
+{"q": "multiply 1 and 9", "a": "1 times 9 equals 9."}
+{"q": "what is 1 plus 10?", "a": "1 plus 10 equals 11."}
+{"q": "what is 1 + 10?", "a": "1 plus 10 equals 11."}
+{"q": "what's 1 plus 10?", "a": "1 plus 10 equals 11."}
+{"q": "1 plus 10", "a": "1 plus 10 equals 11."}
+{"q": "add 1 and 10", "a": "1 plus 10 equals 11."}
+{"q": "calculate 1 + 10", "a": "1 plus 10 equals 11."}
+{"q": "what is 1 times 10?", "a": "1 times 10 equals 10."}
+{"q": "what is 1 * 10?", "a": "1 times 10 equals 10."}
+{"q": "1 times 10", "a": "1 times 10 equals 10."}
+{"q": "multiply 1 and 10", "a": "1 times 10 equals 10."}
+{"q": "what is 2 plus 0?", "a": "2 plus 0 equals 2."}
+{"q": "what is 2 + 0?", "a": "2 plus 0 equals 2."}
+{"q": "what's 2 plus 0?", "a": "2 plus 0 equals 2."}
+{"q": "2 plus 0", "a": "2 plus 0 equals 2."}
+{"q": "add 2 and 0", "a": "2 plus 0 equals 2."}
+{"q": "calculate 2 + 0", "a": "2 plus 0 equals 2."}
+{"q": "what is 2 minus 0?", "a": "2 minus 0 equals 2."}
+{"q": "what is 2 - 0?", "a": "2 minus 0 equals 2."}
+{"q": "2 minus 0", "a": "2 minus 0 equals 2."}
+{"q": "subtract 0 from 2", "a": "2 minus 0 equals 2."}
+{"q": "what is 2 times 0?", "a": "2 times 0 equals 0."}
+{"q": "what is 2 * 0?", "a": "2 times 0 equals 0."}
+{"q": "2 times 0", "a": "2 times 0 equals 0."}
+{"q": "multiply 2 and 0", "a": "2 times 0 equals 0."}
+{"q": "what is 2 plus 1?", "a": "2 plus 1 equals 3."}
+{"q": "what is 2 + 1?", "a": "2 plus 1 equals 3."}
+{"q": "what's 2 plus 1?", "a": "2 plus 1 equals 3."}
+{"q": "2 plus 1", "a": "2 plus 1 equals 3."}
+{"q": "add 2 and 1", "a": "2 plus 1 equals 3."}
+{"q": "calculate 2 + 1", "a": "2 plus 1 equals 3."}
+{"q": "what is 2 minus 1?", "a": "2 minus 1 equals 1."}
+{"q": "what is 2 - 1?", "a": "2 minus 1 equals 1."}
+{"q": "2 minus 1", "a": "2 minus 1 equals 1."}
+{"q": "subtract 1 from 2", "a": "2 minus 1 equals 1."}
+{"q": "what is 2 times 1?", "a": "2 times 1 equals 2."}
+{"q": "what is 2 * 1?", "a": "2 times 1 equals 2."}
+{"q": "2 times 1", "a": "2 times 1 equals 2."}
+{"q": "multiply 2 and 1", "a": "2 times 1 equals 2."}
+{"q": "what is 2 plus 2?", "a": "2 plus 2 equals 4."}
+{"q": "what is 2 + 2?", "a": "2 plus 2 equals 4."}
+{"q": "what's 2 plus 2?", "a": "2 plus 2 equals 4."}
+{"q": "2 plus 2", "a": "2 plus 2 equals 4."}
+{"q": "add 2 and 2", "a": "2 plus 2 equals 4."}
+{"q": "calculate 2 + 2", "a": "2 plus 2 equals 4."}
+{"q": "what is 2 minus 2?", "a": "2 minus 2 equals 0."}
+{"q": "what is 2 - 2?", "a": "2 minus 2 equals 0."}
+{"q": "2 minus 2", "a": "2 minus 2 equals 0."}
+{"q": "subtract 2 from 2", "a": "2 minus 2 equals 0."}
+{"q": "what is 2 times 2?", "a": "2 times 2 equals 4."}
+{"q": "what is 2 * 2?", "a": "2 times 2 equals 4."}
+{"q": "2 times 2", "a": "2 times 2 equals 4."}
+{"q": "multiply 2 and 2", "a": "2 times 2 equals 4."}
+{"q": "what is 2 plus 3?", "a": "2 plus 3 equals 5."}
+{"q": "what is 2 + 3?", "a": "2 plus 3 equals 5."}
+{"q": "what's 2 plus 3?", "a": "2 plus 3 equals 5."}
+{"q": "2 plus 3", "a": "2 plus 3 equals 5."}
+{"q": "add 2 and 3", "a": "2 plus 3 equals 5."}
+{"q": "calculate 2 + 3", "a": "2 plus 3 equals 5."}
+{"q": "what is 2 times 3?", "a": "2 times 3 equals 6."}
+{"q": "what is 2 * 3?", "a": "2 times 3 equals 6."}
+{"q": "2 times 3", "a": "2 times 3 equals 6."}
+{"q": "multiply 2 and 3", "a": "2 times 3 equals 6."}
+{"q": "what is 2 plus 4?", "a": "2 plus 4 equals 6."}
+{"q": "what is 2 + 4?", "a": "2 plus 4 equals 6."}
+{"q": "what's 2 plus 4?", "a": "2 plus 4 equals 6."}
+{"q": "2 plus 4", "a": "2 plus 4 equals 6."}
+{"q": "add 2 and 4", "a": "2 plus 4 equals 6."}
+{"q": "calculate 2 + 4", "a": "2 plus 4 equals 6."}
+{"q": "what is 2 times 4?", "a": "2 times 4 equals 8."}
+{"q": "what is 2 * 4?", "a": "2 times 4 equals 8."}
+{"q": "2 times 4", "a": "2 times 4 equals 8."}
+{"q": "multiply 2 and 4", "a": "2 times 4 equals 8."}
+{"q": "what is 2 plus 5?", "a": "2 plus 5 equals 7."}
+{"q": "what is 2 + 5?", "a": "2 plus 5 equals 7."}
+{"q": "what's 2 plus 5?", "a": "2 plus 5 equals 7."}
+{"q": "2 plus 5", "a": "2 plus 5 equals 7."}
+{"q": "add 2 and 5", "a": "2 plus 5 equals 7."}
+{"q": "calculate 2 + 5", "a": "2 plus 5 equals 7."}
+{"q": "what is 2 times 5?", "a": "2 times 5 equals 10."}
+{"q": "what is 2 * 5?", "a": "2 times 5 equals 10."}
+{"q": "2 times 5", "a": "2 times 5 equals 10."}
+{"q": "multiply 2 and 5", "a": "2 times 5 equals 10."}
+{"q": "what is 2 plus 6?", "a": "2 plus 6 equals 8."}
+{"q": "what is 2 + 6?", "a": "2 plus 6 equals 8."}
+{"q": "what's 2 plus 6?", "a": "2 plus 6 equals 8."}
+{"q": "2 plus 6", "a": "2 plus 6 equals 8."}
+{"q": "add 2 and 6", "a": "2 plus 6 equals 8."}
+{"q": "calculate 2 + 6", "a": "2 plus 6 equals 8."}
+{"q": "what is 2 times 6?", "a": "2 times 6 equals 12."}
+{"q": "what is 2 * 6?", "a": "2 times 6 equals 12."}
+{"q": "2 times 6", "a": "2 times 6 equals 12."}
+{"q": "multiply 2 and 6", "a": "2 times 6 equals 12."}
+{"q": "what is 2 plus 7?", "a": "2 plus 7 equals 9."}
+{"q": "what is 2 + 7?", "a": "2 plus 7 equals 9."}
+{"q": "what's 2 plus 7?", "a": "2 plus 7 equals 9."}
+{"q": "2 plus 7", "a": "2 plus 7 equals 9."}
+{"q": "add 2 and 7", "a": "2 plus 7 equals 9."}
+{"q": "calculate 2 + 7", "a": "2 plus 7 equals 9."}
+{"q": "what is 2 times 7?", "a": "2 times 7 equals 14."}
+{"q": "what is 2 * 7?", "a": "2 times 7 equals 14."}
+{"q": "2 times 7", "a": "2 times 7 equals 14."}
+{"q": "multiply 2 and 7", "a": "2 times 7 equals 14."}
+{"q": "what is 2 plus 8?", "a": "2 plus 8 equals 10."}
+{"q": "what is 2 + 8?", "a": "2 plus 8 equals 10."}
+{"q": "what's 2 plus 8?", "a": "2 plus 8 equals 10."}
+{"q": "2 plus 8", "a": "2 plus 8 equals 10."}
+{"q": "add 2 and 8", "a": "2 plus 8 equals 10."}
+{"q": "calculate 2 + 8", "a": "2 plus 8 equals 10."}
+{"q": "what is 2 times 8?", "a": "2 times 8 equals 16."}
+{"q": "what is 2 * 8?", "a": "2 times 8 equals 16."}
+{"q": "2 times 8", "a": "2 times 8 equals 16."}
+{"q": "multiply 2 and 8", "a": "2 times 8 equals 16."}
+{"q": "what is 2 plus 9?", "a": "2 plus 9 equals 11."}
+{"q": "what is 2 + 9?", "a": "2 plus 9 equals 11."}
+{"q": "what's 2 plus 9?", "a": "2 plus 9 equals 11."}
+{"q": "2 plus 9", "a": "2 plus 9 equals 11."}
+{"q": "add 2 and 9", "a": "2 plus 9 equals 11."}
+{"q": "calculate 2 + 9", "a": "2 plus 9 equals 11."}
+{"q": "what is 2 times 9?", "a": "2 times 9 equals 18."}
+{"q": "what is 2 * 9?", "a": "2 times 9 equals 18."}
+{"q": "2 times 9", "a": "2 times 9 equals 18."}
+{"q": "multiply 2 and 9", "a": "2 times 9 equals 18."}
+{"q": "what is 2 plus 10?", "a": "2 plus 10 equals 12."}
+{"q": "what is 2 + 10?", "a": "2 plus 10 equals 12."}
+{"q": "what's 2 plus 10?", "a": "2 plus 10 equals 12."}
+{"q": "2 plus 10", "a": "2 plus 10 equals 12."}
+{"q": "add 2 and 10", "a": "2 plus 10 equals 12."}
+{"q": "calculate 2 + 10", "a": "2 plus 10 equals 12."}
+{"q": "what is 2 times 10?", "a": "2 times 10 equals 20."}
+{"q": "what is 2 * 10?", "a": "2 times 10 equals 20."}
+{"q": "2 times 10", "a": "2 times 10 equals 20."}
+{"q": "multiply 2 and 10", "a": "2 times 10 equals 20."}
+{"q": "what is 3 plus 0?", "a": "3 plus 0 equals 3."}
+{"q": "what is 3 + 0?", "a": "3 plus 0 equals 3."}
+{"q": "what's 3 plus 0?", "a": "3 plus 0 equals 3."}
+{"q": "3 plus 0", "a": "3 plus 0 equals 3."}
+{"q": "add 3 and 0", "a": "3 plus 0 equals 3."}
+{"q": "calculate 3 + 0", "a": "3 plus 0 equals 3."}
+{"q": "what is 3 minus 0?", "a": "3 minus 0 equals 3."}
+{"q": "what is 3 - 0?", "a": "3 minus 0 equals 3."}
+{"q": "3 minus 0", "a": "3 minus 0 equals 3."}
+{"q": "subtract 0 from 3", "a": "3 minus 0 equals 3."}
+{"q": "what is 3 times 0?", "a": "3 times 0 equals 0."}
+{"q": "what is 3 * 0?", "a": "3 times 0 equals 0."}
+{"q": "3 times 0", "a": "3 times 0 equals 0."}
+{"q": "multiply 3 and 0", "a": "3 times 0 equals 0."}
+{"q": "what is 3 plus 1?", "a": "3 plus 1 equals 4."}
+{"q": "what is 3 + 1?", "a": "3 plus 1 equals 4."}
+{"q": "what's 3 plus 1?", "a": "3 plus 1 equals 4."}
+{"q": "3 plus 1", "a": "3 plus 1 equals 4."}
+{"q": "add 3 and 1", "a": "3 plus 1 equals 4."}
+{"q": "calculate 3 + 1", "a": "3 plus 1 equals 4."}
+{"q": "what is 3 minus 1?", "a": "3 minus 1 equals 2."}
+{"q": "what is 3 - 1?", "a": "3 minus 1 equals 2."}
+{"q": "3 minus 1", "a": "3 minus 1 equals 2."}
+{"q": "subtract 1 from 3", "a": "3 minus 1 equals 2."}
+{"q": "what is 3 times 1?", "a": "3 times 1 equals 3."}
+{"q": "what is 3 * 1?", "a": "3 times 1 equals 3."}
+{"q": "3 times 1", "a": "3 times 1 equals 3."}
+{"q": "multiply 3 and 1", "a": "3 times 1 equals 3."}
+{"q": "what is 3 plus 2?", "a": "3 plus 2 equals 5."}
+{"q": "what is 3 + 2?", "a": "3 plus 2 equals 5."}
+{"q": "what's 3 plus 2?", "a": "3 plus 2 equals 5."}
+{"q": "3 plus 2", "a": "3 plus 2 equals 5."}
+{"q": "add 3 and 2", "a": "3 plus 2 equals 5."}
+{"q": "calculate 3 + 2", "a": "3 plus 2 equals 5."}
+{"q": "what is 3 minus 2?", "a": "3 minus 2 equals 1."}
+{"q": "what is 3 - 2?", "a": "3 minus 2 equals 1."}
+{"q": "3 minus 2", "a": "3 minus 2 equals 1."}
+{"q": "subtract 2 from 3", "a": "3 minus 2 equals 1."}
+{"q": "what is 3 times 2?", "a": "3 times 2 equals 6."}
+{"q": "what is 3 * 2?", "a": "3 times 2 equals 6."}
+{"q": "3 times 2", "a": "3 times 2 equals 6."}
+{"q": "multiply 3 and 2", "a": "3 times 2 equals 6."}
+{"q": "what is 3 plus 3?", "a": "3 plus 3 equals 6."}
+{"q": "what is 3 + 3?", "a": "3 plus 3 equals 6."}
+{"q": "what's 3 plus 3?", "a": "3 plus 3 equals 6."}
+{"q": "3 plus 3", "a": "3 plus 3 equals 6."}
+{"q": "add 3 and 3", "a": "3 plus 3 equals 6."}
+{"q": "calculate 3 + 3", "a": "3 plus 3 equals 6."}
+{"q": "what is 3 minus 3?", "a": "3 minus 3 equals 0."}
+{"q": "what is 3 - 3?", "a": "3 minus 3 equals 0."}
+{"q": "3 minus 3", "a": "3 minus 3 equals 0."}
+{"q": "subtract 3 from 3", "a": "3 minus 3 equals 0."}
+{"q": "what is 3 times 3?", "a": "3 times 3 equals 9."}
+{"q": "what is 3 * 3?", "a": "3 times 3 equals 9."}
+{"q": "3 times 3", "a": "3 times 3 equals 9."}
+{"q": "multiply 3 and 3", "a": "3 times 3 equals 9."}
+{"q": "what is 3 plus 4?", "a": "3 plus 4 equals 7."}
+{"q": "what is 3 + 4?", "a": "3 plus 4 equals 7."}
+{"q": "what's 3 plus 4?", "a": "3 plus 4 equals 7."}
+{"q": "3 plus 4", "a": "3 plus 4 equals 7."}
+{"q": "add 3 and 4", "a": "3 plus 4 equals 7."}
+{"q": "calculate 3 + 4", "a": "3 plus 4 equals 7."}
+{"q": "what is 3 times 4?", "a": "3 times 4 equals 12."}
+{"q": "what is 3 * 4?", "a": "3 times 4 equals 12."}
+{"q": "3 times 4", "a": "3 times 4 equals 12."}
+{"q": "multiply 3 and 4", "a": "3 times 4 equals 12."}
+{"q": "what is 3 plus 5?", "a": "3 plus 5 equals 8."}
+{"q": "what is 3 + 5?", "a": "3 plus 5 equals 8."}
+{"q": "what's 3 plus 5?", "a": "3 plus 5 equals 8."}
+{"q": "3 plus 5", "a": "3 plus 5 equals 8."}
+{"q": "add 3 and 5", "a": "3 plus 5 equals 8."}
+{"q": "calculate 3 + 5", "a": "3 plus 5 equals 8."}
+{"q": "what is 3 times 5?", "a": "3 times 5 equals 15."}
+{"q": "what is 3 * 5?", "a": "3 times 5 equals 15."}
+{"q": "3 times 5", "a": "3 times 5 equals 15."}
+{"q": "multiply 3 and 5", "a": "3 times 5 equals 15."}
+{"q": "what is 3 plus 6?", "a": "3 plus 6 equals 9."}
+{"q": "what is 3 + 6?", "a": "3 plus 6 equals 9."}
+{"q": "what's 3 plus 6?", "a": "3 plus 6 equals 9."}
+{"q": "3 plus 6", "a": "3 plus 6 equals 9."}
+{"q": "add 3 and 6", "a": "3 plus 6 equals 9."}
+{"q": "calculate 3 + 6", "a": "3 plus 6 equals 9."}
+{"q": "what is 3 times 6?", "a": "3 times 6 equals 18."}
+{"q": "what is 3 * 6?", "a": "3 times 6 equals 18."}
+{"q": "3 times 6", "a": "3 times 6 equals 18."}
+{"q": "multiply 3 and 6", "a": "3 times 6 equals 18."}
+{"q": "what is 3 plus 7?", "a": "3 plus 7 equals 10."}
+{"q": "what is 3 + 7?", "a": "3 plus 7 equals 10."}
+{"q": "what's 3 plus 7?", "a": "3 plus 7 equals 10."}
+{"q": "3 plus 7", "a": "3 plus 7 equals 10."}
+{"q": "add 3 and 7", "a": "3 plus 7 equals 10."}
+{"q": "calculate 3 + 7", "a": "3 plus 7 equals 10."}
+{"q": "what is 3 times 7?", "a": "3 times 7 equals 21."}
+{"q": "what is 3 * 7?", "a": "3 times 7 equals 21."}
+{"q": "3 times 7", "a": "3 times 7 equals 21."}
+{"q": "multiply 3 and 7", "a": "3 times 7 equals 21."}
+{"q": "what is 3 plus 8?", "a": "3 plus 8 equals 11."}
+{"q": "what is 3 + 8?", "a": "3 plus 8 equals 11."}
+{"q": "what's 3 plus 8?", "a": "3 plus 8 equals 11."}
+{"q": "3 plus 8", "a": "3 plus 8 equals 11."}
+{"q": "add 3 and 8", "a": "3 plus 8 equals 11."}
+{"q": "calculate 3 + 8", "a": "3 plus 8 equals 11."}
+{"q": "what is 3 times 8?", "a": "3 times 8 equals 24."}
+{"q": "what is 3 * 8?", "a": "3 times 8 equals 24."}
+{"q": "3 times 8", "a": "3 times 8 equals 24."}
+{"q": "multiply 3 and 8", "a": "3 times 8 equals 24."}
+{"q": "what is 3 plus 9?", "a": "3 plus 9 equals 12."}
+{"q": "what is 3 + 9?", "a": "3 plus 9 equals 12."}
+{"q": "what's 3 plus 9?", "a": "3 plus 9 equals 12."}
+{"q": "3 plus 9", "a": "3 plus 9 equals 12."}
+{"q": "add 3 and 9", "a": "3 plus 9 equals 12."}
+{"q": "calculate 3 + 9", "a": "3 plus 9 equals 12."}
+{"q": "what is 3 times 9?", "a": "3 times 9 equals 27."}
+{"q": "what is 3 * 9?", "a": "3 times 9 equals 27."}
+{"q": "3 times 9", "a": "3 times 9 equals 27."}
+{"q": "multiply 3 and 9", "a": "3 times 9 equals 27."}
+{"q": "what is 3 plus 10?", "a": "3 plus 10 equals 13."}
+{"q": "what is 3 + 10?", "a": "3 plus 10 equals 13."}
+{"q": "what's 3 plus 10?", "a": "3 plus 10 equals 13."}
+{"q": "3 plus 10", "a": "3 plus 10 equals 13."}
+{"q": "add 3 and 10", "a": "3 plus 10 equals 13."}
+{"q": "calculate 3 + 10", "a": "3 plus 10 equals 13."}
+{"q": "what is 3 times 10?", "a": "3 times 10 equals 30."}
+{"q": "what is 3 * 10?", "a": "3 times 10 equals 30."}
+{"q": "3 times 10", "a": "3 times 10 equals 30."}
+{"q": "multiply 3 and 10", "a": "3 times 10 equals 30."}
+{"q": "what is 4 plus 0?", "a": "4 plus 0 equals 4."}
+{"q": "what is 4 + 0?", "a": "4 plus 0 equals 4."}
+{"q": "what's 4 plus 0?", "a": "4 plus 0 equals 4."}
+{"q": "4 plus 0", "a": "4 plus 0 equals 4."}
+{"q": "add 4 and 0", "a": "4 plus 0 equals 4."}
+{"q": "calculate 4 + 0", "a": "4 plus 0 equals 4."}
+{"q": "what is 4 minus 0?", "a": "4 minus 0 equals 4."}
+{"q": "what is 4 - 0?", "a": "4 minus 0 equals 4."}
+{"q": "4 minus 0", "a": "4 minus 0 equals 4."}
+{"q": "subtract 0 from 4", "a": "4 minus 0 equals 4."}
+{"q": "what is 4 times 0?", "a": "4 times 0 equals 0."}
+{"q": "what is 4 * 0?", "a": "4 times 0 equals 0."}
+{"q": "4 times 0", "a": "4 times 0 equals 0."}
+{"q": "multiply 4 and 0", "a": "4 times 0 equals 0."}
+{"q": "what is 4 plus 1?", "a": "4 plus 1 equals 5."}
+{"q": "what is 4 + 1?", "a": "4 plus 1 equals 5."}
+{"q": "what's 4 plus 1?", "a": "4 plus 1 equals 5."}
+{"q": "4 plus 1", "a": "4 plus 1 equals 5."}
+{"q": "add 4 and 1", "a": "4 plus 1 equals 5."}
+{"q": "calculate 4 + 1", "a": "4 plus 1 equals 5."}
+{"q": "what is 4 minus 1?", "a": "4 minus 1 equals 3."}
+{"q": "what is 4 - 1?", "a": "4 minus 1 equals 3."}
+{"q": "4 minus 1", "a": "4 minus 1 equals 3."}
+{"q": "subtract 1 from 4", "a": "4 minus 1 equals 3."}
+{"q": "what is 4 times 1?", "a": "4 times 1 equals 4."}
+{"q": "what is 4 * 1?", "a": "4 times 1 equals 4."}
+{"q": "4 times 1", "a": "4 times 1 equals 4."}
+{"q": "multiply 4 and 1", "a": "4 times 1 equals 4."}
+{"q": "what is 4 plus 2?", "a": "4 plus 2 equals 6."}
+{"q": "what is 4 + 2?", "a": "4 plus 2 equals 6."}
+{"q": "what's 4 plus 2?", "a": "4 plus 2 equals 6."}
+{"q": "4 plus 2", "a": "4 plus 2 equals 6."}
+{"q": "add 4 and 2", "a": "4 plus 2 equals 6."}
+{"q": "calculate 4 + 2", "a": "4 plus 2 equals 6."}
+{"q": "what is 4 minus 2?", "a": "4 minus 2 equals 2."}
+{"q": "what is 4 - 2?", "a": "4 minus 2 equals 2."}
+{"q": "4 minus 2", "a": "4 minus 2 equals 2."}
+{"q": "subtract 2 from 4", "a": "4 minus 2 equals 2."}
+{"q": "what is 4 times 2?", "a": "4 times 2 equals 8."}
+{"q": "what is 4 * 2?", "a": "4 times 2 equals 8."}
+{"q": "4 times 2", "a": "4 times 2 equals 8."}
+{"q": "multiply 4 and 2", "a": "4 times 2 equals 8."}
+{"q": "what is 4 plus 3?", "a": "4 plus 3 equals 7."}
+{"q": "what is 4 + 3?", "a": "4 plus 3 equals 7."}
+{"q": "what's 4 plus 3?", "a": "4 plus 3 equals 7."}
+{"q": "4 plus 3", "a": "4 plus 3 equals 7."}
+{"q": "add 4 and 3", "a": "4 plus 3 equals 7."}
+{"q": "calculate 4 + 3", "a": "4 plus 3 equals 7."}
+{"q": "what is 4 minus 3?", "a": "4 minus 3 equals 1."}
+{"q": "what is 4 - 3?", "a": "4 minus 3 equals 1."}
+{"q": "4 minus 3", "a": "4 minus 3 equals 1."}
+{"q": "subtract 3 from 4", "a": "4 minus 3 equals 1."}
+{"q": "what is 4 times 3?", "a": "4 times 3 equals 12."}
+{"q": "what is 4 * 3?", "a": "4 times 3 equals 12."}
+{"q": "4 times 3", "a": "4 times 3 equals 12."}
+{"q": "multiply 4 and 3", "a": "4 times 3 equals 12."}
+{"q": "what is 4 plus 4?", "a": "4 plus 4 equals 8."}
+{"q": "what is 4 + 4?", "a": "4 plus 4 equals 8."}
+{"q": "what's 4 plus 4?", "a": "4 plus 4 equals 8."}
+{"q": "4 plus 4", "a": "4 plus 4 equals 8."}
+{"q": "add 4 and 4", "a": "4 plus 4 equals 8."}
+{"q": "calculate 4 + 4", "a": "4 plus 4 equals 8."}
+{"q": "what is 4 minus 4?", "a": "4 minus 4 equals 0."}
+{"q": "what is 4 - 4?", "a": "4 minus 4 equals 0."}
+{"q": "4 minus 4", "a": "4 minus 4 equals 0."}
+{"q": "subtract 4 from 4", "a": "4 minus 4 equals 0."}
+{"q": "what is 4 times 4?", "a": "4 times 4 equals 16."}
+{"q": "what is 4 * 4?", "a": "4 times 4 equals 16."}
+{"q": "4 times 4", "a": "4 times 4 equals 16."}
+{"q": "multiply 4 and 4", "a": "4 times 4 equals 16."}
+{"q": "what is 4 plus 5?", "a": "4 plus 5 equals 9."}
+{"q": "what is 4 + 5?", "a": "4 plus 5 equals 9."}
+{"q": "what's 4 plus 5?", "a": "4 plus 5 equals 9."}
+{"q": "4 plus 5", "a": "4 plus 5 equals 9."}
+{"q": "add 4 and 5", "a": "4 plus 5 equals 9."}
+{"q": "calculate 4 + 5", "a": "4 plus 5 equals 9."}
+{"q": "what is 4 times 5?", "a": "4 times 5 equals 20."}
+{"q": "what is 4 * 5?", "a": "4 times 5 equals 20."}
+{"q": "4 times 5", "a": "4 times 5 equals 20."}
+{"q": "multiply 4 and 5", "a": "4 times 5 equals 20."}
+{"q": "what is 4 plus 6?", "a": "4 plus 6 equals 10."}
+{"q": "what is 4 + 6?", "a": "4 plus 6 equals 10."}
+{"q": "what's 4 plus 6?", "a": "4 plus 6 equals 10."}
+{"q": "4 plus 6", "a": "4 plus 6 equals 10."}
+{"q": "add 4 and 6", "a": "4 plus 6 equals 10."}
+{"q": "calculate 4 + 6", "a": "4 plus 6 equals 10."}
+{"q": "what is 4 times 6?", "a": "4 times 6 equals 24."}
+{"q": "what is 4 * 6?", "a": "4 times 6 equals 24."}
+{"q": "4 times 6", "a": "4 times 6 equals 24."}
+{"q": "multiply 4 and 6", "a": "4 times 6 equals 24."}
+{"q": "what is 4 plus 7?", "a": "4 plus 7 equals 11."}
+{"q": "what is 4 + 7?", "a": "4 plus 7 equals 11."}
+{"q": "what's 4 plus 7?", "a": "4 plus 7 equals 11."}
+{"q": "4 plus 7", "a": "4 plus 7 equals 11."}
+{"q": "add 4 and 7", "a": "4 plus 7 equals 11."}
+{"q": "calculate 4 + 7", "a": "4 plus 7 equals 11."}
+{"q": "what is 4 times 7?", "a": "4 times 7 equals 28."}
+{"q": "what is 4 * 7?", "a": "4 times 7 equals 28."}
+{"q": "4 times 7", "a": "4 times 7 equals 28."}
+{"q": "multiply 4 and 7", "a": "4 times 7 equals 28."}
+{"q": "what is 4 plus 8?", "a": "4 plus 8 equals 12."}
+{"q": "what is 4 + 8?", "a": "4 plus 8 equals 12."}
+{"q": "what's 4 plus 8?", "a": "4 plus 8 equals 12."}
+{"q": "4 plus 8", "a": "4 plus 8 equals 12."}
+{"q": "add 4 and 8", "a": "4 plus 8 equals 12."}
+{"q": "calculate 4 + 8", "a": "4 plus 8 equals 12."}
+{"q": "what is 4 times 8?", "a": "4 times 8 equals 32."}
+{"q": "what is 4 * 8?", "a": "4 times 8 equals 32."}
+{"q": "4 times 8", "a": "4 times 8 equals 32."}
+{"q": "multiply 4 and 8", "a": "4 times 8 equals 32."}
+{"q": "what is 4 plus 9?", "a": "4 plus 9 equals 13."}
+{"q": "what is 4 + 9?", "a": "4 plus 9 equals 13."}
+{"q": "what's 4 plus 9?", "a": "4 plus 9 equals 13."}
+{"q": "4 plus 9", "a": "4 plus 9 equals 13."}
+{"q": "add 4 and 9", "a": "4 plus 9 equals 13."}
+{"q": "calculate 4 + 9", "a": "4 plus 9 equals 13."}
+{"q": "what is 4 times 9?", "a": "4 times 9 equals 36."}
+{"q": "what is 4 * 9?", "a": "4 times 9 equals 36."}
+{"q": "4 times 9", "a": "4 times 9 equals 36."}
+{"q": "multiply 4 and 9", "a": "4 times 9 equals 36."}
+{"q": "what is 4 plus 10?", "a": "4 plus 10 equals 14."}
+{"q": "what is 4 + 10?", "a": "4 plus 10 equals 14."}
+{"q": "what's 4 plus 10?", "a": "4 plus 10 equals 14."}
+{"q": "4 plus 10", "a": "4 plus 10 equals 14."}
+{"q": "add 4 and 10", "a": "4 plus 10 equals 14."}
+{"q": "calculate 4 + 10", "a": "4 plus 10 equals 14."}
+{"q": "what is 4 times 10?", "a": "4 times 10 equals 40."}
+{"q": "what is 4 * 10?", "a": "4 times 10 equals 40."}
+{"q": "4 times 10", "a": "4 times 10 equals 40."}
+{"q": "multiply 4 and 10", "a": "4 times 10 equals 40."}
+{"q": "what is 5 plus 0?", "a": "5 plus 0 equals 5."}
+{"q": "what is 5 + 0?", "a": "5 plus 0 equals 5."}
+{"q": "what's 5 plus 0?", "a": "5 plus 0 equals 5."}
+{"q": "5 plus 0", "a": "5 plus 0 equals 5."}
+{"q": "add 5 and 0", "a": "5 plus 0 equals 5."}
+{"q": "calculate 5 + 0", "a": "5 plus 0 equals 5."}
+{"q": "what is 5 minus 0?", "a": "5 minus 0 equals 5."}
+{"q": "what is 5 - 0?", "a": "5 minus 0 equals 5."}
+{"q": "5 minus 0", "a": "5 minus 0 equals 5."}
+{"q": "subtract 0 from 5", "a": "5 minus 0 equals 5."}
+{"q": "what is 5 times 0?", "a": "5 times 0 equals 0."}
+{"q": "what is 5 * 0?", "a": "5 times 0 equals 0."}
+{"q": "5 times 0", "a": "5 times 0 equals 0."}
+{"q": "multiply 5 and 0", "a": "5 times 0 equals 0."}
+{"q": "what is 5 plus 1?", "a": "5 plus 1 equals 6."}
+{"q": "what is 5 + 1?", "a": "5 plus 1 equals 6."}
+{"q": "what's 5 plus 1?", "a": "5 plus 1 equals 6."}
+{"q": "5 plus 1", "a": "5 plus 1 equals 6."}
+{"q": "add 5 and 1", "a": "5 plus 1 equals 6."}
+{"q": "calculate 5 + 1", "a": "5 plus 1 equals 6."}
+{"q": "what is 5 minus 1?", "a": "5 minus 1 equals 4."}
+{"q": "what is 5 - 1?", "a": "5 minus 1 equals 4."}
+{"q": "5 minus 1", "a": "5 minus 1 equals 4."}
+{"q": "subtract 1 from 5", "a": "5 minus 1 equals 4."}
+{"q": "what is 5 times 1?", "a": "5 times 1 equals 5."}
+{"q": "what is 5 * 1?", "a": "5 times 1 equals 5."}
+{"q": "5 times 1", "a": "5 times 1 equals 5."}
+{"q": "multiply 5 and 1", "a": "5 times 1 equals 5."}
+{"q": "what is 5 plus 2?", "a": "5 plus 2 equals 7."}
+{"q": "what is 5 + 2?", "a": "5 plus 2 equals 7."}
+{"q": "what's 5 plus 2?", "a": "5 plus 2 equals 7."}
+{"q": "5 plus 2", "a": "5 plus 2 equals 7."}
+{"q": "add 5 and 2", "a": "5 plus 2 equals 7."}
+{"q": "calculate 5 + 2", "a": "5 plus 2 equals 7."}
+{"q": "what is 5 minus 2?", "a": "5 minus 2 equals 3."}
+{"q": "what is 5 - 2?", "a": "5 minus 2 equals 3."}
+{"q": "5 minus 2", "a": "5 minus 2 equals 3."}
+{"q": "subtract 2 from 5", "a": "5 minus 2 equals 3."}
+{"q": "what is 5 times 2?", "a": "5 times 2 equals 10."}
+{"q": "what is 5 * 2?", "a": "5 times 2 equals 10."}
+{"q": "5 times 2", "a": "5 times 2 equals 10."}
+{"q": "multiply 5 and 2", "a": "5 times 2 equals 10."}
+{"q": "what is 5 plus 3?", "a": "5 plus 3 equals 8."}
+{"q": "what is 5 + 3?", "a": "5 plus 3 equals 8."}
+{"q": "what's 5 plus 3?", "a": "5 plus 3 equals 8."}
+{"q": "5 plus 3", "a": "5 plus 3 equals 8."}
+{"q": "add 5 and 3", "a": "5 plus 3 equals 8."}
+{"q": "calculate 5 + 3", "a": "5 plus 3 equals 8."}
+{"q": "what is 5 minus 3?", "a": "5 minus 3 equals 2."}
+{"q": "what is 5 - 3?", "a": "5 minus 3 equals 2."}
+{"q": "5 minus 3", "a": "5 minus 3 equals 2."}
+{"q": "subtract 3 from 5", "a": "5 minus 3 equals 2."}
+{"q": "what is 5 times 3?", "a": "5 times 3 equals 15."}
+{"q": "what is 5 * 3?", "a": "5 times 3 equals 15."}
+{"q": "5 times 3", "a": "5 times 3 equals 15."}
+{"q": "multiply 5 and 3", "a": "5 times 3 equals 15."}
+{"q": "what is 5 plus 4?", "a": "5 plus 4 equals 9."}
+{"q": "what is 5 + 4?", "a": "5 plus 4 equals 9."}
+{"q": "what's 5 plus 4?", "a": "5 plus 4 equals 9."}
+{"q": "5 plus 4", "a": "5 plus 4 equals 9."}
+{"q": "add 5 and 4", "a": "5 plus 4 equals 9."}
+{"q": "calculate 5 + 4", "a": "5 plus 4 equals 9."}
+{"q": "what is 5 minus 4?", "a": "5 minus 4 equals 1."}
+{"q": "what is 5 - 4?", "a": "5 minus 4 equals 1."}
+{"q": "5 minus 4", "a": "5 minus 4 equals 1."}
+{"q": "subtract 4 from 5", "a": "5 minus 4 equals 1."}
+{"q": "what is 5 times 4?", "a": "5 times 4 equals 20."}
+{"q": "what is 5 * 4?", "a": "5 times 4 equals 20."}
+{"q": "5 times 4", "a": "5 times 4 equals 20."}
+{"q": "multiply 5 and 4", "a": "5 times 4 equals 20."}
+{"q": "what is 5 plus 5?", "a": "5 plus 5 equals 10."}
+{"q": "what is 5 + 5?", "a": "5 plus 5 equals 10."}
+{"q": "what's 5 plus 5?", "a": "5 plus 5 equals 10."}
+{"q": "5 plus 5", "a": "5 plus 5 equals 10."}
+{"q": "add 5 and 5", "a": "5 plus 5 equals 10."}
+{"q": "calculate 5 + 5", "a": "5 plus 5 equals 10."}
+{"q": "what is 5 minus 5?", "a": "5 minus 5 equals 0."}
+{"q": "what is 5 - 5?", "a": "5 minus 5 equals 0."}
+{"q": "5 minus 5", "a": "5 minus 5 equals 0."}
+{"q": "subtract 5 from 5", "a": "5 minus 5 equals 0."}
+{"q": "what is 5 times 5?", "a": "5 times 5 equals 25."}
+{"q": "what is 5 * 5?", "a": "5 times 5 equals 25."}
+{"q": "5 times 5", "a": "5 times 5 equals 25."}
+{"q": "multiply 5 and 5", "a": "5 times 5 equals 25."}
+{"q": "what is 5 plus 6?", "a": "5 plus 6 equals 11."}
+{"q": "what is 5 + 6?", "a": "5 plus 6 equals 11."}
+{"q": "what's 5 plus 6?", "a": "5 plus 6 equals 11."}
+{"q": "5 plus 6", "a": "5 plus 6 equals 11."}
+{"q": "add 5 and 6", "a": "5 plus 6 equals 11."}
+{"q": "calculate 5 + 6", "a": "5 plus 6 equals 11."}
+{"q": "what is 5 times 6?", "a": "5 times 6 equals 30."}
+{"q": "what is 5 * 6?", "a": "5 times 6 equals 30."}
+{"q": "5 times 6", "a": "5 times 6 equals 30."}
+{"q": "multiply 5 and 6", "a": "5 times 6 equals 30."}
+{"q": "what is 5 plus 7?", "a": "5 plus 7 equals 12."}
+{"q": "what is 5 + 7?", "a": "5 plus 7 equals 12."}
+{"q": "what's 5 plus 7?", "a": "5 plus 7 equals 12."}
+{"q": "5 plus 7", "a": "5 plus 7 equals 12."}
+{"q": "add 5 and 7", "a": "5 plus 7 equals 12."}
+{"q": "calculate 5 + 7", "a": "5 plus 7 equals 12."}
+{"q": "what is 5 times 7?", "a": "5 times 7 equals 35."}
+{"q": "what is 5 * 7?", "a": "5 times 7 equals 35."}
+{"q": "5 times 7", "a": "5 times 7 equals 35."}
+{"q": "multiply 5 and 7", "a": "5 times 7 equals 35."}
+{"q": "what is 5 plus 8?", "a": "5 plus 8 equals 13."}
+{"q": "what is 5 + 8?", "a": "5 plus 8 equals 13."}
+{"q": "what's 5 plus 8?", "a": "5 plus 8 equals 13."}
+{"q": "5 plus 8", "a": "5 plus 8 equals 13."}
+{"q": "add 5 and 8", "a": "5 plus 8 equals 13."}
+{"q": "calculate 5 + 8", "a": "5 plus 8 equals 13."}
+{"q": "what is 5 times 8?", "a": "5 times 8 equals 40."}
+{"q": "what is 5 * 8?", "a": "5 times 8 equals 40."}
+{"q": "5 times 8", "a": "5 times 8 equals 40."}
+{"q": "multiply 5 and 8", "a": "5 times 8 equals 40."}
+{"q": "what is 5 plus 9?", "a": "5 plus 9 equals 14."}
+{"q": "what is 5 + 9?", "a": "5 plus 9 equals 14."}
+{"q": "what's 5 plus 9?", "a": "5 plus 9 equals 14."}
+{"q": "5 plus 9", "a": "5 plus 9 equals 14."}
+{"q": "add 5 and 9", "a": "5 plus 9 equals 14."}
+{"q": "calculate 5 + 9", "a": "5 plus 9 equals 14."}
+{"q": "what is 5 times 9?", "a": "5 times 9 equals 45."}
+{"q": "what is 5 * 9?", "a": "5 times 9 equals 45."}
+{"q": "5 times 9", "a": "5 times 9 equals 45."}
+{"q": "multiply 5 and 9", "a": "5 times 9 equals 45."}
+{"q": "what is 5 plus 10?", "a": "5 plus 10 equals 15."}
+{"q": "what is 5 + 10?", "a": "5 plus 10 equals 15."}
+{"q": "what's 5 plus 10?", "a": "5 plus 10 equals 15."}
+{"q": "5 plus 10", "a": "5 plus 10 equals 15."}
+{"q": "add 5 and 10", "a": "5 plus 10 equals 15."}
+{"q": "calculate 5 + 10", "a": "5 plus 10 equals 15."}
+{"q": "what is 5 times 10?", "a": "5 times 10 equals 50."}
+{"q": "what is 5 * 10?", "a": "5 times 10 equals 50."}
+{"q": "5 times 10", "a": "5 times 10 equals 50."}
+{"q": "multiply 5 and 10", "a": "5 times 10 equals 50."}
+{"q": "what is 6 plus 0?", "a": "6 plus 0 equals 6."}
+{"q": "what is 6 + 0?", "a": "6 plus 0 equals 6."}
+{"q": "what's 6 plus 0?", "a": "6 plus 0 equals 6."}
+{"q": "6 plus 0", "a": "6 plus 0 equals 6."}
+{"q": "add 6 and 0", "a": "6 plus 0 equals 6."}
+{"q": "calculate 6 + 0", "a": "6 plus 0 equals 6."}
+{"q": "what is 6 minus 0?", "a": "6 minus 0 equals 6."}
+{"q": "what is 6 - 0?", "a": "6 minus 0 equals 6."}
+{"q": "6 minus 0", "a": "6 minus 0 equals 6."}
+{"q": "subtract 0 from 6", "a": "6 minus 0 equals 6."}
+{"q": "what is 6 times 0?", "a": "6 times 0 equals 0."}
+{"q": "what is 6 * 0?", "a": "6 times 0 equals 0."}
+{"q": "6 times 0", "a": "6 times 0 equals 0."}
+{"q": "multiply 6 and 0", "a": "6 times 0 equals 0."}
+{"q": "what is 6 plus 1?", "a": "6 plus 1 equals 7."}
+{"q": "what is 6 + 1?", "a": "6 plus 1 equals 7."}
+{"q": "what's 6 plus 1?", "a": "6 plus 1 equals 7."}
+{"q": "6 plus 1", "a": "6 plus 1 equals 7."}
+{"q": "add 6 and 1", "a": "6 plus 1 equals 7."}
+{"q": "calculate 6 + 1", "a": "6 plus 1 equals 7."}
+{"q": "what is 6 minus 1?", "a": "6 minus 1 equals 5."}
+{"q": "what is 6 - 1?", "a": "6 minus 1 equals 5."}
+{"q": "6 minus 1", "a": "6 minus 1 equals 5."}
+{"q": "subtract 1 from 6", "a": "6 minus 1 equals 5."}
+{"q": "what is 6 times 1?", "a": "6 times 1 equals 6."}
+{"q": "what is 6 * 1?", "a": "6 times 1 equals 6."}
+{"q": "6 times 1", "a": "6 times 1 equals 6."}
+{"q": "multiply 6 and 1", "a": "6 times 1 equals 6."}
+{"q": "what is 6 plus 2?", "a": "6 plus 2 equals 8."}
+{"q": "what is 6 + 2?", "a": "6 plus 2 equals 8."}
+{"q": "what's 6 plus 2?", "a": "6 plus 2 equals 8."}
+{"q": "6 plus 2", "a": "6 plus 2 equals 8."}
+{"q": "add 6 and 2", "a": "6 plus 2 equals 8."}
+{"q": "calculate 6 + 2", "a": "6 plus 2 equals 8."}
+{"q": "what is 6 minus 2?", "a": "6 minus 2 equals 4."}
+{"q": "what is 6 - 2?", "a": "6 minus 2 equals 4."}
+{"q": "6 minus 2", "a": "6 minus 2 equals 4."}
+{"q": "subtract 2 from 6", "a": "6 minus 2 equals 4."}
+{"q": "what is 6 times 2?", "a": "6 times 2 equals 12."}
+{"q": "what is 6 * 2?", "a": "6 times 2 equals 12."}
+{"q": "6 times 2", "a": "6 times 2 equals 12."}
+{"q": "multiply 6 and 2", "a": "6 times 2 equals 12."}
+{"q": "what is 6 plus 3?", "a": "6 plus 3 equals 9."}
+{"q": "what is 6 + 3?", "a": "6 plus 3 equals 9."}
+{"q": "what's 6 plus 3?", "a": "6 plus 3 equals 9."}
+{"q": "6 plus 3", "a": "6 plus 3 equals 9."}
+{"q": "add 6 and 3", "a": "6 plus 3 equals 9."}
+{"q": "calculate 6 + 3", "a": "6 plus 3 equals 9."}
+{"q": "what is 6 minus 3?", "a": "6 minus 3 equals 3."}
+{"q": "what is 6 - 3?", "a": "6 minus 3 equals 3."}
+{"q": "6 minus 3", "a": "6 minus 3 equals 3."}
+{"q": "subtract 3 from 6", "a": "6 minus 3 equals 3."}
+{"q": "what is 6 times 3?", "a": "6 times 3 equals 18."}
+{"q": "what is 6 * 3?", "a": "6 times 3 equals 18."}
+{"q": "6 times 3", "a": "6 times 3 equals 18."}
+{"q": "multiply 6 and 3", "a": "6 times 3 equals 18."}
+{"q": "what is 6 plus 4?", "a": "6 plus 4 equals 10."}
+{"q": "what is 6 + 4?", "a": "6 plus 4 equals 10."}
+{"q": "what's 6 plus 4?", "a": "6 plus 4 equals 10."}
+{"q": "6 plus 4", "a": "6 plus 4 equals 10."}
+{"q": "add 6 and 4", "a": "6 plus 4 equals 10."}
+{"q": "calculate 6 + 4", "a": "6 plus 4 equals 10."}
+{"q": "what is 6 minus 4?", "a": "6 minus 4 equals 2."}
+{"q": "what is 6 - 4?", "a": "6 minus 4 equals 2."}
+{"q": "6 minus 4", "a": "6 minus 4 equals 2."}
+{"q": "subtract 4 from 6", "a": "6 minus 4 equals 2."}
+{"q": "what is 6 times 4?", "a": "6 times 4 equals 24."}
+{"q": "what is 6 * 4?", "a": "6 times 4 equals 24."}
+{"q": "6 times 4", "a": "6 times 4 equals 24."}
+{"q": "multiply 6 and 4", "a": "6 times 4 equals 24."}
+{"q": "what is 6 plus 5?", "a": "6 plus 5 equals 11."}
+{"q": "what is 6 + 5?", "a": "6 plus 5 equals 11."}
+{"q": "what's 6 plus 5?", "a": "6 plus 5 equals 11."}
+{"q": "6 plus 5", "a": "6 plus 5 equals 11."}
+{"q": "add 6 and 5", "a": "6 plus 5 equals 11."}
+{"q": "calculate 6 + 5", "a": "6 plus 5 equals 11."}
+{"q": "what is 6 minus 5?", "a": "6 minus 5 equals 1."}
+{"q": "what is 6 - 5?", "a": "6 minus 5 equals 1."}
+{"q": "6 minus 5", "a": "6 minus 5 equals 1."}
+{"q": "subtract 5 from 6", "a": "6 minus 5 equals 1."}
+{"q": "what is 6 times 5?", "a": "6 times 5 equals 30."}
+{"q": "what is 6 * 5?", "a": "6 times 5 equals 30."}
+{"q": "6 times 5", "a": "6 times 5 equals 30."}
+{"q": "multiply 6 and 5", "a": "6 times 5 equals 30."}
+{"q": "what is 6 plus 6?", "a": "6 plus 6 equals 12."}
+{"q": "what is 6 + 6?", "a": "6 plus 6 equals 12."}
+{"q": "what's 6 plus 6?", "a": "6 plus 6 equals 12."}
+{"q": "6 plus 6", "a": "6 plus 6 equals 12."}
+{"q": "add 6 and 6", "a": "6 plus 6 equals 12."}
+{"q": "calculate 6 + 6", "a": "6 plus 6 equals 12."}
+{"q": "what is 6 minus 6?", "a": "6 minus 6 equals 0."}
+{"q": "what is 6 - 6?", "a": "6 minus 6 equals 0."}
+{"q": "6 minus 6", "a": "6 minus 6 equals 0."}
+{"q": "subtract 6 from 6", "a": "6 minus 6 equals 0."}
+{"q": "what is 6 times 6?", "a": "6 times 6 equals 36."}
+{"q": "what is 6 * 6?", "a": "6 times 6 equals 36."}
+{"q": "6 times 6", "a": "6 times 6 equals 36."}
+{"q": "multiply 6 and 6", "a": "6 times 6 equals 36."}
+{"q": "what is 6 plus 7?", "a": "6 plus 7 equals 13."}
+{"q": "what is 6 + 7?", "a": "6 plus 7 equals 13."}
+{"q": "what's 6 plus 7?", "a": "6 plus 7 equals 13."}
+{"q": "6 plus 7", "a": "6 plus 7 equals 13."}
+{"q": "add 6 and 7", "a": "6 plus 7 equals 13."}
+{"q": "calculate 6 + 7", "a": "6 plus 7 equals 13."}
+{"q": "what is 6 times 7?", "a": "6 times 7 equals 42."}
+{"q": "what is 6 * 7?", "a": "6 times 7 equals 42."}
+{"q": "6 times 7", "a": "6 times 7 equals 42."}
+{"q": "multiply 6 and 7", "a": "6 times 7 equals 42."}
+{"q": "what is 6 plus 8?", "a": "6 plus 8 equals 14."}
+{"q": "what is 6 + 8?", "a": "6 plus 8 equals 14."}
+{"q": "what's 6 plus 8?", "a": "6 plus 8 equals 14."}
+{"q": "6 plus 8", "a": "6 plus 8 equals 14."}
+{"q": "add 6 and 8", "a": "6 plus 8 equals 14."}
+{"q": "calculate 6 + 8", "a": "6 plus 8 equals 14."}
+{"q": "what is 6 times 8?", "a": "6 times 8 equals 48."}
+{"q": "what is 6 * 8?", "a": "6 times 8 equals 48."}
+{"q": "6 times 8", "a": "6 times 8 equals 48."}
+{"q": "multiply 6 and 8", "a": "6 times 8 equals 48."}
+{"q": "what is 6 plus 9?", "a": "6 plus 9 equals 15."}
+{"q": "what is 6 + 9?", "a": "6 plus 9 equals 15."}
+{"q": "what's 6 plus 9?", "a": "6 plus 9 equals 15."}
+{"q": "6 plus 9", "a": "6 plus 9 equals 15."}
+{"q": "add 6 and 9", "a": "6 plus 9 equals 15."}
+{"q": "calculate 6 + 9", "a": "6 plus 9 equals 15."}
+{"q": "what is 6 times 9?", "a": "6 times 9 equals 54."}
+{"q": "what is 6 * 9?", "a": "6 times 9 equals 54."}
+{"q": "6 times 9", "a": "6 times 9 equals 54."}
+{"q": "multiply 6 and 9", "a": "6 times 9 equals 54."}
+{"q": "what is 6 plus 10?", "a": "6 plus 10 equals 16."}
+{"q": "what is 6 + 10?", "a": "6 plus 10 equals 16."}
+{"q": "what's 6 plus 10?", "a": "6 plus 10 equals 16."}
+{"q": "6 plus 10", "a": "6 plus 10 equals 16."}
+{"q": "add 6 and 10", "a": "6 plus 10 equals 16."}
+{"q": "calculate 6 + 10", "a": "6 plus 10 equals 16."}
+{"q": "what is 6 times 10?", "a": "6 times 10 equals 60."}
+{"q": "what is 6 * 10?", "a": "6 times 10 equals 60."}
+{"q": "6 times 10", "a": "6 times 10 equals 60."}
+{"q": "multiply 6 and 10", "a": "6 times 10 equals 60."}
+{"q": "what is 7 plus 0?", "a": "7 plus 0 equals 7."}
+{"q": "what is 7 + 0?", "a": "7 plus 0 equals 7."}
+{"q": "what's 7 plus 0?", "a": "7 plus 0 equals 7."}
+{"q": "7 plus 0", "a": "7 plus 0 equals 7."}
+{"q": "add 7 and 0", "a": "7 plus 0 equals 7."}
+{"q": "calculate 7 + 0", "a": "7 plus 0 equals 7."}
+{"q": "what is 7 minus 0?", "a": "7 minus 0 equals 7."}
+{"q": "what is 7 - 0?", "a": "7 minus 0 equals 7."}
+{"q": "7 minus 0", "a": "7 minus 0 equals 7."}
+{"q": "subtract 0 from 7", "a": "7 minus 0 equals 7."}
+{"q": "what is 7 times 0?", "a": "7 times 0 equals 0."}
+{"q": "what is 7 * 0?", "a": "7 times 0 equals 0."}
+{"q": "7 times 0", "a": "7 times 0 equals 0."}
+{"q": "multiply 7 and 0", "a": "7 times 0 equals 0."}
+{"q": "what is 7 plus 1?", "a": "7 plus 1 equals 8."}
+{"q": "what is 7 + 1?", "a": "7 plus 1 equals 8."}
+{"q": "what's 7 plus 1?", "a": "7 plus 1 equals 8."}
+{"q": "7 plus 1", "a": "7 plus 1 equals 8."}
+{"q": "add 7 and 1", "a": "7 plus 1 equals 8."}
+{"q": "calculate 7 + 1", "a": "7 plus 1 equals 8."}
+{"q": "what is 7 minus 1?", "a": "7 minus 1 equals 6."}
+{"q": "what is 7 - 1?", "a": "7 minus 1 equals 6."}
+{"q": "7 minus 1", "a": "7 minus 1 equals 6."}
+{"q": "subtract 1 from 7", "a": "7 minus 1 equals 6."}
+{"q": "what is 7 times 1?", "a": "7 times 1 equals 7."}
+{"q": "what is 7 * 1?", "a": "7 times 1 equals 7."}
+{"q": "7 times 1", "a": "7 times 1 equals 7."}
+{"q": "multiply 7 and 1", "a": "7 times 1 equals 7."}
+{"q": "what is 7 plus 2?", "a": "7 plus 2 equals 9."}
+{"q": "what is 7 + 2?", "a": "7 plus 2 equals 9."}
+{"q": "what's 7 plus 2?", "a": "7 plus 2 equals 9."}
+{"q": "7 plus 2", "a": "7 plus 2 equals 9."}
+{"q": "add 7 and 2", "a": "7 plus 2 equals 9."}
+{"q": "calculate 7 + 2", "a": "7 plus 2 equals 9."}
+{"q": "what is 7 minus 2?", "a": "7 minus 2 equals 5."}
+{"q": "what is 7 - 2?", "a": "7 minus 2 equals 5."}
+{"q": "7 minus 2", "a": "7 minus 2 equals 5."}
+{"q": "subtract 2 from 7", "a": "7 minus 2 equals 5."}
+{"q": "what is 7 times 2?", "a": "7 times 2 equals 14."}
+{"q": "what is 7 * 2?", "a": "7 times 2 equals 14."}
+{"q": "7 times 2", "a": "7 times 2 equals 14."}
+{"q": "multiply 7 and 2", "a": "7 times 2 equals 14."}
+{"q": "what is 7 plus 3?", "a": "7 plus 3 equals 10."}
+{"q": "what is 7 + 3?", "a": "7 plus 3 equals 10."}
+{"q": "what's 7 plus 3?", "a": "7 plus 3 equals 10."}
+{"q": "7 plus 3", "a": "7 plus 3 equals 10."}
+{"q": "add 7 and 3", "a": "7 plus 3 equals 10."}
+{"q": "calculate 7 + 3", "a": "7 plus 3 equals 10."}
+{"q": "what is 7 minus 3?", "a": "7 minus 3 equals 4."}
+{"q": "what is 7 - 3?", "a": "7 minus 3 equals 4."}
+{"q": "7 minus 3", "a": "7 minus 3 equals 4."}
+{"q": "subtract 3 from 7", "a": "7 minus 3 equals 4."}
+{"q": "what is 7 times 3?", "a": "7 times 3 equals 21."}
+{"q": "what is 7 * 3?", "a": "7 times 3 equals 21."}
+{"q": "7 times 3", "a": "7 times 3 equals 21."}
+{"q": "multiply 7 and 3", "a": "7 times 3 equals 21."}
+{"q": "what is 7 plus 4?", "a": "7 plus 4 equals 11."}
+{"q": "what is 7 + 4?", "a": "7 plus 4 equals 11."}
+{"q": "what's 7 plus 4?", "a": "7 plus 4 equals 11."}
+{"q": "7 plus 4", "a": "7 plus 4 equals 11."}
+{"q": "add 7 and 4", "a": "7 plus 4 equals 11."}
+{"q": "calculate 7 + 4", "a": "7 plus 4 equals 11."}
+{"q": "what is 7 minus 4?", "a": "7 minus 4 equals 3."}
+{"q": "what is 7 - 4?", "a": "7 minus 4 equals 3."}
+{"q": "7 minus 4", "a": "7 minus 4 equals 3."}
+{"q": "subtract 4 from 7", "a": "7 minus 4 equals 3."}
+{"q": "what is 7 times 4?", "a": "7 times 4 equals 28."}
+{"q": "what is 7 * 4?", "a": "7 times 4 equals 28."}
+{"q": "7 times 4", "a": "7 times 4 equals 28."}
+{"q": "multiply 7 and 4", "a": "7 times 4 equals 28."}
+{"q": "what is 7 plus 5?", "a": "7 plus 5 equals 12."}
+{"q": "what is 7 + 5?", "a": "7 plus 5 equals 12."}
+{"q": "what's 7 plus 5?", "a": "7 plus 5 equals 12."}
+{"q": "7 plus 5", "a": "7 plus 5 equals 12."}
+{"q": "add 7 and 5", "a": "7 plus 5 equals 12."}
+{"q": "calculate 7 + 5", "a": "7 plus 5 equals 12."}
+{"q": "what is 7 minus 5?", "a": "7 minus 5 equals 2."}
+{"q": "what is 7 - 5?", "a": "7 minus 5 equals 2."}
+{"q": "7 minus 5", "a": "7 minus 5 equals 2."}
+{"q": "subtract 5 from 7", "a": "7 minus 5 equals 2."}
+{"q": "what is 7 times 5?", "a": "7 times 5 equals 35."}
+{"q": "what is 7 * 5?", "a": "7 times 5 equals 35."}
+{"q": "7 times 5", "a": "7 times 5 equals 35."}
+{"q": "multiply 7 and 5", "a": "7 times 5 equals 35."}
+{"q": "what is 7 plus 6?", "a": "7 plus 6 equals 13."}
+{"q": "what is 7 + 6?", "a": "7 plus 6 equals 13."}
+{"q": "what's 7 plus 6?", "a": "7 plus 6 equals 13."}
+{"q": "7 plus 6", "a": "7 plus 6 equals 13."}
+{"q": "add 7 and 6", "a": "7 plus 6 equals 13."}
+{"q": "calculate 7 + 6", "a": "7 plus 6 equals 13."}
+{"q": "what is 7 minus 6?", "a": "7 minus 6 equals 1."}
+{"q": "what is 7 - 6?", "a": "7 minus 6 equals 1."}
+{"q": "7 minus 6", "a": "7 minus 6 equals 1."}
+{"q": "subtract 6 from 7", "a": "7 minus 6 equals 1."}
+{"q": "what is 7 times 6?", "a": "7 times 6 equals 42."}
+{"q": "what is 7 * 6?", "a": "7 times 6 equals 42."}
+{"q": "7 times 6", "a": "7 times 6 equals 42."}
+{"q": "multiply 7 and 6", "a": "7 times 6 equals 42."}
+{"q": "what is 7 plus 7?", "a": "7 plus 7 equals 14."}
+{"q": "what is 7 + 7?", "a": "7 plus 7 equals 14."}
+{"q": "what's 7 plus 7?", "a": "7 plus 7 equals 14."}
+{"q": "7 plus 7", "a": "7 plus 7 equals 14."}
+{"q": "add 7 and 7", "a": "7 plus 7 equals 14."}
+{"q": "calculate 7 + 7", "a": "7 plus 7 equals 14."}
+{"q": "what is 7 minus 7?", "a": "7 minus 7 equals 0."}
+{"q": "what is 7 - 7?", "a": "7 minus 7 equals 0."}
+{"q": "7 minus 7", "a": "7 minus 7 equals 0."}
+{"q": "subtract 7 from 7", "a": "7 minus 7 equals 0."}
+{"q": "what is 7 times 7?", "a": "7 times 7 equals 49."}
+{"q": "what is 7 * 7?", "a": "7 times 7 equals 49."}
+{"q": "7 times 7", "a": "7 times 7 equals 49."}
+{"q": "multiply 7 and 7", "a": "7 times 7 equals 49."}
+{"q": "what is 7 plus 8?", "a": "7 plus 8 equals 15."}
+{"q": "what is 7 + 8?", "a": "7 plus 8 equals 15."}
+{"q": "what's 7 plus 8?", "a": "7 plus 8 equals 15."}
+{"q": "7 plus 8", "a": "7 plus 8 equals 15."}
+{"q": "add 7 and 8", "a": "7 plus 8 equals 15."}
+{"q": "calculate 7 + 8", "a": "7 plus 8 equals 15."}
+{"q": "what is 7 times 8?", "a": "7 times 8 equals 56."}
+{"q": "what is 7 * 8?", "a": "7 times 8 equals 56."}
+{"q": "7 times 8", "a": "7 times 8 equals 56."}
+{"q": "multiply 7 and 8", "a": "7 times 8 equals 56."}
+{"q": "what is 7 plus 9?", "a": "7 plus 9 equals 16."}
+{"q": "what is 7 + 9?", "a": "7 plus 9 equals 16."}
+{"q": "what's 7 plus 9?", "a": "7 plus 9 equals 16."}
+{"q": "7 plus 9", "a": "7 plus 9 equals 16."}
+{"q": "add 7 and 9", "a": "7 plus 9 equals 16."}
+{"q": "calculate 7 + 9", "a": "7 plus 9 equals 16."}
+{"q": "what is 7 times 9?", "a": "7 times 9 equals 63."}
+{"q": "what is 7 * 9?", "a": "7 times 9 equals 63."}
+{"q": "7 times 9", "a": "7 times 9 equals 63."}
+{"q": "multiply 7 and 9", "a": "7 times 9 equals 63."}
+{"q": "what is 7 plus 10?", "a": "7 plus 10 equals 17."}
+{"q": "what is 7 + 10?", "a": "7 plus 10 equals 17."}
+{"q": "what's 7 plus 10?", "a": "7 plus 10 equals 17."}
+{"q": "7 plus 10", "a": "7 plus 10 equals 17."}
+{"q": "add 7 and 10", "a": "7 plus 10 equals 17."}
+{"q": "calculate 7 + 10", "a": "7 plus 10 equals 17."}
+{"q": "what is 7 times 10?", "a": "7 times 10 equals 70."}
+{"q": "what is 7 * 10?", "a": "7 times 10 equals 70."}
+{"q": "7 times 10", "a": "7 times 10 equals 70."}
+{"q": "multiply 7 and 10", "a": "7 times 10 equals 70."}
+{"q": "what is 8 plus 0?", "a": "8 plus 0 equals 8."}
+{"q": "what is 8 + 0?", "a": "8 plus 0 equals 8."}
+{"q": "what's 8 plus 0?", "a": "8 plus 0 equals 8."}
+{"q": "8 plus 0", "a": "8 plus 0 equals 8."}
+{"q": "add 8 and 0", "a": "8 plus 0 equals 8."}
+{"q": "calculate 8 + 0", "a": "8 plus 0 equals 8."}
+{"q": "what is 8 minus 0?", "a": "8 minus 0 equals 8."}
+{"q": "what is 8 - 0?", "a": "8 minus 0 equals 8."}
+{"q": "8 minus 0", "a": "8 minus 0 equals 8."}
+{"q": "subtract 0 from 8", "a": "8 minus 0 equals 8."}
+{"q": "what is 8 times 0?", "a": "8 times 0 equals 0."}
+{"q": "what is 8 * 0?", "a": "8 times 0 equals 0."}
+{"q": "8 times 0", "a": "8 times 0 equals 0."}
+{"q": "multiply 8 and 0", "a": "8 times 0 equals 0."}
+{"q": "what is 8 plus 1?", "a": "8 plus 1 equals 9."}
+{"q": "what is 8 + 1?", "a": "8 plus 1 equals 9."}
+{"q": "what's 8 plus 1?", "a": "8 plus 1 equals 9."}
+{"q": "8 plus 1", "a": "8 plus 1 equals 9."}
+{"q": "add 8 and 1", "a": "8 plus 1 equals 9."}
+{"q": "calculate 8 + 1", "a": "8 plus 1 equals 9."}
+{"q": "what is 8 minus 1?", "a": "8 minus 1 equals 7."}
+{"q": "what is 8 - 1?", "a": "8 minus 1 equals 7."}
+{"q": "8 minus 1", "a": "8 minus 1 equals 7."}
+{"q": "subtract 1 from 8", "a": "8 minus 1 equals 7."}
+{"q": "what is 8 times 1?", "a": "8 times 1 equals 8."}
+{"q": "what is 8 * 1?", "a": "8 times 1 equals 8."}
+{"q": "8 times 1", "a": "8 times 1 equals 8."}
+{"q": "multiply 8 and 1", "a": "8 times 1 equals 8."}
+{"q": "what is 8 plus 2?", "a": "8 plus 2 equals 10."}
+{"q": "what is 8 + 2?", "a": "8 plus 2 equals 10."}
+{"q": "what's 8 plus 2?", "a": "8 plus 2 equals 10."}
+{"q": "8 plus 2", "a": "8 plus 2 equals 10."}
+{"q": "add 8 and 2", "a": "8 plus 2 equals 10."}
+{"q": "calculate 8 + 2", "a": "8 plus 2 equals 10."}
+{"q": "what is 8 minus 2?", "a": "8 minus 2 equals 6."}
+{"q": "what is 8 - 2?", "a": "8 minus 2 equals 6."}
+{"q": "8 minus 2", "a": "8 minus 2 equals 6."}
+{"q": "subtract 2 from 8", "a": "8 minus 2 equals 6."}
+{"q": "what is 8 times 2?", "a": "8 times 2 equals 16."}
+{"q": "what is 8 * 2?", "a": "8 times 2 equals 16."}
+{"q": "8 times 2", "a": "8 times 2 equals 16."}
+{"q": "multiply 8 and 2", "a": "8 times 2 equals 16."}
+{"q": "what is 8 plus 3?", "a": "8 plus 3 equals 11."}
+{"q": "what is 8 + 3?", "a": "8 plus 3 equals 11."}
+{"q": "what's 8 plus 3?", "a": "8 plus 3 equals 11."}
+{"q": "8 plus 3", "a": "8 plus 3 equals 11."}
+{"q": "add 8 and 3", "a": "8 plus 3 equals 11."}
+{"q": "calculate 8 + 3", "a": "8 plus 3 equals 11."}
+{"q": "what is 8 minus 3?", "a": "8 minus 3 equals 5."}
+{"q": "what is 8 - 3?", "a": "8 minus 3 equals 5."}
+{"q": "8 minus 3", "a": "8 minus 3 equals 5."}
+{"q": "subtract 3 from 8", "a": "8 minus 3 equals 5."}
+{"q": "what is 8 times 3?", "a": "8 times 3 equals 24."}
+{"q": "what is 8 * 3?", "a": "8 times 3 equals 24."}
+{"q": "8 times 3", "a": "8 times 3 equals 24."}
+{"q": "multiply 8 and 3", "a": "8 times 3 equals 24."}
+{"q": "what is 8 plus 4?", "a": "8 plus 4 equals 12."}
+{"q": "what is 8 + 4?", "a": "8 plus 4 equals 12."}
+{"q": "what's 8 plus 4?", "a": "8 plus 4 equals 12."}
+{"q": "8 plus 4", "a": "8 plus 4 equals 12."}
+{"q": "add 8 and 4", "a": "8 plus 4 equals 12."}
+{"q": "calculate 8 + 4", "a": "8 plus 4 equals 12."}
+{"q": "what is 8 minus 4?", "a": "8 minus 4 equals 4."}
+{"q": "what is 8 - 4?", "a": "8 minus 4 equals 4."}
+{"q": "8 minus 4", "a": "8 minus 4 equals 4."}
+{"q": "subtract 4 from 8", "a": "8 minus 4 equals 4."}
+{"q": "what is 8 times 4?", "a": "8 times 4 equals 32."}
+{"q": "what is 8 * 4?", "a": "8 times 4 equals 32."}
+{"q": "8 times 4", "a": "8 times 4 equals 32."}
+{"q": "multiply 8 and 4", "a": "8 times 4 equals 32."}
+{"q": "what is 8 plus 5?", "a": "8 plus 5 equals 13."}
+{"q": "what is 8 + 5?", "a": "8 plus 5 equals 13."}
+{"q": "what's 8 plus 5?", "a": "8 plus 5 equals 13."}
+{"q": "8 plus 5", "a": "8 plus 5 equals 13."}
+{"q": "add 8 and 5", "a": "8 plus 5 equals 13."}
+{"q": "calculate 8 + 5", "a": "8 plus 5 equals 13."}
+{"q": "what is 8 minus 5?", "a": "8 minus 5 equals 3."}
+{"q": "what is 8 - 5?", "a": "8 minus 5 equals 3."}
+{"q": "8 minus 5", "a": "8 minus 5 equals 3."}
+{"q": "subtract 5 from 8", "a": "8 minus 5 equals 3."}
+{"q": "what is 8 times 5?", "a": "8 times 5 equals 40."}
+{"q": "what is 8 * 5?", "a": "8 times 5 equals 40."}
+{"q": "8 times 5", "a": "8 times 5 equals 40."}
+{"q": "multiply 8 and 5", "a": "8 times 5 equals 40."}
+{"q": "what is 8 plus 6?", "a": "8 plus 6 equals 14."}
+{"q": "what is 8 + 6?", "a": "8 plus 6 equals 14."}
+{"q": "what's 8 plus 6?", "a": "8 plus 6 equals 14."}
+{"q": "8 plus 6", "a": "8 plus 6 equals 14."}
+{"q": "add 8 and 6", "a": "8 plus 6 equals 14."}
+{"q": "calculate 8 + 6", "a": "8 plus 6 equals 14."}
+{"q": "what is 8 minus 6?", "a": "8 minus 6 equals 2."}
+{"q": "what is 8 - 6?", "a": "8 minus 6 equals 2."}
+{"q": "8 minus 6", "a": "8 minus 6 equals 2."}
+{"q": "subtract 6 from 8", "a": "8 minus 6 equals 2."}
+{"q": "what is 8 times 6?", "a": "8 times 6 equals 48."}
+{"q": "what is 8 * 6?", "a": "8 times 6 equals 48."}
+{"q": "8 times 6", "a": "8 times 6 equals 48."}
+{"q": "multiply 8 and 6", "a": "8 times 6 equals 48."}
+{"q": "what is 8 plus 7?", "a": "8 plus 7 equals 15."}
+{"q": "what is 8 + 7?", "a": "8 plus 7 equals 15."}
+{"q": "what's 8 plus 7?", "a": "8 plus 7 equals 15."}
+{"q": "8 plus 7", "a": "8 plus 7 equals 15."}
+{"q": "add 8 and 7", "a": "8 plus 7 equals 15."}
+{"q": "calculate 8 + 7", "a": "8 plus 7 equals 15."}
+{"q": "what is 8 minus 7?", "a": "8 minus 7 equals 1."}
+{"q": "what is 8 - 7?", "a": "8 minus 7 equals 1."}
+{"q": "8 minus 7", "a": "8 minus 7 equals 1."}
+{"q": "subtract 7 from 8", "a": "8 minus 7 equals 1."}
+{"q": "what is 8 times 7?", "a": "8 times 7 equals 56."}
+{"q": "what is 8 * 7?", "a": "8 times 7 equals 56."}
+{"q": "8 times 7", "a": "8 times 7 equals 56."}
+{"q": "multiply 8 and 7", "a": "8 times 7 equals 56."}
+{"q": "what is 8 plus 8?", "a": "8 plus 8 equals 16."}
+{"q": "what is 8 + 8?", "a": "8 plus 8 equals 16."}
+{"q": "what's 8 plus 8?", "a": "8 plus 8 equals 16."}
+{"q": "8 plus 8", "a": "8 plus 8 equals 16."}
+{"q": "add 8 and 8", "a": "8 plus 8 equals 16."}
+{"q": "calculate 8 + 8", "a": "8 plus 8 equals 16."}
+{"q": "what is 8 minus 8?", "a": "8 minus 8 equals 0."}
+{"q": "what is 8 - 8?", "a": "8 minus 8 equals 0."}
+{"q": "8 minus 8", "a": "8 minus 8 equals 0."}
+{"q": "subtract 8 from 8", "a": "8 minus 8 equals 0."}
+{"q": "what is 8 times 8?", "a": "8 times 8 equals 64."}
+{"q": "what is 8 * 8?", "a": "8 times 8 equals 64."}
+{"q": "8 times 8", "a": "8 times 8 equals 64."}
+{"q": "multiply 8 and 8", "a": "8 times 8 equals 64."}
+{"q": "what is 8 plus 9?", "a": "8 plus 9 equals 17."}
+{"q": "what is 8 + 9?", "a": "8 plus 9 equals 17."}
+{"q": "what's 8 plus 9?", "a": "8 plus 9 equals 17."}
+{"q": "8 plus 9", "a": "8 plus 9 equals 17."}
+{"q": "add 8 and 9", "a": "8 plus 9 equals 17."}
+{"q": "calculate 8 + 9", "a": "8 plus 9 equals 17."}
+{"q": "what is 8 times 9?", "a": "8 times 9 equals 72."}
+{"q": "what is 8 * 9?", "a": "8 times 9 equals 72."}
+{"q": "8 times 9", "a": "8 times 9 equals 72."}
+{"q": "multiply 8 and 9", "a": "8 times 9 equals 72."}
+{"q": "what is 8 plus 10?", "a": "8 plus 10 equals 18."}
+{"q": "what is 8 + 10?", "a": "8 plus 10 equals 18."}
+{"q": "what's 8 plus 10?", "a": "8 plus 10 equals 18."}
+{"q": "8 plus 10", "a": "8 plus 10 equals 18."}
+{"q": "add 8 and 10", "a": "8 plus 10 equals 18."}
+{"q": "calculate 8 + 10", "a": "8 plus 10 equals 18."}
+{"q": "what is 8 times 10?", "a": "8 times 10 equals 80."}
+{"q": "what is 8 * 10?", "a": "8 times 10 equals 80."}
+{"q": "8 times 10", "a": "8 times 10 equals 80."}
+{"q": "multiply 8 and 10", "a": "8 times 10 equals 80."}
+{"q": "what is 9 plus 0?", "a": "9 plus 0 equals 9."}
+{"q": "what is 9 + 0?", "a": "9 plus 0 equals 9."}
+{"q": "what's 9 plus 0?", "a": "9 plus 0 equals 9."}
+{"q": "9 plus 0", "a": "9 plus 0 equals 9."}
+{"q": "add 9 and 0", "a": "9 plus 0 equals 9."}
+{"q": "calculate 9 + 0", "a": "9 plus 0 equals 9."}
+{"q": "what is 9 minus 0?", "a": "9 minus 0 equals 9."}
+{"q": "what is 9 - 0?", "a": "9 minus 0 equals 9."}
+{"q": "9 minus 0", "a": "9 minus 0 equals 9."}
+{"q": "subtract 0 from 9", "a": "9 minus 0 equals 9."}
+{"q": "what is 9 times 0?", "a": "9 times 0 equals 0."}
+{"q": "what is 9 * 0?", "a": "9 times 0 equals 0."}
+{"q": "9 times 0", "a": "9 times 0 equals 0."}
+{"q": "multiply 9 and 0", "a": "9 times 0 equals 0."}
+{"q": "what is 9 plus 1?", "a": "9 plus 1 equals 10."}
+{"q": "what is 9 + 1?", "a": "9 plus 1 equals 10."}
+{"q": "what's 9 plus 1?", "a": "9 plus 1 equals 10."}
+{"q": "9 plus 1", "a": "9 plus 1 equals 10."}
+{"q": "add 9 and 1", "a": "9 plus 1 equals 10."}
+{"q": "calculate 9 + 1", "a": "9 plus 1 equals 10."}
+{"q": "what is 9 minus 1?", "a": "9 minus 1 equals 8."}
+{"q": "what is 9 - 1?", "a": "9 minus 1 equals 8."}
+{"q": "9 minus 1", "a": "9 minus 1 equals 8."}
+{"q": "subtract 1 from 9", "a": "9 minus 1 equals 8."}
+{"q": "what is 9 times 1?", "a": "9 times 1 equals 9."}
+{"q": "what is 9 * 1?", "a": "9 times 1 equals 9."}
+{"q": "9 times 1", "a": "9 times 1 equals 9."}
+{"q": "multiply 9 and 1", "a": "9 times 1 equals 9."}
+{"q": "what is 9 plus 2?", "a": "9 plus 2 equals 11."}
+{"q": "what is 9 + 2?", "a": "9 plus 2 equals 11."}
+{"q": "what's 9 plus 2?", "a": "9 plus 2 equals 11."}
+{"q": "9 plus 2", "a": "9 plus 2 equals 11."}
+{"q": "add 9 and 2", "a": "9 plus 2 equals 11."}
+{"q": "calculate 9 + 2", "a": "9 plus 2 equals 11."}
+{"q": "what is 9 minus 2?", "a": "9 minus 2 equals 7."}
+{"q": "what is 9 - 2?", "a": "9 minus 2 equals 7."}
+{"q": "9 minus 2", "a": "9 minus 2 equals 7."}
+{"q": "subtract 2 from 9", "a": "9 minus 2 equals 7."}
+{"q": "what is 9 times 2?", "a": "9 times 2 equals 18."}
+{"q": "what is 9 * 2?", "a": "9 times 2 equals 18."}
+{"q": "9 times 2", "a": "9 times 2 equals 18."}
+{"q": "multiply 9 and 2", "a": "9 times 2 equals 18."}
+{"q": "what is 9 plus 3?", "a": "9 plus 3 equals 12."}
+{"q": "what is 9 + 3?", "a": "9 plus 3 equals 12."}
+{"q": "what's 9 plus 3?", "a": "9 plus 3 equals 12."}
+{"q": "9 plus 3", "a": "9 plus 3 equals 12."}
+{"q": "add 9 and 3", "a": "9 plus 3 equals 12."}
+{"q": "calculate 9 + 3", "a": "9 plus 3 equals 12."}
+{"q": "what is 9 minus 3?", "a": "9 minus 3 equals 6."}
+{"q": "what is 9 - 3?", "a": "9 minus 3 equals 6."}
+{"q": "9 minus 3", "a": "9 minus 3 equals 6."}
+{"q": "subtract 3 from 9", "a": "9 minus 3 equals 6."}
+{"q": "what is 9 times 3?", "a": "9 times 3 equals 27."}
+{"q": "what is 9 * 3?", "a": "9 times 3 equals 27."}
+{"q": "9 times 3", "a": "9 times 3 equals 27."}
+{"q": "multiply 9 and 3", "a": "9 times 3 equals 27."}
+{"q": "what is 9 plus 4?", "a": "9 plus 4 equals 13."}
+{"q": "what is 9 + 4?", "a": "9 plus 4 equals 13."}
+{"q": "what's 9 plus 4?", "a": "9 plus 4 equals 13."}
+{"q": "9 plus 4", "a": "9 plus 4 equals 13."}
+{"q": "add 9 and 4", "a": "9 plus 4 equals 13."}
+{"q": "calculate 9 + 4", "a": "9 plus 4 equals 13."}
+{"q": "what is 9 minus 4?", "a": "9 minus 4 equals 5."}
+{"q": "what is 9 - 4?", "a": "9 minus 4 equals 5."}
+{"q": "9 minus 4", "a": "9 minus 4 equals 5."}
+{"q": "subtract 4 from 9", "a": "9 minus 4 equals 5."}
+{"q": "what is 9 times 4?", "a": "9 times 4 equals 36."}
+{"q": "what is 9 * 4?", "a": "9 times 4 equals 36."}
+{"q": "9 times 4", "a": "9 times 4 equals 36."}
+{"q": "multiply 9 and 4", "a": "9 times 4 equals 36."}
+{"q": "what is 9 plus 5?", "a": "9 plus 5 equals 14."}
+{"q": "what is 9 + 5?", "a": "9 plus 5 equals 14."}
+{"q": "what's 9 plus 5?", "a": "9 plus 5 equals 14."}
+{"q": "9 plus 5", "a": "9 plus 5 equals 14."}
+{"q": "add 9 and 5", "a": "9 plus 5 equals 14."}
+{"q": "calculate 9 + 5", "a": "9 plus 5 equals 14."}
+{"q": "what is 9 minus 5?", "a": "9 minus 5 equals 4."}
+{"q": "what is 9 - 5?", "a": "9 minus 5 equals 4."}
+{"q": "9 minus 5", "a": "9 minus 5 equals 4."}
+{"q": "subtract 5 from 9", "a": "9 minus 5 equals 4."}
+{"q": "what is 9 times 5?", "a": "9 times 5 equals 45."}
+{"q": "what is 9 * 5?", "a": "9 times 5 equals 45."}
+{"q": "9 times 5", "a": "9 times 5 equals 45."}
+{"q": "multiply 9 and 5", "a": "9 times 5 equals 45."}
+{"q": "what is 9 plus 6?", "a": "9 plus 6 equals 15."}
+{"q": "what is 9 + 6?", "a": "9 plus 6 equals 15."}
+{"q": "what's 9 plus 6?", "a": "9 plus 6 equals 15."}
+{"q": "9 plus 6", "a": "9 plus 6 equals 15."}
+{"q": "add 9 and 6", "a": "9 plus 6 equals 15."}
+{"q": "calculate 9 + 6", "a": "9 plus 6 equals 15."}
+{"q": "what is 9 minus 6?", "a": "9 minus 6 equals 3."}
+{"q": "what is 9 - 6?", "a": "9 minus 6 equals 3."}
+{"q": "9 minus 6", "a": "9 minus 6 equals 3."}
+{"q": "subtract 6 from 9", "a": "9 minus 6 equals 3."}
+{"q": "what is 9 times 6?", "a": "9 times 6 equals 54."}
+{"q": "what is 9 * 6?", "a": "9 times 6 equals 54."}
+{"q": "9 times 6", "a": "9 times 6 equals 54."}
+{"q": "multiply 9 and 6", "a": "9 times 6 equals 54."}
+{"q": "what is 9 plus 7?", "a": "9 plus 7 equals 16."}
+{"q": "what is 9 + 7?", "a": "9 plus 7 equals 16."}
+{"q": "what's 9 plus 7?", "a": "9 plus 7 equals 16."}
+{"q": "9 plus 7", "a": "9 plus 7 equals 16."}
+{"q": "add 9 and 7", "a": "9 plus 7 equals 16."}
+{"q": "calculate 9 + 7", "a": "9 plus 7 equals 16."}
+{"q": "what is 9 minus 7?", "a": "9 minus 7 equals 2."}
+{"q": "what is 9 - 7?", "a": "9 minus 7 equals 2."}
+{"q": "9 minus 7", "a": "9 minus 7 equals 2."}
+{"q": "subtract 7 from 9", "a": "9 minus 7 equals 2."}
+{"q": "what is 9 times 7?", "a": "9 times 7 equals 63."}
+{"q": "what is 9 * 7?", "a": "9 times 7 equals 63."}
+{"q": "9 times 7", "a": "9 times 7 equals 63."}
+{"q": "multiply 9 and 7", "a": "9 times 7 equals 63."}
+{"q": "what is 9 plus 8?", "a": "9 plus 8 equals 17."}
+{"q": "what is 9 + 8?", "a": "9 plus 8 equals 17."}
+{"q": "what's 9 plus 8?", "a": "9 plus 8 equals 17."}
+{"q": "9 plus 8", "a": "9 plus 8 equals 17."}
+{"q": "add 9 and 8", "a": "9 plus 8 equals 17."}
+{"q": "calculate 9 + 8", "a": "9 plus 8 equals 17."}
+{"q": "what is 9 minus 8?", "a": "9 minus 8 equals 1."}
+{"q": "what is 9 - 8?", "a": "9 minus 8 equals 1."}
+{"q": "9 minus 8", "a": "9 minus 8 equals 1."}
+{"q": "subtract 8 from 9", "a": "9 minus 8 equals 1."}
+{"q": "what is 9 times 8?", "a": "9 times 8 equals 72."}
+{"q": "what is 9 * 8?", "a": "9 times 8 equals 72."}
+{"q": "9 times 8", "a": "9 times 8 equals 72."}
+{"q": "multiply 9 and 8", "a": "9 times 8 equals 72."}
+{"q": "what is 9 plus 9?", "a": "9 plus 9 equals 18."}
+{"q": "what is 9 + 9?", "a": "9 plus 9 equals 18."}
+{"q": "what's 9 plus 9?", "a": "9 plus 9 equals 18."}
+{"q": "9 plus 9", "a": "9 plus 9 equals 18."}
+{"q": "add 9 and 9", "a": "9 plus 9 equals 18."}
+{"q": "calculate 9 + 9", "a": "9 plus 9 equals 18."}
+{"q": "what is 9 minus 9?", "a": "9 minus 9 equals 0."}
+{"q": "what is 9 - 9?", "a": "9 minus 9 equals 0."}
+{"q": "9 minus 9", "a": "9 minus 9 equals 0."}
+{"q": "subtract 9 from 9", "a": "9 minus 9 equals 0."}
+{"q": "what is 9 times 9?", "a": "9 times 9 equals 81."}
+{"q": "what is 9 * 9?", "a": "9 times 9 equals 81."}
+{"q": "9 times 9", "a": "9 times 9 equals 81."}
+{"q": "multiply 9 and 9", "a": "9 times 9 equals 81."}
+{"q": "what is 9 plus 10?", "a": "9 plus 10 equals 19."}
+{"q": "what is 9 + 10?", "a": "9 plus 10 equals 19."}
+{"q": "what's 9 plus 10?", "a": "9 plus 10 equals 19."}
+{"q": "9 plus 10", "a": "9 plus 10 equals 19."}
+{"q": "add 9 and 10", "a": "9 plus 10 equals 19."}
+{"q": "calculate 9 + 10", "a": "9 plus 10 equals 19."}
+{"q": "what is 9 times 10?", "a": "9 times 10 equals 90."}
+{"q": "what is 9 * 10?", "a": "9 times 10 equals 90."}
+{"q": "9 times 10", "a": "9 times 10 equals 90."}
+{"q": "multiply 9 and 10", "a": "9 times 10 equals 90."}
+{"q": "what is 10 plus 0?", "a": "10 plus 0 equals 10."}
+{"q": "what is 10 + 0?", "a": "10 plus 0 equals 10."}
+{"q": "what's 10 plus 0?", "a": "10 plus 0 equals 10."}
+{"q": "10 plus 0", "a": "10 plus 0 equals 10."}
+{"q": "add 10 and 0", "a": "10 plus 0 equals 10."}
+{"q": "calculate 10 + 0", "a": "10 plus 0 equals 10."}
+{"q": "what is 10 minus 0?", "a": "10 minus 0 equals 10."}
+{"q": "what is 10 - 0?", "a": "10 minus 0 equals 10."}
+{"q": "10 minus 0", "a": "10 minus 0 equals 10."}
+{"q": "subtract 0 from 10", "a": "10 minus 0 equals 10."}
+{"q": "what is 10 times 0?", "a": "10 times 0 equals 0."}
+{"q": "what is 10 * 0?", "a": "10 times 0 equals 0."}
+{"q": "10 times 0", "a": "10 times 0 equals 0."}
+{"q": "multiply 10 and 0", "a": "10 times 0 equals 0."}
+{"q": "what is 10 plus 1?", "a": "10 plus 1 equals 11."}
+{"q": "what is 10 + 1?", "a": "10 plus 1 equals 11."}
+{"q": "what's 10 plus 1?", "a": "10 plus 1 equals 11."}
+{"q": "10 plus 1", "a": "10 plus 1 equals 11."}
+{"q": "add 10 and 1", "a": "10 plus 1 equals 11."}
+{"q": "calculate 10 + 1", "a": "10 plus 1 equals 11."}
+{"q": "what is 10 minus 1?", "a": "10 minus 1 equals 9."}
+{"q": "what is 10 - 1?", "a": "10 minus 1 equals 9."}
+{"q": "10 minus 1", "a": "10 minus 1 equals 9."}
+{"q": "subtract 1 from 10", "a": "10 minus 1 equals 9."}
+{"q": "what is 10 times 1?", "a": "10 times 1 equals 10."}
+{"q": "what is 10 * 1?", "a": "10 times 1 equals 10."}
+{"q": "10 times 1", "a": "10 times 1 equals 10."}
+{"q": "multiply 10 and 1", "a": "10 times 1 equals 10."}
+{"q": "what is 10 plus 2?", "a": "10 plus 2 equals 12."}
+{"q": "what is 10 + 2?", "a": "10 plus 2 equals 12."}
+{"q": "what's 10 plus 2?", "a": "10 plus 2 equals 12."}
+{"q": "10 plus 2", "a": "10 plus 2 equals 12."}
+{"q": "add 10 and 2", "a": "10 plus 2 equals 12."}
+{"q": "calculate 10 + 2", "a": "10 plus 2 equals 12."}
+{"q": "what is 10 minus 2?", "a": "10 minus 2 equals 8."}
+{"q": "what is 10 - 2?", "a": "10 minus 2 equals 8."}
+{"q": "10 minus 2", "a": "10 minus 2 equals 8."}
+{"q": "subtract 2 from 10", "a": "10 minus 2 equals 8."}
+{"q": "what is 10 times 2?", "a": "10 times 2 equals 20."}
+{"q": "what is 10 * 2?", "a": "10 times 2 equals 20."}
+{"q": "10 times 2", "a": "10 times 2 equals 20."}
+{"q": "multiply 10 and 2", "a": "10 times 2 equals 20."}
+{"q": "what is 10 plus 3?", "a": "10 plus 3 equals 13."}
+{"q": "what is 10 + 3?", "a": "10 plus 3 equals 13."}
+{"q": "what's 10 plus 3?", "a": "10 plus 3 equals 13."}
+{"q": "10 plus 3", "a": "10 plus 3 equals 13."}
+{"q": "add 10 and 3", "a": "10 plus 3 equals 13."}
+{"q": "calculate 10 + 3", "a": "10 plus 3 equals 13."}
+{"q": "what is 10 minus 3?", "a": "10 minus 3 equals 7."}
+{"q": "what is 10 - 3?", "a": "10 minus 3 equals 7."}
+{"q": "10 minus 3", "a": "10 minus 3 equals 7."}
+{"q": "subtract 3 from 10", "a": "10 minus 3 equals 7."}
+{"q": "what is 10 times 3?", "a": "10 times 3 equals 30."}
+{"q": "what is 10 * 3?", "a": "10 times 3 equals 30."}
+{"q": "10 times 3", "a": "10 times 3 equals 30."}
+{"q": "multiply 10 and 3", "a": "10 times 3 equals 30."}
+{"q": "what is 10 plus 4?", "a": "10 plus 4 equals 14."}
+{"q": "what is 10 + 4?", "a": "10 plus 4 equals 14."}
+{"q": "what's 10 plus 4?", "a": "10 plus 4 equals 14."}
+{"q": "10 plus 4", "a": "10 plus 4 equals 14."}
+{"q": "add 10 and 4", "a": "10 plus 4 equals 14."}
+{"q": "calculate 10 + 4", "a": "10 plus 4 equals 14."}
+{"q": "what is 10 minus 4?", "a": "10 minus 4 equals 6."}
+{"q": "what is 10 - 4?", "a": "10 minus 4 equals 6."}
+{"q": "10 minus 4", "a": "10 minus 4 equals 6."}
+{"q": "subtract 4 from 10", "a": "10 minus 4 equals 6."}
+{"q": "what is 10 times 4?", "a": "10 times 4 equals 40."}
+{"q": "what is 10 * 4?", "a": "10 times 4 equals 40."}
+{"q": "10 times 4", "a": "10 times 4 equals 40."}
+{"q": "multiply 10 and 4", "a": "10 times 4 equals 40."}
+{"q": "what is 10 plus 5?", "a": "10 plus 5 equals 15."}
+{"q": "what is 10 + 5?", "a": "10 plus 5 equals 15."}
+{"q": "what's 10 plus 5?", "a": "10 plus 5 equals 15."}
+{"q": "10 plus 5", "a": "10 plus 5 equals 15."}
+{"q": "add 10 and 5", "a": "10 plus 5 equals 15."}
+{"q": "calculate 10 + 5", "a": "10 plus 5 equals 15."}
+{"q": "what is 10 minus 5?", "a": "10 minus 5 equals 5."}
+{"q": "what is 10 - 5?", "a": "10 minus 5 equals 5."}
+{"q": "10 minus 5", "a": "10 minus 5 equals 5."}
+{"q": "subtract 5 from 10", "a": "10 minus 5 equals 5."}
+{"q": "what is 10 times 5?", "a": "10 times 5 equals 50."}
+{"q": "what is 10 * 5?", "a": "10 times 5 equals 50."}
+{"q": "10 times 5", "a": "10 times 5 equals 50."}
+{"q": "multiply 10 and 5", "a": "10 times 5 equals 50."}
+{"q": "what is 10 plus 6?", "a": "10 plus 6 equals 16."}
+{"q": "what is 10 + 6?", "a": "10 plus 6 equals 16."}
+{"q": "what's 10 plus 6?", "a": "10 plus 6 equals 16."}
+{"q": "10 plus 6", "a": "10 plus 6 equals 16."}
+{"q": "add 10 and 6", "a": "10 plus 6 equals 16."}
+{"q": "calculate 10 + 6", "a": "10 plus 6 equals 16."}
+{"q": "what is 10 minus 6?", "a": "10 minus 6 equals 4."}
+{"q": "what is 10 - 6?", "a": "10 minus 6 equals 4."}
+{"q": "10 minus 6", "a": "10 minus 6 equals 4."}
+{"q": "subtract 6 from 10", "a": "10 minus 6 equals 4."}
+{"q": "what is 10 times 6?", "a": "10 times 6 equals 60."}
+{"q": "what is 10 * 6?", "a": "10 times 6 equals 60."}
+{"q": "10 times 6", "a": "10 times 6 equals 60."}
+{"q": "multiply 10 and 6", "a": "10 times 6 equals 60."}
+{"q": "what is 10 plus 7?", "a": "10 plus 7 equals 17."}
+{"q": "what is 10 + 7?", "a": "10 plus 7 equals 17."}
+{"q": "what's 10 plus 7?", "a": "10 plus 7 equals 17."}
+{"q": "10 plus 7", "a": "10 plus 7 equals 17."}
+{"q": "add 10 and 7", "a": "10 plus 7 equals 17."}
+{"q": "calculate 10 + 7", "a": "10 plus 7 equals 17."}
+{"q": "what is 10 minus 7?", "a": "10 minus 7 equals 3."}
+{"q": "what is 10 - 7?", "a": "10 minus 7 equals 3."}
+{"q": "10 minus 7", "a": "10 minus 7 equals 3."}
+{"q": "subtract 7 from 10", "a": "10 minus 7 equals 3."}
+{"q": "what is 10 times 7?", "a": "10 times 7 equals 70."}
+{"q": "what is 10 * 7?", "a": "10 times 7 equals 70."}
+{"q": "10 times 7", "a": "10 times 7 equals 70."}
+{"q": "multiply 10 and 7", "a": "10 times 7 equals 70."}
+{"q": "what is 10 plus 8?", "a": "10 plus 8 equals 18."}
+{"q": "what is 10 + 8?", "a": "10 plus 8 equals 18."}
+{"q": "what's 10 plus 8?", "a": "10 plus 8 equals 18."}
+{"q": "10 plus 8", "a": "10 plus 8 equals 18."}
+{"q": "add 10 and 8", "a": "10 plus 8 equals 18."}
+{"q": "calculate 10 + 8", "a": "10 plus 8 equals 18."}
+{"q": "what is 10 minus 8?", "a": "10 minus 8 equals 2."}
+{"q": "what is 10 - 8?", "a": "10 minus 8 equals 2."}
+{"q": "10 minus 8", "a": "10 minus 8 equals 2."}
+{"q": "subtract 8 from 10", "a": "10 minus 8 equals 2."}
+{"q": "what is 10 times 8?", "a": "10 times 8 equals 80."}
+{"q": "what is 10 * 8?", "a": "10 times 8 equals 80."}
+{"q": "10 times 8", "a": "10 times 8 equals 80."}
+{"q": "multiply 10 and 8", "a": "10 times 8 equals 80."}
+{"q": "what is 10 plus 9?", "a": "10 plus 9 equals 19."}
+{"q": "what is 10 + 9?", "a": "10 plus 9 equals 19."}
+{"q": "what's 10 plus 9?", "a": "10 plus 9 equals 19."}
+{"q": "10 plus 9", "a": "10 plus 9 equals 19."}
+{"q": "add 10 and 9", "a": "10 plus 9 equals 19."}
+{"q": "calculate 10 + 9", "a": "10 plus 9 equals 19."}
+{"q": "what is 10 minus 9?", "a": "10 minus 9 equals 1."}
+{"q": "what is 10 - 9?", "a": "10 minus 9 equals 1."}
+{"q": "10 minus 9", "a": "10 minus 9 equals 1."}
+{"q": "subtract 9 from 10", "a": "10 minus 9 equals 1."}
+{"q": "what is 10 times 9?", "a": "10 times 9 equals 90."}
+{"q": "what is 10 * 9?", "a": "10 times 9 equals 90."}
+{"q": "10 times 9", "a": "10 times 9 equals 90."}
+{"q": "multiply 10 and 9", "a": "10 times 9 equals 90."}
+{"q": "what is 10 plus 10?", "a": "10 plus 10 equals 20."}
+{"q": "what is 10 + 10?", "a": "10 plus 10 equals 20."}
+{"q": "what's 10 plus 10?", "a": "10 plus 10 equals 20."}
+{"q": "10 plus 10", "a": "10 plus 10 equals 20."}
+{"q": "add 10 and 10", "a": "10 plus 10 equals 20."}
+{"q": "calculate 10 + 10", "a": "10 plus 10 equals 20."}
+{"q": "what is 10 minus 10?", "a": "10 minus 10 equals 0."}
+{"q": "what is 10 - 10?", "a": "10 minus 10 equals 0."}
+{"q": "10 minus 10", "a": "10 minus 10 equals 0."}
+{"q": "subtract 10 from 10", "a": "10 minus 10 equals 0."}
+{"q": "what is 10 times 10?", "a": "10 times 10 equals 100."}
+{"q": "what is 10 * 10?", "a": "10 times 10 equals 100."}
+{"q": "10 times 10", "a": "10 times 10 equals 100."}
+{"q": "multiply 10 and 10", "a": "10 times 10 equals 100."}
+{"q": "hello", "a": "Hello! Ask me a question."}
+{"q": "hi", "a": "Hello! Ask me a question."}
+{"q": "hey", "a": "Hello! Ask me a question."}
+{"q": "hi there", "a": "Hello! Ask me a question."}
+{"q": "hello there", "a": "Hello! Ask me a question."}
+{"q": "good morning", "a": "Hello! How can I help?"}
+{"q": "good afternoon", "a": "Hello! How can I help?"}
+{"q": "good evening", "a": "Hello! How can I help?"}
+{"q": "how are you", "a": "I'm just a tiny program, but I'm running fine. What would you like to ask?"}
+{"q": "how are you doing", "a": "I'm just a tiny program, but I'm running fine. What would you like to ask?"}
+{"q": "how's it going", "a": "I'm just a tiny program, but I'm running fine. What would you like to ask?"}
+{"q": "thanks", "a": "You're welcome!"}
+{"q": "thank you", "a": "You're welcome!"}
+{"q": "thanks a lot", "a": "You're welcome!"}
+{"q": "bye", "a": "Goodbye!"}
+{"q": "goodbye", "a": "Goodbye!"}
+{"q": "see you", "a": "Goodbye!"}
+{"q": "see you later", "a": "Goodbye!"}
+{"q": "ok", "a": "Glad that helped. Ask me something else!"}
+{"q": "okay", "a": "Glad that helped. Ask me something else!"}
+{"q": "cool", "a": "Glad that helped. Ask me something else!"}
+{"q": "nice", "a": "Glad that helped. Ask me something else!"}
+{"q": "what is your name", "a": "I am a tiny GPT language model, built from scratch in PyTorch."}
+{"q": "what's your name", "a": "I am a tiny GPT language model, built from scratch in PyTorch."}
+{"q": "who are you", "a": "I am a tiny GPT language model, built from scratch in PyTorch."}
+{"q": "what are you", "a": "I am a tiny GPT language model, built from scratch in PyTorch."}
+{"q": "who made you", "a": "I was built from scratch as an educational project."}
+{"q": "who created you", "a": "I was built from scratch as an educational project."}
+{"q": "who built you", "a": "I was built from scratch as an educational project."}
+{"q": "how do you work", "a": "I predict one word at a time using a small transformer neural network."}
+{"q": "how were you trained", "a": "I predict one word at a time using a small transformer neural network."}
+{"q": "how do you generate text", "a": "I predict one word at a time using a small transformer neural network."}
+{"q": "are you chatgpt", "a": "No. I am a very small model trained on a tiny dataset, so I only know a few things."}
+{"q": "are you gpt", "a": "No. I am a very small model trained on a tiny dataset, so I only know a few things."}
+{"q": "are you a real ai", "a": "No. I am a very small model trained on a tiny dataset, so I only know a few things."}
+{"q": "are you smart", "a": "No. I am a very small model trained on a tiny dataset, so I only know a few things."}
+{"q": "what can you do", "a": "I can do simple arithmetic and answer a small set of general knowledge questions."}
+{"q": "what do you know", "a": "I can do simple arithmetic and answer a small set of general knowledge questions."}
+{"q": "help", "a": "I can do simple arithmetic and answer a small set of general knowledge questions."}
+{"q": "what can i ask", "a": "I can do simple arithmetic and answer a small set of general knowledge questions."}
+{"q": "how many parameters do you have", "a": "I am tiny, with only about a million parameters."}
+{"q": "how big are you", "a": "I am tiny, with only about a million parameters."}
+{"q": "what is the capital of france", "a": "The capital of France is Paris."}
+{"q": "capital of france", "a": "The capital of France is Paris."}
+{"q": "what is the capital of japan", "a": "The capital of Japan is Tokyo."}
+{"q": "capital of japan", "a": "The capital of Japan is Tokyo."}
+{"q": "what is the capital of italy", "a": "The capital of Italy is Rome."}
+{"q": "capital of italy", "a": "The capital of Italy is Rome."}
+{"q": "what is the capital of spain", "a": "The capital of Spain is Madrid."}
+{"q": "capital of spain", "a": "The capital of Spain is Madrid."}
+{"q": "what is the capital of germany", "a": "The capital of Germany is Berlin."}
+{"q": "capital of germany", "a": "The capital of Germany is Berlin."}
+{"q": "what is the capital of england", "a": "The capital of England is London."}
+{"q": "capital of england", "a": "The capital of England is London."}
+{"q": "what is the capital of russia", "a": "The capital of Russia is Moscow."}
+{"q": "capital of russia", "a": "The capital of Russia is Moscow."}
+{"q": "what is the capital of china", "a": "The capital of China is Beijing."}
+{"q": "capital of china", "a": "The capital of China is Beijing."}
+{"q": "what is the capital of canada", "a": "The capital of Canada is Ottawa."}
+{"q": "capital of canada", "a": "The capital of Canada is Ottawa."}
+{"q": "what is the capital of egypt", "a": "The capital of Egypt is Cairo."}
+{"q": "capital of egypt", "a": "The capital of Egypt is Cairo."}
+{"q": "what color is the sky", "a": "The sky is blue."}
+{"q": "what colour is the sky", "a": "The sky is blue."}
+{"q": "what color is grass", "a": "Grass is green."}
+{"q": "what colour is grass", "a": "Grass is green."}
+{"q": "what color is the sun", "a": "The sun is yellow."}
+{"q": "what color is snow", "a": "Snow is white."}
+{"q": "how many days are in a week", "a": "There are seven days in a week."}
+{"q": "days in a week", "a": "There are seven days in a week."}
+{"q": "how many months are in a year", "a": "There are twelve months in a year."}
+{"q": "months in a year", "a": "There are twelve months in a year."}
+{"q": "how many days are in a year", "a": "There are three hundred and sixty five days in a year."}
+{"q": "days in a year", "a": "There are three hundred and sixty five days in a year."}
+{"q": "how many hours are in a day", "a": "There are twenty four hours in a day."}
+{"q": "hours in a day", "a": "There are twenty four hours in a day."}
+{"q": "how many minutes are in an hour", "a": "There are sixty minutes in an hour."}
+{"q": "minutes in an hour", "a": "There are sixty minutes in an hour."}
+{"q": "how many seconds are in a minute", "a": "There are sixty seconds in a minute."}
+{"q": "seconds in a minute", "a": "There are sixty seconds in a minute."}
+{"q": "how many planets are in the solar system", "a": "There are eight planets in the solar system."}
+{"q": "how many planets are there", "a": "There are eight planets in the solar system."}
+{"q": "what is the largest planet", "a": "The largest planet is Jupiter."}
+{"q": "biggest planet", "a": "The largest planet is Jupiter."}
+{"q": "what is the closest planet to the sun", "a": "The closest planet to the sun is Mercury."}
+{"q": "what is the largest ocean", "a": "The largest ocean is the Pacific Ocean."}
+{"q": "biggest ocean", "a": "The largest ocean is the Pacific Ocean."}
+{"q": "what is the tallest mountain", "a": "The tallest mountain is Mount Everest."}
+{"q": "highest mountain", "a": "The tallest mountain is Mount Everest."}
+{"q": "what is the longest river", "a": "The longest river is the Nile."}
+{"q": "longest river in the world", "a": "The longest river is the Nile."}
+{"q": "what is water made of", "a": "Water is made of hydrogen and oxygen."}
+{"q": "what is water", "a": "Water is made of hydrogen and oxygen."}
+{"q": "what is the chemical symbol for water", "a": "The chemical symbol for water is H2O."}
+{"q": "what gas do plants produce", "a": "Plants produce oxygen."}
+{"q": "what do plants produce", "a": "Plants produce oxygen."}
+{"q": "what do bees make", "a": "Bees make honey."}
+{"q": "what do bees produce", "a": "Bees make honey."}
+{"q": "what is the fastest land animal", "a": "The fastest land animal is the cheetah."}
+{"q": "what is the largest animal", "a": "The largest animal is the blue whale."}
+{"q": "biggest animal", "a": "The largest animal is the blue whale."}
+{"q": "how many legs does a spider have", "a": "A spider has eight legs."}
+{"q": "spider legs", "a": "A spider has eight legs."}
+{"q": "how many legs does an insect have", "a": "An insect has six legs."}
+{"q": "what is the freezing point of water", "a": "Water freezes at zero degrees celsius."}
+{"q": "what is the boiling point of water", "a": "Water boils at one hundred degrees celsius."}
+{"q": "how many continents are there", "a": "There are seven continents."}
+{"q": "number of continents", "a": "There are seven continents."}
+{"q": "what is the opposite of hot", "a": "The opposite of hot is cold."}
+{"q": "what is the opposite of up", "a": "The opposite of up is down."}
+{"q": "what is the opposite of big", "a": "The opposite of big is small."}
+{"q": "what is the opposite of fast", "a": "The opposite of fast is slow."}
+{"q": "what is the first day of the week", "a": "The first day of the week is Sunday."}
+{"q": "what shape has three sides", "a": "A triangle has three sides."}
+{"q": "shape with three sides", "a": "A triangle has three sides."}
+{"q": "what shape has four sides", "a": "A square has four sides."}
+{"q": "shape with four sides", "a": "A square has four sides."}
+{"q": "what language is spoken in france", "a": "The language spoken in France is French."}
+{"q": "what language is spoken in japan", "a": "The language spoken in Japan is Japanese."}
+{"q": "what is the currency of the united states", "a": "The currency of the United States is the dollar."}
+{"q": "currency of the usa", "a": "The currency of the United States is the dollar."}
+{"q": "what is the speed of light", "a": "The speed of light is about three hundred thousand kilometers per second."}
+{"q": "who wrote romeo and juliet", "a": "Romeo and Juliet was written by William Shakespeare."}
+{"q": "what is the smallest prime number", "a": "The smallest prime number is two."}

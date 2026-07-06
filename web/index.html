@@ -3,183 +3,134 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Tiny GPT — from scratch, in your browser</title>
+    <title>Tiny Chatbot — a GPT built from scratch</title>
     <link
       rel="icon"
       href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>"
     />
     <meta
       name="description"
-      content="A tiny GPT-style language model built from scratch in PyTorch and ported to JavaScript — runs entirely in your browser."
+      content="A tiny question-answering chatbot built from scratch in PyTorch and ported to JavaScript — trained on a small dataset and running entirely in your browser."
     />
     <style>
       :root {
-        --bg: #0f1117;
-        --panel: #171a23;
-        --panel-2: #1e222d;
-        --border: #2a2f3d;
-        --text: #e6e8ee;
-        --muted: #8b93a7;
-        --accent: #7c9cff;
-        --accent-2: #4ade80;
+        --bg: #0f1117; --panel: #171a23; --panel-2: #1e222d; --border: #2a2f3d;
+        --text: #e6e8ee; --muted: #8b93a7; --accent: #7c9cff; --user: #2f6df6;
         --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
       }
       * { box-sizing: border-box; }
       body {
-        margin: 0;
-        background: radial-gradient(1200px 600px at 50% -10%, #1a1f2e 0%, var(--bg) 60%);
-        color: var(--text);
-        font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-        line-height: 1.55;
-        min-height: 100vh;
+        margin: 0; background: radial-gradient(1200px 600px at 50% -10%, #1a1f2e 0%, var(--bg) 60%);
+        color: var(--text); font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.5; min-height: 100vh;
       }
-      .wrap { max-width: 860px; margin: 0 auto; padding: 40px 20px 80px; }
-      header h1 { font-size: 1.9rem; margin: 0 0 6px; letter-spacing: -0.02em; }
+      .wrap { max-width: 760px; margin: 0 auto; padding: 32px 18px 60px; }
+      header h1 { font-size: 1.7rem; margin: 0 0 6px; letter-spacing: -0.02em; }
       header h1 .dim { color: var(--muted); font-weight: 500; }
-      header p { color: var(--muted); margin: 0 0 4px; }
-      .badges { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 28px; }
+      header p { color: var(--muted); margin: 0; font-size: 0.95rem; }
+      .badges { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
       .badge {
         font-family: var(--mono); font-size: 0.72rem; color: var(--muted);
-        background: var(--panel-2); border: 1px solid var(--border);
-        padding: 4px 10px; border-radius: 999px;
+        background: var(--panel-2); border: 1px solid var(--border); padding: 4px 10px; border-radius: 999px;
       }
       .badge b { color: var(--accent); font-weight: 600; }
-      .panel {
-        background: var(--panel); border: 1px solid var(--border);
-        border-radius: 14px; padding: 20px; margin-bottom: 20px;
-      }
-      label { display: block; font-size: 0.8rem; color: var(--muted); margin-bottom: 6px; }
-      textarea {
-        width: 100%; background: var(--bg); color: var(--text);
-        border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px;
-        font-family: var(--mono); font-size: 0.9rem; resize: vertical; min-height: 68px;
-      }
-      textarea:focus, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
-      .controls { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 18px; }
-      @media (max-width: 640px) { .controls { grid-template-columns: 1fr; } }
-      .ctrl .row { display: flex; justify-content: space-between; align-items: baseline; }
-      .ctrl output { font-family: var(--mono); color: var(--accent); font-size: 0.85rem; }
-      input[type="range"] { width: 100%; accent-color: var(--accent); }
-      .actions { display: flex; gap: 12px; margin-top: 22px; align-items: center; }
-      button {
-        font: inherit; font-weight: 600; border-radius: 10px; padding: 11px 20px;
-        border: 1px solid var(--border); background: var(--panel-2); color: var(--text);
-        cursor: pointer; transition: transform 0.05s ease, background 0.15s ease;
-      }
-      button:hover:not(:disabled) { background: #262b38; }
-      button:active:not(:disabled) { transform: translateY(1px); }
-      button.primary { background: var(--accent); color: #0b0e16; border-color: transparent; }
-      button.primary:hover:not(:disabled) { background: #93adff; }
-      button:disabled { opacity: 0.45; cursor: default; }
-      .status { color: var(--muted); font-size: 0.82rem; }
-      .status.err { color: #ff8080; }
-      #output {
-        white-space: pre-wrap; word-break: break-word; font-family: var(--mono);
-        font-size: 0.92rem; background: var(--bg); border: 1px solid var(--border);
-        border-radius: 10px; padding: 16px; min-height: 160px; margin-top: 4px;
-      }
-      #output .prompt { color: var(--accent-2); }
-      #output .caret { color: var(--accent); animation: blink 1s step-end infinite; }
-      @keyframes blink { 50% { opacity: 0; } }
-      footer { color: var(--muted); font-size: 0.8rem; text-align: center; margin-top: 32px; }
-      a { color: var(--accent); }
-      details { margin-top: 18px; }
-      summary { cursor: pointer; color: var(--muted); font-size: 0.85rem; }
-      details p { color: var(--muted); font-size: 0.86rem; }
       .note {
-        display: flex; gap: 12px; align-items: flex-start;
+        display: flex; gap: 10px; align-items: flex-start;
         background: rgba(124, 156, 255, 0.08); border: 1px solid rgba(124, 156, 255, 0.35);
-        border-radius: 12px; padding: 14px 16px; margin: 4px 0 28px; font-size: 0.9rem;
+        border-radius: 12px; padding: 12px 14px; margin: 8px 0 20px; font-size: 0.86rem; color: var(--muted);
       }
-      .note .ico { font-size: 1.1rem; line-height: 1.4; }
       .note b { color: var(--text); }
-      .examples { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+      #chat {
+        background: var(--panel); border: 1px solid var(--border); border-radius: 14px;
+        padding: 18px; min-height: 320px; max-height: 55vh; overflow-y: auto;
+        display: flex; flex-direction: column; gap: 12px;
+      }
+      .msg { max-width: 84%; padding: 10px 14px; border-radius: 14px; white-space: pre-wrap; word-break: break-word; }
+      .msg.user { align-self: flex-end; background: var(--user); color: #fff; border-bottom-right-radius: 4px; }
+      .msg.bot { align-self: flex-start; background: var(--panel-2); border: 1px solid var(--border); border-bottom-left-radius: 4px; }
+      .msg.bot .caret { color: var(--accent); animation: blink 1s step-end infinite; }
+      @keyframes blink { 50% { opacity: 0; } }
+      .hint { align-self: center; color: var(--muted); font-size: 0.82rem; }
+      .suggestions { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 8px; }
       .chip {
-        font: inherit; font-size: 0.8rem; color: var(--text);
-        background: var(--panel-2); border: 1px solid var(--border);
-        padding: 6px 12px; border-radius: 999px; cursor: pointer;
+        font: inherit; font-size: 0.8rem; color: var(--text); background: var(--panel-2);
+        border: 1px solid var(--border); padding: 6px 12px; border-radius: 999px; cursor: pointer;
       }
       .chip:hover { background: #262b38; }
+      .composer { display: flex; gap: 10px; margin-top: 8px; }
+      #input {
+        flex: 1; background: var(--bg); color: var(--text); border: 1px solid var(--border);
+        border-radius: 10px; padding: 12px 14px; font: inherit;
+      }
+      #input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+      button {
+        font: inherit; font-weight: 600; border-radius: 10px; padding: 0 20px; border: 1px solid transparent;
+        background: var(--accent); color: #0b0e16; cursor: pointer;
+      }
+      button:hover:not(:disabled) { background: #93adff; }
+      button:disabled { opacity: 0.45; cursor: default; }
+      footer { color: var(--muted); font-size: 0.8rem; text-align: center; margin-top: 26px; }
+      a { color: var(--accent); }
+      details { margin-top: 16px; }
+      summary { cursor: pointer; color: var(--muted); font-size: 0.85rem; }
+      details p { color: var(--muted); font-size: 0.86rem; }
     </style>
   </head>
   <body>
     <div class="wrap">
       <header>
-        <h1>Tiny GPT <span class="dim">— a from-scratch text generator</span></h1>
+        <h1>Tiny Chatbot <span class="dim">— a GPT built from scratch</span></h1>
         <p>
-          A decoder-only Transformer with every component hand-written — tokenizer, attention,
-          LayerNorm, the works. Trained in PyTorch, then its forward pass re-implemented in plain
-          JavaScript so it runs <b>entirely on your device</b>. No server, no API calls.
+          A ~2M-parameter decoder-only Transformer, hand-written in PyTorch and re-implemented in
+          plain JavaScript. Trained on a small question/answer dataset — and it runs
+          <b>entirely in your browser</b>, no server.
         </p>
       </header>
 
+      <div class="badges" id="badges"><span class="badge">loading model…</span></div>
+
       <div class="note">
-        <span class="ico">⚠️</span>
+        <span>⚠️</span>
         <span>
-          <b>This is not a chatbot, and it can't answer questions or do math.</b> It's a tiny
-          (~0.8M-parameter) <i>character-level</i> model trained on a single short story, built to
-          show how the GPT architecture works — not to be useful. Give it the <i>start</i> of a
-          sentence and it will continue it in the story's style, one character at a time. Expect
-          dream-like, semi-garbled prose. Ask it "what is 1 + 1?" and it will happily ramble on
-          about lighthouses.
+          <b>This bot only knows what it was trained on:</b> simple arithmetic (small numbers),
+          greetings, a few facts about itself, and a hand-picked set of general-knowledge questions
+          (capitals, science, etc.). Ask within that world and it answers; ask outside it and it
+          will confidently make something up. It's a demo of the <i>architecture</i>, not a real
+          assistant.
         </span>
       </div>
 
-      <div class="badges" id="badges">
-        <span class="badge">loading model…</span>
+      <div id="chat">
+        <div class="hint" id="hint">Loading the model…</div>
       </div>
 
-      <div class="panel">
-        <label for="prompt">Start some text and the model will continue it</label>
-        <textarea id="prompt" spellcheck="false">The lighthouse</textarea>
-        <div class="examples" id="examples">
-          <button class="chip" type="button">The lighthouse</button>
-          <button class="chip" type="button">Mara climbed the</button>
-          <button class="chip" type="button">One evening, the wind</button>
-          <button class="chip" type="button">"The sea does not</button>
-        </div>
-
-        <div class="controls">
-          <div class="ctrl">
-            <div class="row"><label for="temp">Temperature</label><output id="tempOut">0.80</output></div>
-            <input type="range" id="temp" min="0.1" max="1.5" step="0.05" value="0.8" />
-          </div>
-          <div class="ctrl">
-            <div class="row"><label for="topk">Top-k</label><output id="topkOut">40</output></div>
-            <input type="range" id="topk" min="1" max="46" step="1" value="40" />
-          </div>
-          <div class="ctrl">
-            <div class="row"><label for="len">Max new tokens</label><output id="lenOut">240</output></div>
-            <input type="range" id="len" min="20" max="240" step="10" value="240" />
-          </div>
-        </div>
-
-        <div class="actions">
-          <button class="primary" id="go" disabled>Generate</button>
-          <button id="stop" disabled>Stop</button>
-          <span class="status" id="status">Loading weights…</span>
-        </div>
+      <div class="suggestions" id="suggestions">
+        <button class="chip" type="button">what is 3 plus 5?</button>
+        <button class="chip" type="button">what is 7 times 6?</button>
+        <button class="chip" type="button">what is the capital of japan?</button>
+        <button class="chip" type="button">what color is the sky?</button>
+        <button class="chip" type="button">who are you?</button>
+        <button class="chip" type="button">how many planets are there?</button>
       </div>
 
-      <label>Output</label>
-      <div id="output"></div>
+      <div class="composer">
+        <input id="input" type="text" placeholder="Ask a question…" autocomplete="off" disabled />
+        <button id="send" disabled>Send</button>
+      </div>
 
       <details>
-        <summary>What am I looking at?</summary>
+        <summary>How does it work?</summary>
         <p>
-          This is a <b>character-level</b> model with only a few hundred thousand parameters,
-          trained on a single short story. At that scale it mostly learns the <i>texture</i> of the
-          text — plausible letter and word patterns — rather than real meaning, so expect
-          dream-like fragments, not coherent prose. That's the point: it's small enough to read the
-          entire implementation and watch every matrix multiply that turns a prompt into text.
-          Lower the temperature for safer, more repetitive output; raise it for more surprising
-          (and more garbled) results.
+          Every question is turned into word tokens, framed as
+          <code>&lt;user&gt; … &lt;bot&gt;</code>, and fed through the same from-scratch Transformer
+          (multi-head causal self-attention, LayerNorm, feed-forward, residuals — all hand-written).
+          The model then predicts the answer one word at a time until it emits an end-of-answer
+          token. The whole forward pass runs in JavaScript on your device; the trained weights ship
+          as a static JSON file.
         </p>
       </details>
 
-      <footer>
-        Runs 100% client-side. Source, training loop, and the PyTorch model are in the repository.
-      </footer>
+      <footer>Runs 100% client-side. Full source, training code, and dataset are in the repository.</footer>
     </div>
 
     <script type="module" src="./app.js"></script>

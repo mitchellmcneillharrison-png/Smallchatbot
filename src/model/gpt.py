@@ -85,8 +85,12 @@ class GPT(nn.Module):
         loss = None
         if targets is not None:
             # Flatten batch and time dimensions so cross_entropy scores every
-            # (position -> next token) prediction independently.
-            loss = F.cross_entropy(logits.view(-1, logits.size(-1)), targets.view(-1))
+            # (position -> next token) prediction independently. Targets set to
+            # -1 are ignored -- this is how the chat trainer masks the loss so it
+            # only counts the answer tokens, not the prompt or padding.
+            loss = F.cross_entropy(
+                logits.view(-1, logits.size(-1)), targets.view(-1), ignore_index=-1
+            )
         return logits, loss
 
     @torch.no_grad()
@@ -96,13 +100,17 @@ class GPT(nn.Module):
         max_new_tokens: int,
         temperature: float = 1.0,
         top_k: int = None,
+        eos_token: int = None,
     ) -> torch.Tensor:
-        """Autoregressively sample `max_new_tokens` new tokens after the prompt `idx`.
+        """Autoregressively sample up to `max_new_tokens` new tokens after `idx`.
 
         Each step: run the model on the current sequence, look only at the
         logits for the *last* position (the prediction for "what comes next"),
         turn them into a probability distribution, and sample one token from it.
         That token is appended and fed back in for the next step.
+
+        If `eos_token` is given, generation stops as soon as that token is
+        sampled -- this is how the chatbot knows its answer is finished.
         """
         self.eval()
         for _ in range(max_new_tokens):
@@ -122,6 +130,8 @@ class GPT(nn.Module):
             probs = F.softmax(logits, dim=-1)
             next_id = torch.multinomial(probs, num_samples=1)  # (B, 1)
             idx = torch.cat([idx, next_id], dim=1)
+            if eos_token is not None and (next_id == eos_token).all():
+                break
         return idx
 
     def get_num_params(self) -> int:

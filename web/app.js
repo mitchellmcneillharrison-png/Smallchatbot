@@ -1,31 +1,18 @@
-// app.js -- browser glue: load the exported model, wire up the controls, and
-// stream generated text into the page. All the actual model maths lives in
-// gpt.js; this file only touches the DOM.
+// app.js -- browser glue for the chatbot. Loads the exported model + tokenizer,
+// renders a chat UI, and streams the model's answer word by word. All model
+// maths is in gpt.js; all tokenization is in tokenizer.js.
 
 import { TinyGPT } from "./gpt.js";
+import { WordTokenizer } from "./tokenizer.js";
 
 const $ = (id) => document.getElementById(id);
-const els = {
-  prompt: $("prompt"),
-  temp: $("temp"), tempOut: $("tempOut"),
-  topk: $("topk"), topkOut: $("topkOut"),
-  len: $("len"), lenOut: $("lenOut"),
-  go: $("go"), stop: $("stop"),
-  status: $("status"), output: $("output"), badges: $("badges"),
-};
-
-// Live-update the little value readouts next to each slider.
-const bindReadout = (input, out, fmt) => {
-  const sync = () => (out.textContent = fmt(input.value));
-  input.addEventListener("input", sync);
-  sync();
-};
-bindReadout(els.temp, els.tempOut, (v) => Number(v).toFixed(2));
-bindReadout(els.topk, els.topkOut, (v) => String(v));
-bindReadout(els.len, els.lenOut, (v) => String(v));
+const chat = $("chat");
+const input = $("input");
+const sendBtn = $("send");
 
 let gpt = null;
-let stopRequested = false;
+let tok = null;
+let busy = false;
 
 async function loadModel() {
   try {
@@ -33,106 +20,96 @@ async function loadModel() {
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const model = await res.json();
     gpt = new TinyGPT(model);
+    tok = new WordTokenizer(model.tokenizer);
 
-    const c = gpt.config;
+    const c = model.config;
     const nParams = Object.values(model.weights).reduce((s, t) => s + t.data.length, 0);
-    els.badges.innerHTML = "";
     const badges = [
-      `<b>${(nParams / 1000).toFixed(0)}K</b> params`,
+      `<b>${(nParams / 1e6).toFixed(1)}M</b> params`,
       `<b>${c.n_layer}</b> layers`,
       `<b>${c.n_head}</b> heads`,
       `<b>${c.n_embd}</b> dim`,
-      `<b>${c.vocab_size}</b> vocab (chars)`,
+      `<b>${c.vocab_size}</b> word vocab`,
       `<b>${c.block_size}</b> ctx`,
-      `${c.pos_encoding} pos-enc`,
     ];
-    for (const b of badges) {
-      const span = document.createElement("span");
-      span.className = "badge";
-      span.innerHTML = b;
-      els.badges.appendChild(span);
-    }
+    $("badges").innerHTML = badges.map((b) => `<span class="badge">${b}</span>`).join("");
 
-    els.go.disabled = false;
-    els.status.textContent = "Ready.";
+    $("hint").textContent = "Ask me a question to get started.";
+    input.disabled = false;
+    sendBtn.disabled = false;
+    input.focus();
   } catch (err) {
-    els.status.textContent = `Failed to load model.json (${err.message}).`;
-    els.status.classList.add("err");
+    $("hint").textContent = `Failed to load model.json (${err.message}).`;
   }
 }
 
-function setRunning(running) {
-  els.go.disabled = running;
-  els.stop.disabled = !running;
-  els.prompt.disabled = running;
+function addMessage(role, text) {
+  const el = document.createElement("div");
+  el.className = `msg ${role}`;
+  el.textContent = text;
+  chat.appendChild(el);
+  chat.scrollTop = chat.scrollHeight;
+  return el;
 }
 
-async function run() {
-  if (!gpt) return;
-  stopRequested = false;
-  setRunning(true);
-  els.status.classList.remove("err");
-  els.status.textContent = "Generating…";
+async function ask(question) {
+  if (!gpt || busy || !question.trim()) return;
+  busy = true;
+  input.disabled = true;
+  sendBtn.disabled = true;
+  const hint = $("hint");
+  if (hint) hint.remove();
 
-  const prompt = els.prompt.value;
-  // Render the prompt (highlighted) followed by a blinking caret we replace as
-  // tokens stream in.
-  els.output.innerHTML = "";
-  const promptSpan = document.createElement("span");
-  promptSpan.className = "prompt";
-  promptSpan.textContent = prompt;
-  const genSpan = document.createElement("span");
+  addMessage("user", question);
+  const botEl = addMessage("bot", "");
   const caret = document.createElement("span");
   caret.className = "caret";
   caret.textContent = "▋";
-  els.output.append(promptSpan, genSpan, caret);
+  botEl.appendChild(caret);
 
-  const started = performance.now();
-  let count = 0;
+  const promptIds = tok.buildPrompt(question);
+  const answerIds = [];
   try {
-    await gpt.generate(prompt, {
-      maxNewTokens: Number(els.len.value),
-      temperature: Number(els.temp.value),
-      topK: Number(els.topk.value),
+    await gpt.generateIds(promptIds, {
+      maxNewTokens: gpt.config.block_size,
+      temperature: 0.4,
+      topK: 20,
+      stopToken: tok.specials.eos,
       onToken: (id) => {
-        if (stopRequested) throw new StopSignal();
-        genSpan.textContent += gpt.decode([id]);
-        count++;
-        els.output.scrollTop = els.output.scrollHeight;
+        answerIds.push(id);
+        // Re-decode the whole answer each token so word spacing stays correct.
+        botEl.textContent = tok.decode(answerIds);
+        botEl.appendChild(caret);
+        chat.scrollTop = chat.scrollHeight;
       },
     });
   } catch (err) {
-    if (!(err instanceof StopSignal)) {
-      els.status.textContent = `Error: ${err.message}`;
-      els.status.classList.add("err");
-      caret.remove();
-      setRunning(false);
-      return;
-    }
+    botEl.textContent = `Error: ${err.message}`;
   }
-
   caret.remove();
-  const secs = (performance.now() - started) / 1000;
-  const rate = count > 0 ? (count / secs).toFixed(0) : "0";
-  els.status.textContent = stopRequested
-    ? `Stopped after ${count} tokens.`
-    : `Done — ${count} tokens in ${secs.toFixed(1)}s (${rate} tok/s).`;
-  setRunning(false);
+  if (!botEl.textContent.trim()) botEl.textContent = "…";
+
+  busy = false;
+  input.disabled = false;
+  sendBtn.disabled = false;
+  input.focus();
 }
 
-class StopSignal extends Error {}
-
-els.go.addEventListener("click", run);
-els.stop.addEventListener("click", () => {
-  stopRequested = true;
+sendBtn.addEventListener("click", () => {
+  const q = input.value;
+  input.value = "";
+  ask(q);
 });
-
-// Clicking an example chip drops its text into the prompt box.
-document.getElementById("examples").addEventListener("click", (e) => {
-  if (e.target.classList.contains("chip")) {
-    els.prompt.value = e.target.textContent;
-    els.prompt.focus();
+input.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" && !e.shiftKey) {
+    e.preventDefault();
+    const q = input.value;
+    input.value = "";
+    ask(q);
   }
+});
+$("suggestions").addEventListener("click", (e) => {
+  if (e.target.classList.contains("chip") && !busy) ask(e.target.textContent);
 });
 
 loadModel();
