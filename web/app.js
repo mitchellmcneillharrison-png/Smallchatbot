@@ -127,4 +127,12 @@ els.stop.addEventListener("click", () => {
   stopRequested = true;
 });
 
+// Clicking an example chip drops its text into the prompt box.
+document.getElementById("examples").addEventListener("click", (e) => {
+  if (e.target.classList.contains("chip")) {
+    els.prompt.value = e.target.textContent;
+    els.prompt.focus();
+  }
+});
+
 loadModel();

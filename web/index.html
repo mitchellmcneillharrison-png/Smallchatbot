@@ -4,6 +4,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Tiny GPT — from scratch, in your browser</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>"
+    />
+    <meta
+      name="description"
+      content="A tiny GPT-style language model built from scratch in PyTorch and ported to JavaScript — runs entirely in your browser."
+    />
     <style>
       :root {
         --bg: #0f1117;
@@ -78,12 +86,26 @@
       details { margin-top: 18px; }
       summary { cursor: pointer; color: var(--muted); font-size: 0.85rem; }
       details p { color: var(--muted); font-size: 0.86rem; }
+      .note {
+        display: flex; gap: 12px; align-items: flex-start;
+        background: rgba(124, 156, 255, 0.08); border: 1px solid rgba(124, 156, 255, 0.35);
+        border-radius: 12px; padding: 14px 16px; margin: 4px 0 28px; font-size: 0.9rem;
+      }
+      .note .ico { font-size: 1.1rem; line-height: 1.4; }
+      .note b { color: var(--text); }
+      .examples { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+      .chip {
+        font: inherit; font-size: 0.8rem; color: var(--text);
+        background: var(--panel-2); border: 1px solid var(--border);
+        padding: 6px 12px; border-radius: 999px; cursor: pointer;
+      }
+      .chip:hover { background: #262b38; }
     </style>
   </head>
   <body>
     <div class="wrap">
       <header>
-        <h1>Tiny GPT <span class="dim">— from scratch, in your browser</span></h1>
+        <h1>Tiny GPT <span class="dim">— a from-scratch text generator</span></h1>
         <p>
           A decoder-only Transformer with every component hand-written — tokenizer, attention,
           LayerNorm, the works. Trained in PyTorch, then its forward pass re-implemented in plain
@@ -91,13 +113,31 @@
         </p>
       </header>
 
+      <div class="note">
+        <span class="ico">⚠️</span>
+        <span>
+          <b>This is not a chatbot, and it can't answer questions or do math.</b> It's a tiny
+          (~0.8M-parameter) <i>character-level</i> model trained on a single short story, built to
+          show how the GPT architecture works — not to be useful. Give it the <i>start</i> of a
+          sentence and it will continue it in the story's style, one character at a time. Expect
+          dream-like, semi-garbled prose. Ask it "what is 1 + 1?" and it will happily ramble on
+          about lighthouses.
+        </span>
+      </div>
+
       <div class="badges" id="badges">
         <span class="badge">loading model…</span>
       </div>
 
       <div class="panel">
-        <label for="prompt">Prompt</label>
+        <label for="prompt">Start some text and the model will continue it</label>
         <textarea id="prompt" spellcheck="false">The lighthouse</textarea>
+        <div class="examples" id="examples">
+          <button class="chip" type="button">The lighthouse</button>
+          <button class="chip" type="button">Mara climbed the</button>
+          <button class="chip" type="button">One evening, the wind</button>
+          <button class="chip" type="button">"The sea does not</button>
+        </div>
 
         <div class="controls">
           <div class="ctrl">

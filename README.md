@@ -124,10 +124,18 @@ the PyTorch forward pass (`src/model/gpt.py`) to plain JavaScript over
 `Float32Array`, using an incremental KV cache so generation is fast. The
 trained weights ship as `web/model.json`.
 
-Regenerate the weights after training your own model:
+> **What it is (and isn't):** the deployed demo is a ~0.8M-parameter,
+> character-level model trained on a single short story. It is a **text
+> continuer, not a chatbot** — give it the start of a sentence and it extends
+> it in the story's style. It cannot answer questions, hold a conversation, or
+> do arithmetic; at this scale those abilities simply aren't there. The point
+> is to make the whole GPT architecture small enough to read and run.
+
+Regenerate the weights after training your own model (the shipped `model.json`
+was produced with these settings):
 
 ```bash
-python train.py --out_dir web_ckpt --block_size 256 --n_embd 128 --n_layer 4 --max_steps 3000
+python train.py --out_dir web_ckpt --block_size 128 --n_embd 128 --n_layer 4 --max_steps 2000
 python export_web.py --checkpoint web_ckpt/ckpt.pt --out web/model.json
 ```
 
