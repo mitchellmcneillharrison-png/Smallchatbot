@@ -98,18 +98,21 @@ def arithmetic():
             ans = f"{a} plus {b} equals {s}."
             simple(ans, [f"what is {a} plus {b}?", f"what is {a} + {b}?",
                          f"what's {a} plus {b}?", f"{a} plus {b}", f"add {a} and {b}",
-                         f"calculate {a} + {b}"])
+                         f"calculate {a} + {b}", f"how much is {a} plus {b}?",
+                         f"how much is {a} + {b}?", f"what is the sum of {a} and {b}?"])
             if a >= b:
                 d = a - b
                 ans = f"{a} minus {b} equals {d}."
                 simple(ans, [f"what is {a} minus {b}?", f"what is {a} - {b}?",
-                             f"{a} minus {b}", f"subtract {b} from {a}"])
+                             f"{a} minus {b}", f"subtract {b} from {a}",
+                             f"how much is {a} minus {b}?", f"{a} take away {b}"])
     for a in MUL:
         for b in MUL:
             p = a * b
             ans = f"{a} times {b} equals {p}."
             simple(ans, [f"what is {a} times {b}?", f"what is {a} * {b}?",
-                         f"{a} times {b}", f"multiply {a} and {b}", f"{a} x {b}"])
+                         f"{a} times {b}", f"multiply {a} and {b}", f"{a} x {b}",
+                         f"how much is {a} times {b}?", f"what is {a} multiplied by {b}?"])
 
 
 # ----------------------------------------------------------------------------
@@ -130,7 +133,7 @@ COUNTRIES = {
     "egypt": ("Cairo", "the egyptian pound", "Arabic", "Africa", ["egypt"]),
     "brazil": ("Brasilia", "the real", "Portuguese", "South America", ["brazil"]),
     "india": ("New Delhi", "the rupee", "Hindi", "Asia", ["india"]),
-    "australia": ("Canberra", "the australian dollar", "English", "Australia", ["australia"]),
+    "australia": ("Canberra", "the australian dollar", "English", "Oceania", ["australia"]),
     "mexico": ("Mexico City", "the peso", "Spanish", "North America", ["mexico"]),
     "greece": ("Athens", "the euro", "Greek", "Europe", ["greece"]),
     "portugal": ("Lisbon", "the euro", "Portuguese", "Europe", ["portugal"]),
@@ -166,15 +169,23 @@ def countries():
     for name, (cap, cur, lang, cont, syns) in COUNTRIES.items():
         disp = name.title()
         fact(f"The capital of {disp} is {cap}.",
-             "{lead} the capital of {c}{q}", {"lead": WHAT, "c": syns, "q": Q})
+             "{lead} the capital {of} {c}{q}",
+             {"lead": WHAT, "of": ["of", "city of"], "c": syns, "q": Q})
+        fact(f"The capital of {disp} is {cap}.",
+             "{lead} {c}'s capital{q}", {"lead": WHAT, "c": syns, "q": Q})
         simple(f"The capital of {disp} is {cap}.", [f"capital of {s}" for s in syns])
         fact(f"The currency of {disp} is {cur}.",
-             "{lead} the currency of {c}{q}", {"lead": WHAT, "c": syns, "q": Q})
+             "{lead} the currency {of} {c}{q}",
+             {"lead": WHAT, "of": ["of", "used in"], "c": syns, "q": Q})
+        fact(f"The currency of {disp} is {cur}.",
+             "{lead} {c}'s currency{q}", {"lead": WHAT, "c": syns, "q": Q})
         fact(f"The main language spoken in {disp} is {lang}.",
-             "{lead} language {do} they speak in {c}{q}",
-             {"lead": ["what", "which", "what kind of"], "do": ["do", "do"], "c": syns, "q": Q})
+             "{lead} language {verb} in {c}{q}",
+             {"lead": ["what", "which"], "verb": ["do they speak", "do people speak", "is spoken"],
+              "c": syns, "q": Q})
         fact(f"The main language spoken in {disp} is {lang}.",
-             "{lead} the language of {c}{q}", {"lead": WHAT, "c": syns, "q": Q})
+             "{lead} the language {of} {c}{q}",
+             {"lead": WHAT, "of": ["of", "spoken in"], "c": syns, "q": Q})
         fact(f"{disp} is in {cont}.",
              "{lead} continent is {c} {inn}{q}",
              {"lead": WHICH, "c": syns, "inn": ["in", "on", "located in"], "q": Q})
@@ -259,7 +270,9 @@ def general():
     simple("The smallest planet is Mercury.",
            ["what is the smallest planet?", "smallest planet"])
     simple("The closest planet to the sun is Mercury.",
-           ["what is the closest planet to the sun?", "closest planet to the sun"])
+           ["what is the closest planet to the sun?", "closest planet to the sun",
+            "what is the nearest planet to the sun?", "which planet is nearest to the sun?",
+            "which planet is closest to the sun?"])
     simple("The largest ocean is the Pacific Ocean.",
            ["what is the largest ocean?", "biggest ocean", "what is the biggest ocean?"])
     simple("The tallest mountain is Mount Everest.",

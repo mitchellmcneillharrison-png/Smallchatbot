@@ -16,6 +16,31 @@
 // It has no browser or Node dependencies, so the same file powers both the web
 // UI (web/app.js) and the correctness test (web/verify.mjs).
 
+// ---- weight decoding -------------------------------------------------------
+
+// Convert an IEEE-754 half-precision (float16) bit pattern to a JS number.
+function halfBitsToFloat(h) {
+  const sign = (h & 0x8000) ? -1 : 1;
+  const exp = (h & 0x7c00) >> 10;
+  const frac = h & 0x03ff;
+  if (exp === 0) return sign * Math.pow(2, -14) * (frac / 1024); // subnormal / zero
+  if (exp === 0x1f) return frac ? NaN : sign * Infinity;
+  return sign * Math.pow(2, exp - 15) * (1 + frac / 1024);
+}
+
+// Decode a base64 string of little-endian float16 values into a Float32Array.
+// `atob` exists in both browsers and Node 22, so this file stays portable.
+function decodeFloat16Base64(b64) {
+  const bin = atob(b64);
+  const count = bin.length >> 1;
+  const out = new Float32Array(count);
+  for (let i = 0; i < count; i++) {
+    const bits = bin.charCodeAt(2 * i) | (bin.charCodeAt(2 * i + 1) << 8);
+    out[i] = halfBitsToFloat(bits);
+  }
+  return out;
+}
+
 // ---- small numeric helpers -------------------------------------------------
 
 // erf approximation (Abramowitz & Stegun 7.1.26), max abs error ~1.5e-7.
@@ -91,11 +116,15 @@ export class TinyGPT {
   constructor(model) {
     this.config = model.config;
 
-    // Convert every weight from a plain JSON number[] into a Float32Array once,
-    // up front, so the hot generation loop touches only typed arrays.
+    // Convert every weight into a Float32Array once, up front, so the hot
+    // generation loop touches only typed arrays. Weights ship either as a plain
+    // JSON number[] (`data`, older exports) or as base64-encoded float16
+    // (`b64`, compact chat export) -- support both.
     this.w = {};
-    for (const [name, { data }] of Object.entries(model.weights)) {
-      this.w[name] = Float32Array.from(data);
+    for (const [name, tensor] of Object.entries(model.weights)) {
+      this.w[name] = tensor.b64 !== undefined
+        ? decodeFloat16Base64(tensor.b64)
+        : Float32Array.from(tensor.data);
     }
 
     const c = this.config;

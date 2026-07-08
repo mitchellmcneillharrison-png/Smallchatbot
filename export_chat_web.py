@@ -10,6 +10,7 @@ Usage:
 """
 
 import argparse
+import base64
 import json
 import os
 
@@ -20,9 +21,17 @@ from src.config import GPTConfig
 from src.model import GPT
 
 
-def tensor_to_list(t, sig: int = 5):
+def tensor_to_list(t, sig: int = 6):
     flat = t.detach().cpu().float().reshape(-1).tolist()
     return [float(f"{x:.{sig}g}") for x in flat]
+
+
+def tensor_to_f16_b64(t):
+    """Quantize a tensor to float16 and base64-encode its raw little-endian
+    bytes. Halves the download vs. float32 and shrinks it ~4x vs. JSON numbers,
+    with negligible quality loss for a sampling demo. Decoded in web/gpt.js."""
+    half = t.detach().cpu().to(torch.float16).contiguous()
+    return base64.b64encode(half.numpy().tobytes()).decode("ascii")
 
 
 def main():
@@ -39,11 +48,18 @@ def main():
     model.load_state_dict(ckpt["model_state_dict"])
     model.eval()
 
+    # Round every weight to float16-representable values IN PLACE, so the logits
+    # the model produces here match what the browser (which loads float16) will
+    # compute -- keeping web/verify.mjs's parity check honest.
+    with torch.no_grad():
+        for p in model.parameters():
+            p.data = p.data.to(torch.float16).float()
+
     weights = {}
     for name, tensor in model.state_dict().items():
         if name.endswith("causal_mask"):
             continue
-        weights[name] = {"shape": list(tensor.shape), "data": tensor_to_list(tensor)}
+        weights[name] = {"shape": list(tensor.shape), "b64": tensor_to_f16_b64(tensor)}
 
     # self-check: fixed prompt -> final-position logits, for web/verify.mjs.
     check_ids = tokenizer.build_prompt("what is 1 plus 1?")[: config.block_size]
