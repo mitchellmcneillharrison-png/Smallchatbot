@@ -81,8 +81,8 @@
       <header>
         <h1>Tiny Chatbot <span class="dim">— a GPT built from scratch</span></h1>
         <p>
-          A ~2M-parameter decoder-only Transformer, hand-written in PyTorch and re-implemented in
-          plain JavaScript. Trained on a small question/answer dataset — and it runs
+          A ~5M-parameter decoder-only Transformer, hand-written in PyTorch and re-implemented in
+          plain JavaScript. Trained on thousands of question/answer pairs — and it runs
           <b>entirely in your browser</b>, no server.
         </p>
       </header>
@@ -92,11 +92,12 @@
       <div class="note">
         <span>⚠️</span>
         <span>
-          <b>This bot only knows what it was trained on:</b> simple arithmetic (small numbers),
-          greetings, a few facts about itself, and a hand-picked set of general-knowledge questions
-          (capitals, science, etc.). Ask within that world and it answers; ask outside it and it
-          will confidently make something up. It's a demo of the <i>architecture</i>, not a real
-          assistant.
+          <b>This bot only knows what it was trained on:</b> arithmetic (small numbers), greetings,
+          facts about itself, and a hand-built set of general-knowledge questions — world capitals,
+          currencies and languages, US presidents, planets, chemical elements, science, geography,
+          and history. It's trained on many <i>wordings</i> of each fact, so rephrasings usually
+          work. Ask outside that world and it will confidently make something up. It's a demo of the
+          <i>architecture</i>, not a real assistant.
         </span>
       </div>
 
@@ -105,12 +106,12 @@
       </div>
 
       <div class="suggestions" id="suggestions">
-        <button class="chip" type="button">what is 3 plus 5?</button>
-        <button class="chip" type="button">what is 7 times 6?</button>
-        <button class="chip" type="button">what is the capital of japan?</button>
-        <button class="chip" type="button">what color is the sky?</button>
+        <button class="chip" type="button">who was the 1st president of the USA?</button>
+        <button class="chip" type="button">how much is 7 times 8?</button>
+        <button class="chip" type="button">what's the capital of brazil?</button>
+        <button class="chip" type="button">what is the chemical symbol for oxygen?</button>
+        <button class="chip" type="button">which planet is closest to the sun?</button>
         <button class="chip" type="button">who are you?</button>
-        <button class="chip" type="button">how many planets are there?</button>
       </div>
 
       <div class="composer">

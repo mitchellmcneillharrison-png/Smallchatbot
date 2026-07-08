@@ -16,15 +16,22 @@ The repo has two things you can train with the **same** hand-built model:
 1. A **story text generator** (character-level) — the classic "train a tiny GPT
    on some text and watch it babble" demo (`train.py` / `generate.py`).
 2. A **closed-domain chatbot** (word-level) that actually answers questions —
-   arithmetic, greetings, and a hand-picked set of facts (`train_chat.py` /
-   `chat.py`). This is what the browser demo deploys.
+   arithmetic plus a hand-built knowledge base of ~11k question/answer pairs
+   (`train_chat.py` / `chat.py`). This is what the browser demo deploys.
+
+   The key trick is **paraphrase robustness**: `build_chat_data.py` generates
+   many wordings of every fact ("who was the *first* president of the *USA*" ==
+   "who was the *1st* president of the *United States*"), so the model answers
+   the same regardless of phrasing. On held-out rewordings it scores 31/31; on
+   its ~11k-pair dataset, ~99% (see `eval_chat.py` and `check_paraphrases.py`).
 
 > **Honest expectations for the chatbot:** it is *tiny* and trained *only* on the
-> small dataset in `build_chat_data.py`. It genuinely answers questions from that
-> dataset and close rewordings of them, but it has no general knowledge or
-> reasoning — ask anything outside its training world and it will confidently
-> make something up. It demonstrates the *architecture and training recipe*, not
-> intelligence.
+> dataset in `build_chat_data.py` (arithmetic over small numbers; world capitals,
+> currencies and languages; US presidents; planets; chemical elements; science,
+> geography, and history facts). It answers those questions and rewordings of
+> them, but it has no general knowledge or reasoning — ask anything outside its
+> training world and it will confidently make something up. It demonstrates the
+> *architecture and training recipe*, not intelligence.
 
 ## Architecture
 
@@ -173,14 +180,17 @@ model **entirely client-side** — no server, no API. `web/gpt.js` is a hand por
 of the PyTorch forward pass (`src/model/gpt.py`) to plain JavaScript over
 `Float32Array`, using an incremental KV cache so generation is fast;
 `web/tokenizer.js` is a matching port of the word-level tokenizer. The trained
-weights and vocabulary ship as `web/model.json`.
+weights and vocabulary ship as `web/model.json`, quantized to float16 and
+base64-encoded to keep the download small (~14 MB for a ~5M-parameter model);
+`web/gpt.js` decodes it on load.
 
-> **What it is (and isn't):** the deployed demo is a ~2M-parameter chatbot that
-> genuinely answers questions **within its small training world** (arithmetic
-> over small numbers, greetings, and the facts in `build_chat_data.py`). Ask it
-> something outside that world and it will confidently make something up — it
-> has no general knowledge or reasoning. It's a demo of the architecture and
-> training recipe, not a real assistant.
+> **What it is (and isn't):** the deployed demo is a ~5M-parameter chatbot that
+> genuinely answers questions **within its training world** (arithmetic over
+> small numbers, plus the geography/science/history knowledge base in
+> `build_chat_data.py`) and rewordings of them. Ask it something outside that
+> world and it will confidently make something up — it has no general knowledge
+> or reasoning. It's a demo of the architecture and training recipe, not a real
+> assistant.
 
 Regenerate `web/model.json` after (re)training the chatbot:
 
