@@ -55,11 +55,28 @@ def main():
         for p in model.parameters():
             p.data = p.data.to(torch.float16).float()
 
-    weights = {}
+    # Pack all weights into ONE flat float16 binary blob (model.bin) and record
+    # each tensor's shape + offset in a small JSON manifest. This is what makes
+    # the page load fast: the browser fetches the blob as an ArrayBuffer (no
+    # base64 inflation, no giant JSON.parse) and reads each weight as a typed-
+    # array view -- see web/gpt.js and web/app.js.
+    import numpy as np
+
+    manifest = {}
+    chunks = []
+    offset = 0  # in float16 elements
     for name, tensor in model.state_dict().items():
         if name.endswith("causal_mask"):
             continue
-        weights[name] = {"shape": list(tensor.shape), "b64": tensor_to_f16_b64(tensor)}
+        flat = tensor.detach().cpu().to(torch.float16).contiguous().numpy().reshape(-1)
+        manifest[name] = {"shape": list(tensor.shape), "offset": offset, "n": int(flat.size)}
+        chunks.append(flat)
+        offset += flat.size
+
+    blob = np.concatenate(chunks).astype("<f2").tobytes()  # little-endian float16
+    bin_path = os.path.splitext(args.out)[0] + ".bin"
+    with open(bin_path, "wb") as f:
+        f.write(blob)
 
     # self-check: fixed prompt -> final-position logits, for web/verify.mjs.
     check_ids = tokenizer.build_prompt("what is 1 plus 1?")[: config.block_size]
@@ -81,7 +98,9 @@ def main():
             },
             "special_list": SPECIAL_TOKENS,
         },
-        "weights": weights,
+        # weights live in the companion .bin file, addressed by this manifest.
+        "weights_bin": os.path.basename(bin_path),
+        "weights": manifest,
         "self_check": {"input_ids": check_ids, "last_logits": tensor_to_list(logits[0, -1, :])},
     }
 
@@ -89,8 +108,10 @@ def main():
     with open(args.out, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False)
 
-    size_mb = os.path.getsize(args.out) / 1e6
-    print(f"Wrote {args.out} ({size_mb:.2f} MB) | vocab {tokenizer.vocab_size} | block {config.block_size}")
+    json_mb = os.path.getsize(args.out) / 1e6
+    bin_mb = os.path.getsize(bin_path) / 1e6
+    print(f"Wrote {args.out} ({json_mb:.2f} MB) + {bin_path} ({bin_mb:.2f} MB) | "
+          f"vocab {tokenizer.vocab_size} | block {config.block_size}")
 
 
 if __name__ == "__main__":

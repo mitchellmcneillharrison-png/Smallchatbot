@@ -2,7 +2,7 @@
 // renders a chat UI, and streams the model's answer word by word. All model
 // maths is in gpt.js; all tokenization is in tokenizer.js.
 
-import { TinyGPT } from "./gpt.js";
+import { TinyGPT, inflateFloat16 } from "./gpt.js";
 import { WordTokenizer } from "./tokenizer.js";
 
 const $ = (id) => document.getElementById(id);
@@ -14,18 +14,63 @@ let gpt = null;
 let tok = null;
 let busy = false;
 
+// Fetch a URL as an ArrayBuffer while reporting download progress, so the user
+// sees a moving bar instead of a frozen page during the one-time model load.
+async function fetchBufferWithProgress(url, onProgress) {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  const total = Number(res.headers.get("content-length")) || 0;
+  if (!res.body || !res.body.getReader) return await res.arrayBuffer(); // fallback
+  const reader = res.body.getReader();
+  const chunks = [];
+  let received = 0;
+  for (;;) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    chunks.push(value);
+    received += value.length;
+    onProgress(received, total);
+  }
+  const out = new Uint8Array(received);
+  let pos = 0;
+  for (const c of chunks) {
+    out.set(c, pos);
+    pos += c.length;
+  }
+  return out.buffer;
+}
+
+function setProgress(fraction, label) {
+  const fill = $("loadbar-fill");
+  if (fill) fill.style.width = `${Math.round(fraction * 100)}%`;
+  const hint = $("hint");
+  if (hint) hint.textContent = label;
+}
+
 async function loadModel() {
   try {
-    const res = await fetch("./model.json");
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const model = await res.json();
-    gpt = new TinyGPT(model);
-    tok = new WordTokenizer(model.tokenizer);
+    const meta = await (await fetch("./model.json")).json(); // small: config + tokenizer + manifest
+    const c = meta.config;
 
-    const c = model.config;
-    const nParams = Object.values(model.weights).reduce(
-      (s, t) => s + t.shape.reduce((a, b) => a * b, 1), 0
-    );
+    // Download the weights blob with a progress bar.
+    const buf = await fetchBufferWithProgress("./" + (meta.weights_bin || "model.bin"), (r, t) => {
+      const frac = t ? r / t : 0;
+      setProgress(frac, t ? `Loading model… ${Math.round(frac * 100)}%` : `Loading model… ${(r / 1e6).toFixed(1)} MB`);
+    });
+
+    // Decode: one big float16 blob -> a Float32Array per weight (fast).
+    setProgress(1, "Preparing model…");
+    const u16 = new Uint16Array(buf);
+    const weights = {};
+    let nParams = 0;
+    for (const [name, w] of Object.entries(meta.weights)) {
+      weights[name] = inflateFloat16(u16.subarray(w.offset, w.offset + w.n));
+      nParams += w.n;
+    }
+
+    gpt = new TinyGPT({ config: c, tokenizer: meta.tokenizer, weights, self_check: meta.self_check });
+    tok = new WordTokenizer(meta.tokenizer);
+
     const badges = [
       `<b>${(nParams / 1e6).toFixed(1)}M</b> params`,
       `<b>${c.n_layer}</b> layers`,
@@ -36,12 +81,14 @@ async function loadModel() {
     ];
     $("badges").innerHTML = badges.map((b) => `<span class="badge">${b}</span>`).join("");
 
+    const loadbar = $("loadbar");
+    if (loadbar) loadbar.style.display = "none";
     $("hint").textContent = "Ask me a question to get started.";
     input.disabled = false;
     sendBtn.disabled = false;
     input.focus();
   } catch (err) {
-    $("hint").textContent = `Failed to load model.json (${err.message}).`;
+    $("hint").textContent = `Failed to load model (${err.message}).`;
   }
 }
 

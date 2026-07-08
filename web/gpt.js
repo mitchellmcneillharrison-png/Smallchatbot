@@ -41,6 +41,14 @@ function decodeFloat16Base64(b64) {
   return out;
 }
 
+// Inflate a Uint16Array of float16 bit patterns into a Float32Array. Used by
+// the binary-weights loader (app.js in the browser, verify.mjs in Node).
+export function inflateFloat16(u16) {
+  const out = new Float32Array(u16.length);
+  for (let i = 0; i < u16.length; i++) out[i] = halfBitsToFloat(u16[i]);
+  return out;
+}
+
 // ---- small numeric helpers -------------------------------------------------
 
 // erf approximation (Abramowitz & Stegun 7.1.26), max abs error ~1.5e-7.
@@ -116,15 +124,14 @@ export class TinyGPT {
   constructor(model) {
     this.config = model.config;
 
-    // Convert every weight into a Float32Array once, up front, so the hot
-    // generation loop touches only typed arrays. Weights ship either as a plain
-    // JSON number[] (`data`, older exports) or as base64-encoded float16
-    // (`b64`, compact chat export) -- support both.
+    // Every weight ends up a Float32Array. Callers may pass them already
+    // decoded (the binary-blob loader does this), or as base64 float16 (`b64`)
+    // or a plain JSON number[] (`data`) for older exports -- support all three.
     this.w = {};
-    for (const [name, tensor] of Object.entries(model.weights)) {
-      this.w[name] = tensor.b64 !== undefined
-        ? decodeFloat16Base64(tensor.b64)
-        : Float32Array.from(tensor.data);
+    for (const [name, w] of Object.entries(model.weights)) {
+      if (w instanceof Float32Array) this.w[name] = w;
+      else if (w && w.b64 !== undefined) this.w[name] = decodeFloat16Base64(w.b64);
+      else this.w[name] = Float32Array.from(w.data);
     }
 
     const c = this.config;

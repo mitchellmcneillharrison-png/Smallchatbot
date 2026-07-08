@@ -11807,6 +11807,85 @@
 {"q": "what are the olympics?", "a": "The Olympics is a global sporting event held every four years."}
 {"q": "what is the olympics?", "a": "The Olympics is a global sporting event held every four years."}
 {"q": "tell me about the olympics", "a": "The Olympics is a global sporting event held every four years."}
+{"q": "how many downs are in american football?", "a": "There are four downs to make a first down in american football."}
+{"q": "how many downs in football?", "a": "There are four downs to make a first down in american football."}
+{"q": "how many downs do you get?", "a": "There are four downs to make a first down in american football."}
+{"q": "how many yards for a first down?", "a": "A first down requires gaining ten yards in american football."}
+{"q": "how many yards is a first down?", "a": "A first down requires gaining ten yards in american football."}
+{"q": "how long is a football field?", "a": "An american football field is one hundred yards long."}
+{"q": "how many yards is a football field?", "a": "An american football field is one hundred yards long."}
+{"q": "how many points is a safety?", "a": "A safety in american football is worth two points."}
+{"q": "what is a safety worth?", "a": "A safety in american football is worth two points."}
+{"q": "how many outs are in an inning?", "a": "There are three outs in each half of a baseball inning."}
+{"q": "how many outs per inning?", "a": "There are three outs in each half of a baseball inning."}
+{"q": "how many outs in baseball?", "a": "There are three outs in each half of a baseball inning."}
+{"q": "how many balls is a walk?", "a": "It takes four balls to draw a walk in baseball."}
+{"q": "how many balls for a walk?", "a": "It takes four balls to draw a walk in baseball."}
+{"q": "what is a grand slam in baseball?", "a": "A grand slam in baseball is a home run with the bases loaded, scoring four runs."}
+{"q": "what is a grand slam?", "a": "A grand slam in baseball is a home run with the bases loaded, scoring four runs."}
+{"q": "how many bases are in baseball?", "a": "There are four bases in baseball."}
+{"q": "how many bases in baseball?", "a": "There are four bases in baseball."}
+{"q": "what does a red card mean?", "a": "A red card sends a player off in soccer."}
+{"q": "what is a red card?", "a": "A red card sends a player off in soccer."}
+{"q": "which card sends a player off?", "a": "A red card sends a player off in soccer."}
+{"q": "what does a yellow card mean?", "a": "A yellow card is a caution in soccer."}
+{"q": "what is a yellow card?", "a": "A yellow card is a caution in soccer."}
+{"q": "what is a clean sheet?", "a": "A clean sheet in soccer is when a team concedes no goals."}
+{"q": "what does a clean sheet mean?", "a": "A clean sheet in soccer is when a team concedes no goals."}
+{"q": "what is a penalty kick?", "a": "A penalty kick in soccer is taken from the penalty spot."}
+{"q": "where is a penalty kick taken from?", "a": "A penalty kick in soccer is taken from the penalty spot."}
+{"q": "what is a birdie in golf?", "a": "In golf, a birdie is one stroke under par."}
+{"q": "what does birdie mean in golf?", "a": "In golf, a birdie is one stroke under par."}
+{"q": "what is an eagle in golf?", "a": "In golf, an eagle is two strokes under par."}
+{"q": "what does eagle mean in golf?", "a": "In golf, an eagle is two strokes under par."}
+{"q": "what is a bogey in golf?", "a": "In golf, a bogey is one stroke over par."}
+{"q": "what does bogey mean?", "a": "In golf, a bogey is one stroke over par."}
+{"q": "what is par in golf?", "a": "Par is the expected number of strokes for a hole in golf."}
+{"q": "what does par mean in golf?", "a": "Par is the expected number of strokes for a hole in golf."}
+{"q": "what is deuce in tennis?", "a": "In tennis, deuce means the score is forty forty."}
+{"q": "what does deuce mean?", "a": "In tennis, deuce means the score is forty forty."}
+{"q": "how many points is a conversion?", "a": "A conversion in rugby is worth two points."}
+{"q": "what is a conversion worth in rugby?", "a": "A conversion in rugby is worth two points."}
+{"q": "how many balls are in an over?", "a": "There are six balls in an over in cricket."}
+{"q": "how many balls in a cricket over?", "a": "There are six balls in an over in cricket."}
+{"q": "what is a century in cricket?", "a": "A century in cricket is a score of one hundred runs."}
+{"q": "what does a century mean in cricket?", "a": "A century in cricket is a score of one hundred runs."}
+{"q": "how many fouls to foul out in the nba?", "a": "A player fouls out of an NBA game after six personal fouls."}
+{"q": "how many fouls before you foul out?", "a": "A player fouls out of an NBA game after six personal fouls."}
+{"q": "what is the champions league?", "a": "The Champions League is the top club soccer competition in Europe."}
+{"q": "what's the champions league?", "a": "The Champions League is the top club soccer competition in Europe."}
+{"q": "what is the ashes?", "a": "The Ashes is a cricket series between England and Australia."}
+{"q": "what's the ashes?", "a": "The Ashes is a cricket series between England and Australia."}
+{"q": "what is the ryder cup?", "a": "The Ryder Cup is a golf competition between the United States and Europe."}
+{"q": "what's the ryder cup?", "a": "The Ryder Cup is a golf competition between the United States and Europe."}
+{"q": "what sport is the kentucky derby?", "a": "The Kentucky Derby is a horse racing event."}
+{"q": "what is the kentucky derby?", "a": "The Kentucky Derby is a horse racing event."}
+{"q": "what sport is the indy 500?", "a": "The Indianapolis 500 is a motor racing event."}
+{"q": "what is the indianapolis 500?", "a": "The Indianapolis 500 is a motor racing event."}
+{"q": "what is the indy 500?", "a": "The Indianapolis 500 is a motor racing event."}
+{"q": "what sport is formula one?", "a": "Formula One is a motor racing competition."}
+{"q": "what is formula one?", "a": "Formula One is a motor racing competition."}
+{"q": "what is f1?", "a": "Formula One is a motor racing competition."}
+{"q": "what is the us open?", "a": "The US Open is one of the four tennis Grand Slams."}
+{"q": "what sport is the us open?", "a": "The US Open is one of the four tennis Grand Slams."}
+{"q": "what is badminton played with?", "a": "Badminton is played with a racket and a shuttlecock."}
+{"q": "what equipment is used in badminton?", "a": "Badminton is played with a racket and a shuttlecock."}
+{"q": "what is table tennis?", "a": "Table tennis is played on a table with small paddles and a light ball."}
+{"q": "how is table tennis played?", "a": "Table tennis is played on a table with small paddles and a light ball."}
+{"q": "what is ping pong?", "a": "Table tennis is played on a table with small paddles and a light ball."}
+{"q": "how is a boxing match divided?", "a": "Boxing matches are divided into rounds."}
+{"q": "what are boxing matches divided into?", "a": "Boxing matches are divided into rounds."}
+{"q": "what are the swimming strokes?", "a": "The four main swimming strokes are freestyle, backstroke, breaststroke, and butterfly."}
+{"q": "name the swimming strokes", "a": "The four main swimming strokes are freestyle, backstroke, breaststroke, and butterfly."}
+{"q": "what are the four swimming strokes?", "a": "The four main swimming strokes are freestyle, backstroke, breaststroke, and butterfly."}
+{"q": "what is a sprint?", "a": "A sprint in athletics is a short, fast running race."}
+{"q": "what does sprint mean in athletics?", "a": "A sprint in athletics is a short, fast running race."}
+{"q": "who has won the most olympic gold medals?", "a": "Michael Phelps has won the most Olympic gold medals."}
+{"q": "who has the most olympic golds?", "a": "Michael Phelps has won the most Olympic gold medals."}
+{"q": "who won the most olympic gold medals?", "a": "Michael Phelps has won the most Olympic gold medals."}
+{"q": "who holds the 100 meter world record?", "a": "Usain Bolt holds the world record for the one hundred meter sprint."}
+{"q": "who is the fastest man in the world?", "a": "Usain Bolt holds the world record for the one hundred meter sprint."}
+{"q": "who holds the 100m record?", "a": "Usain Bolt holds the world record for the one hundred meter sprint."}
 {"q": "hello", "a": "Hello! Ask me a question."}
 {"q": "hi", "a": "Hello! Ask me a question."}
 {"q": "hey", "a": "Hello! Ask me a question."}

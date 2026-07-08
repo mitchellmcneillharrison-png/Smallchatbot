@@ -568,6 +568,82 @@ def sports():
            ["what is the premier league?", "what's the premier league?"])
     simple("The Olympics is a global sporting event held every four years.",
            ["what are the olympics?", "what is the olympics?", "tell me about the olympics"])
+    # --- more rules and terms ---
+    simple("There are four downs to make a first down in american football.",
+           ["how many downs are in american football?", "how many downs in football?", "how many downs do you get?"])
+    simple("A first down requires gaining ten yards in american football.",
+           ["how many yards for a first down?", "how many yards is a first down?"])
+    simple("An american football field is one hundred yards long.",
+           ["how long is a football field?", "how many yards is a football field?"])
+    simple("A safety in american football is worth two points.",
+           ["how many points is a safety?", "what is a safety worth?"])
+    simple("There are three outs in each half of a baseball inning.",
+           ["how many outs are in an inning?", "how many outs per inning?", "how many outs in baseball?"])
+    simple("It takes four balls to draw a walk in baseball.",
+           ["how many balls is a walk?", "how many balls for a walk?"])
+    simple("A grand slam in baseball is a home run with the bases loaded, scoring four runs.",
+           ["what is a grand slam in baseball?", "what is a grand slam?"])
+    simple("There are four bases in baseball.",
+           ["how many bases are in baseball?", "how many bases in baseball?"])
+    simple("A red card sends a player off in soccer.",
+           ["what does a red card mean?", "what is a red card?", "which card sends a player off?"])
+    simple("A yellow card is a caution in soccer.",
+           ["what does a yellow card mean?", "what is a yellow card?"])
+    simple("A clean sheet in soccer is when a team concedes no goals.",
+           ["what is a clean sheet?", "what does a clean sheet mean?"])
+    simple("A penalty kick in soccer is taken from the penalty spot.",
+           ["what is a penalty kick?", "where is a penalty kick taken from?"])
+    simple("In golf, a birdie is one stroke under par.",
+           ["what is a birdie in golf?", "what does birdie mean in golf?"])
+    simple("In golf, an eagle is two strokes under par.",
+           ["what is an eagle in golf?", "what does eagle mean in golf?"])
+    simple("In golf, a bogey is one stroke over par.",
+           ["what is a bogey in golf?", "what does bogey mean?"])
+    simple("Par is the expected number of strokes for a hole in golf.",
+           ["what is par in golf?", "what does par mean in golf?"])
+    simple("In tennis, deuce means the score is forty forty.",
+           ["what is deuce in tennis?", "what does deuce mean?"])
+    simple("A conversion in rugby is worth two points.",
+           ["how many points is a conversion?", "what is a conversion worth in rugby?"])
+    simple("There are six balls in an over in cricket.",
+           ["how many balls are in an over?", "how many balls in a cricket over?"])
+    simple("A century in cricket is a score of one hundred runs.",
+           ["what is a century in cricket?", "what does a century mean in cricket?"])
+    simple("A player fouls out of an NBA game after six personal fouls.",
+           ["how many fouls to foul out in the nba?", "how many fouls before you foul out?"])
+    # --- more competitions and events ---
+    simple("The Champions League is the top club soccer competition in Europe.",
+           ["what is the champions league?", "what's the champions league?"])
+    simple("The Ashes is a cricket series between England and Australia.",
+           ["what is the ashes?", "what's the ashes?"])
+    simple("The Ryder Cup is a golf competition between the United States and Europe.",
+           ["what is the ryder cup?", "what's the ryder cup?"])
+    simple("The Kentucky Derby is a horse racing event.",
+           ["what sport is the kentucky derby?", "what is the kentucky derby?"])
+    simple("The Indianapolis 500 is a motor racing event.",
+           ["what sport is the indy 500?", "what is the indianapolis 500?", "what is the indy 500?"])
+    simple("Formula One is a motor racing competition.",
+           ["what sport is formula one?", "what is formula one?", "what is f1?"])
+    simple("The US Open is one of the four tennis Grand Slams.",
+           ["what is the us open?", "what sport is the us open?"])
+    # --- more sports ---
+    simple("Badminton is played with a racket and a shuttlecock.",
+           ["what is badminton played with?", "what equipment is used in badminton?"])
+    simple("Table tennis is played on a table with small paddles and a light ball.",
+           ["what is table tennis?", "how is table tennis played?", "what is ping pong?"])
+    simple("Boxing matches are divided into rounds.",
+           ["how is a boxing match divided?", "what are boxing matches divided into?"])
+    simple("The four main swimming strokes are freestyle, backstroke, breaststroke, and butterfly.",
+           ["what are the swimming strokes?", "name the swimming strokes", "what are the four swimming strokes?"])
+    simple("A sprint in athletics is a short, fast running race.",
+           ["what is a sprint?", "what does sprint mean in athletics?"])
+    # --- a few stable athlete records ---
+    simple("Michael Phelps has won the most Olympic gold medals.",
+           ["who has won the most olympic gold medals?", "who has the most olympic golds?",
+            "who won the most olympic gold medals?"])
+    simple("Usain Bolt holds the world record for the one hundred meter sprint.",
+           ["who holds the 100 meter world record?", "who is the fastest man in the world?",
+            "who holds the 100m record?"])
 
 
 def main():

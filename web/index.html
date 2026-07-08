@@ -34,6 +34,14 @@
         background: var(--panel-2); border: 1px solid var(--border); padding: 4px 10px; border-radius: 999px;
       }
       .badge b { color: var(--accent); font-weight: 600; }
+      .loadbar {
+        height: 4px; background: var(--panel-2); border-radius: 999px;
+        overflow: hidden; margin: 4px 0 16px;
+      }
+      .loadbar-fill {
+        height: 100%; width: 0%; background: var(--accent);
+        border-radius: 999px; transition: width 0.15s ease;
+      }
       .note {
         display: flex; gap: 10px; align-items: flex-start;
         background: rgba(124, 156, 255, 0.08); border: 1px solid rgba(124, 156, 255, 0.35);
@@ -88,6 +96,8 @@
       </header>
 
       <div class="badges" id="badges"><span class="badge">loading model…</span></div>
+
+      <div class="loadbar" id="loadbar"><div class="loadbar-fill" id="loadbar-fill"></div></div>
 
       <div class="note">
         <span>⚠️</span>
