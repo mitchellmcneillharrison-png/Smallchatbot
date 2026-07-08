@@ -1,179 +1,382 @@
 """
-Generate the chatbot's training data: a set of (question, answer) pairs written
-to data/chat.jsonl.
+Generate the chatbot's training data: a large, heavily-paraphrased set of
+(question, answer) pairs written to data/chat.jsonl.
 
-This is the bot's entire "knowledge". Because it's a tiny from-scratch model, it
-can only learn to answer things that appear here (and close rewordings) -- there
-is no pretraining and no outside knowledge. So we deliberately cover a small,
-self-contained world:
+The whole point of this file is **paraphrase robustness**. A tiny from-scratch
+model has no outside knowledge, so it can only answer what it is trained on --
+but we want it to answer the same question no matter how it's worded ("who was
+the first president of the USA" == "who was the 1st president of the United
+States"). The way to teach that is to show it many wordings of every fact.
 
-  * arithmetic (addition / subtraction / multiplication over small numbers),
-    with several phrasings, so questions like "what is 1 plus 1?" work;
-  * greetings and small talk;
-  * questions about the bot itself (honest about its limits);
-  * a hand-written set of general-knowledge facts, each asked several ways to
-    encourage the model to generalize across phrasings.
+So instead of writing questions by hand, we describe each fact with a *slot
+template* plus lists of interchangeable phrasings:
 
-Edit or extend the FACTS list to teach the bot new things, then re-run:
+    lead-ins:   who was / who is / name / tell me / do you know ...
+    ordinals:   first / 1st,   second / 2nd ...
+    countries:  the usa / the united states / the us / america ...
+
+and the generator expands the combinations (capped per fact) into many
+paraphrases that all map to the same answer. Extend the knowledge base below and
+re-run:
+
     python build_chat_data.py
     python train_chat.py
 """
 
+import itertools
 import json
 import os
+import random
+import re
 
-NUM_RANGE = range(0, 11)  # operands 0..10 for arithmetic
+RNG = random.Random(1234)  # deterministic dataset
+
+# ----------------------------------------------------------------------------
+# Reusable slot vocabularies (the axes of paraphrase variation)
+# ----------------------------------------------------------------------------
+WHO = ["who was", "who is", "who's", "name", "tell me", "do you know", "can you tell me", "i want to know"]
+WHAT = ["what is", "what's", "tell me", "do you know", "can you tell me", "what's the"]
+WHICH = ["what is", "which is", "what's", "tell me", "name", "do you know"]
+HOWMANY = ["how many", "tell me how many", "do you know how many"]
+Q = ["?", "?", "?", ""]  # mostly with a question mark
+
+ORDINALS = {
+    1: ["first", "1st"], 2: ["second", "2nd"], 3: ["third", "3rd"], 4: ["fourth", "4th"],
+    5: ["fifth", "5th"], 6: ["sixth", "6th"], 7: ["seventh", "7th"], 8: ["eighth", "8th"],
+    16: ["sixteenth", "16th"], 32: ["thirty second", "32nd"], 35: ["thirty fifth", "35th"],
+}
+
+CAP_PER_FACT = 14  # max paraphrases generated per fact
+
+pairs = []  # accumulates (question, answer)
 
 
-def arithmetic_pairs():
-    pairs = []
-    for a in NUM_RANGE:
-        for b in NUM_RANGE:
-            # addition
+def _clean(q):
+    q = re.sub(r"\s+", " ", q).strip()
+    q = q.replace(" ?", "?")
+    return q
+
+
+def fact(answer, template, slots, cap=CAP_PER_FACT):
+    """Expand a slot template into up to `cap` paraphrased questions, each mapped
+    to the same answer."""
+    keys = list(slots.keys())
+    all_combos = list(itertools.product(*[slots[k] for k in keys]))
+    RNG.shuffle(all_combos)
+    seen = set()
+    n = 0
+    for combo in all_combos:
+        q = template
+        for k, v in zip(keys, combo):
+            q = q.replace("{" + k + "}", v)
+        q = _clean(q)
+        if q and q not in seen:
+            seen.add(q)
+            pairs.append((q, answer))
+            n += 1
+        if n >= cap:
+            break
+
+
+def simple(answer, questions):
+    """Attach a fixed answer to an explicit list of question phrasings."""
+    for q in questions:
+        pairs.append((_clean(q), answer))
+
+
+# ----------------------------------------------------------------------------
+# Arithmetic (expanded range + several phrasings)
+# ----------------------------------------------------------------------------
+def arithmetic():
+    # Addition / subtraction over 0..20; multiplication over 0..12 (times tables)
+    # -- large products are genuinely hard for a model this small to memorize.
+    ADD_SUB = range(0, 21)
+    MUL = range(0, 13)
+    for a in ADD_SUB:
+        for b in ADD_SUB:
             s = a + b
             ans = f"{a} plus {b} equals {s}."
-            for q in (
-                f"what is {a} plus {b}?",
-                f"what is {a} + {b}?",
-                f"what's {a} plus {b}?",
-                f"{a} plus {b}",
-                f"add {a} and {b}",
-                f"calculate {a} + {b}",
-            ):
-                pairs.append((q, ans))
-
-            # subtraction (keep results non-negative)
+            simple(ans, [f"what is {a} plus {b}?", f"what is {a} + {b}?",
+                         f"what's {a} plus {b}?", f"{a} plus {b}", f"add {a} and {b}",
+                         f"calculate {a} + {b}"])
             if a >= b:
                 d = a - b
                 ans = f"{a} minus {b} equals {d}."
-                for q in (
-                    f"what is {a} minus {b}?",
-                    f"what is {a} - {b}?",
-                    f"{a} minus {b}",
-                    f"subtract {b} from {a}",
-                ):
-                    pairs.append((q, ans))
-
-            # multiplication
+                simple(ans, [f"what is {a} minus {b}?", f"what is {a} - {b}?",
+                             f"{a} minus {b}", f"subtract {b} from {a}"])
+    for a in MUL:
+        for b in MUL:
             p = a * b
             ans = f"{a} times {b} equals {p}."
-            for q in (
-                f"what is {a} times {b}?",
-                f"what is {a} * {b}?",
-                f"{a} times {b}",
-                f"multiply {a} and {b}",
-            ):
-                pairs.append((q, ans))
-    return pairs
+            simple(ans, [f"what is {a} times {b}?", f"what is {a} * {b}?",
+                         f"{a} times {b}", f"multiply {a} and {b}", f"{a} x {b}"])
 
 
-# Greetings and small talk. Each entry is (list-of-question-phrasings, answer).
-SMALL_TALK = [
-    (["hello", "hi", "hey", "hi there", "hello there"], "Hello! Ask me a question."),
-    (["good morning", "good afternoon", "good evening"], "Hello! How can I help?"),
-    (["how are you", "how are you doing", "how's it going"],
-     "I'm just a tiny program, but I'm running fine. What would you like to ask?"),
-    (["thanks", "thank you", "thanks a lot"], "You're welcome!"),
-    (["bye", "goodbye", "see you", "see you later"], "Goodbye!"),
-    (["ok", "okay", "cool", "nice"], "Glad that helped. Ask me something else!"),
+# ----------------------------------------------------------------------------
+# Countries: capital, currency, language, continent
+# ----------------------------------------------------------------------------
+# name -> (capital, currency, language, continent, [name synonyms])
+COUNTRIES = {
+    "france": ("Paris", "the euro", "French", "Europe", ["france"]),
+    "japan": ("Tokyo", "the yen", "Japanese", "Asia", ["japan"]),
+    "italy": ("Rome", "the euro", "Italian", "Europe", ["italy"]),
+    "spain": ("Madrid", "the euro", "Spanish", "Europe", ["spain"]),
+    "germany": ("Berlin", "the euro", "German", "Europe", ["germany"]),
+    "united kingdom": ("London", "the pound", "English", "Europe",
+                        ["the united kingdom", "the uk", "britain", "great britain", "england"]),
+    "russia": ("Moscow", "the ruble", "Russian", "Europe", ["russia"]),
+    "china": ("Beijing", "the yuan", "Chinese", "Asia", ["china"]),
+    "canada": ("Ottawa", "the canadian dollar", "English", "North America", ["canada"]),
+    "egypt": ("Cairo", "the egyptian pound", "Arabic", "Africa", ["egypt"]),
+    "brazil": ("Brasilia", "the real", "Portuguese", "South America", ["brazil"]),
+    "india": ("New Delhi", "the rupee", "Hindi", "Asia", ["india"]),
+    "australia": ("Canberra", "the australian dollar", "English", "Australia", ["australia"]),
+    "mexico": ("Mexico City", "the peso", "Spanish", "North America", ["mexico"]),
+    "greece": ("Athens", "the euro", "Greek", "Europe", ["greece"]),
+    "portugal": ("Lisbon", "the euro", "Portuguese", "Europe", ["portugal"]),
+    "netherlands": ("Amsterdam", "the euro", "Dutch", "Europe", ["the netherlands", "holland"]),
+    "sweden": ("Stockholm", "the krona", "Swedish", "Europe", ["sweden"]),
+    "norway": ("Oslo", "the krone", "Norwegian", "Europe", ["norway"]),
+    "ireland": ("Dublin", "the euro", "English", "Europe", ["ireland"]),
+    "united states": ("Washington D.C.", "the dollar", "English", "North America",
+                      ["the united states", "the usa", "the us", "america", "the united states of america"]),
+    "argentina": ("Buenos Aires", "the peso", "Spanish", "South America", ["argentina"]),
+    "turkey": ("Ankara", "the lira", "Turkish", "Asia", ["turkey"]),
+    "poland": ("Warsaw", "the zloty", "Polish", "Europe", ["poland"]),
+    "austria": ("Vienna", "the euro", "German", "Europe", ["austria"]),
+    "switzerland": ("Bern", "the swiss franc", "German", "Europe", ["switzerland"]),
+    "belgium": ("Brussels", "the euro", "Dutch", "Europe", ["belgium"]),
+    "denmark": ("Copenhagen", "the krone", "Danish", "Europe", ["denmark"]),
+    "finland": ("Helsinki", "the euro", "Finnish", "Europe", ["finland"]),
+    "thailand": ("Bangkok", "the baht", "Thai", "Asia", ["thailand"]),
+    "vietnam": ("Hanoi", "the dong", "Vietnamese", "Asia", ["vietnam"]),
+    "south korea": ("Seoul", "the won", "Korean", "Asia", ["south korea"]),
+    "saudi arabia": ("Riyadh", "the riyal", "Arabic", "Asia", ["saudi arabia"]),
+    "kenya": ("Nairobi", "the shilling", "Swahili", "Africa", ["kenya"]),
+    "nigeria": ("Abuja", "the naira", "English", "Africa", ["nigeria"]),
+    "south africa": ("Pretoria", "the rand", "English", "Africa", ["south africa"]),
+    "morocco": ("Rabat", "the dirham", "Arabic", "Africa", ["morocco"]),
+    "peru": ("Lima", "the sol", "Spanish", "South America", ["peru"]),
+    "chile": ("Santiago", "the peso", "Spanish", "South America", ["chile"]),
+    "new zealand": ("Wellington", "the new zealand dollar", "English", "Oceania", ["new zealand"]),
+}
+
+
+def countries():
+    for name, (cap, cur, lang, cont, syns) in COUNTRIES.items():
+        disp = name.title()
+        fact(f"The capital of {disp} is {cap}.",
+             "{lead} the capital of {c}{q}", {"lead": WHAT, "c": syns, "q": Q})
+        simple(f"The capital of {disp} is {cap}.", [f"capital of {s}" for s in syns])
+        fact(f"The currency of {disp} is {cur}.",
+             "{lead} the currency of {c}{q}", {"lead": WHAT, "c": syns, "q": Q})
+        fact(f"The main language spoken in {disp} is {lang}.",
+             "{lead} language {do} they speak in {c}{q}",
+             {"lead": ["what", "which", "what kind of"], "do": ["do", "do"], "c": syns, "q": Q})
+        fact(f"The main language spoken in {disp} is {lang}.",
+             "{lead} the language of {c}{q}", {"lead": WHAT, "c": syns, "q": Q})
+        fact(f"{disp} is in {cont}.",
+             "{lead} continent is {c} {inn}{q}",
+             {"lead": WHICH, "c": syns, "inn": ["in", "on", "located in"], "q": Q})
+
+
+# ----------------------------------------------------------------------------
+# Ordinal facts (presidents, planets) -- the paraphrase axis the user asked for
+# ----------------------------------------------------------------------------
+PRESIDENTS = {
+    1: "George Washington", 2: "John Adams", 3: "Thomas Jefferson",
+    4: "James Madison", 16: "Abraham Lincoln", 32: "Franklin Roosevelt",
+    35: "John F. Kennedy",
+}
+USA = ["the usa", "the united states", "the us", "america", "the united states of america"]
+
+
+def presidents():
+    for n, who in PRESIDENTS.items():
+        fact(f"The {ORDINALS[n][0]} president of the United States was {who}.",
+             "{lead} the {ord} president of {c}{q}",
+             {"lead": WHO, "ord": ORDINALS[n], "c": USA, "q": Q})
+
+
+PLANETS = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
+
+
+def planets():
+    for i, planet in enumerate(PLANETS, start=1):
+        fact(f"The {ORDINALS[i][0]} planet from the sun is {planet}.",
+             "{lead} the {ord} planet from the sun{q}",
+             {"lead": WHICH, "ord": ORDINALS[i], "q": Q})
+
+
+# ----------------------------------------------------------------------------
+# Chemical elements (name <-> symbol, atomic number) for the first 20
+# ----------------------------------------------------------------------------
+ELEMENTS = [
+    ("hydrogen", "H", 1), ("helium", "He", 2), ("lithium", "Li", 3), ("beryllium", "Be", 4),
+    ("boron", "B", 5), ("carbon", "C", 6), ("nitrogen", "N", 7), ("oxygen", "O", 8),
+    ("fluorine", "F", 9), ("neon", "Ne", 10), ("sodium", "Na", 11), ("magnesium", "Mg", 12),
+    ("aluminium", "Al", 13), ("silicon", "Si", 14), ("phosphorus", "P", 15), ("sulfur", "S", 16),
+    ("chlorine", "Cl", 17), ("argon", "Ar", 18), ("potassium", "K", 19), ("calcium", "Ca", 20),
 ]
 
-# Questions about the bot itself -- kept honest about what it is.
-META = [
-    (["what is your name", "what's your name", "who are you", "what are you"],
-     "I am a tiny GPT language model, built from scratch in PyTorch."),
-    (["who made you", "who created you", "who built you"],
-     "I was built from scratch as an educational project."),
-    (["how do you work", "how were you trained", "how do you generate text"],
-     "I predict one word at a time using a small transformer neural network."),
-    (["are you chatgpt", "are you gpt", "are you a real ai", "are you smart"],
-     "No. I am a very small model trained on a tiny dataset, so I only know a few things."),
-    (["what can you do", "what do you know", "help", "what can i ask"],
-     "I can do simple arithmetic and answer a small set of general knowledge questions."),
-    (["how many parameters do you have", "how big are you"],
-     "I am tiny, with only about a million parameters."),
-]
 
-# General-knowledge facts. (list-of-question-phrasings, answer).
-FACTS = [
-    (["what is the capital of france", "capital of france"], "The capital of France is Paris."),
-    (["what is the capital of japan", "capital of japan"], "The capital of Japan is Tokyo."),
-    (["what is the capital of italy", "capital of italy"], "The capital of Italy is Rome."),
-    (["what is the capital of spain", "capital of spain"], "The capital of Spain is Madrid."),
-    (["what is the capital of germany", "capital of germany"], "The capital of Germany is Berlin."),
-    (["what is the capital of england", "capital of england"], "The capital of England is London."),
-    (["what is the capital of russia", "capital of russia"], "The capital of Russia is Moscow."),
-    (["what is the capital of china", "capital of china"], "The capital of China is Beijing."),
-    (["what is the capital of canada", "capital of canada"], "The capital of Canada is Ottawa."),
-    (["what is the capital of egypt", "capital of egypt"], "The capital of Egypt is Cairo."),
-    (["what color is the sky", "what colour is the sky"], "The sky is blue."),
-    (["what color is grass", "what colour is grass"], "Grass is green."),
-    (["what color is the sun"], "The sun is yellow."),
-    (["what color is snow"], "Snow is white."),
-    (["how many days are in a week", "days in a week"], "There are seven days in a week."),
-    (["how many months are in a year", "months in a year"], "There are twelve months in a year."),
-    (["how many days are in a year", "days in a year"], "There are three hundred and sixty five days in a year."),
-    (["how many hours are in a day", "hours in a day"], "There are twenty four hours in a day."),
-    (["how many minutes are in an hour", "minutes in an hour"], "There are sixty minutes in an hour."),
-    (["how many seconds are in a minute", "seconds in a minute"], "There are sixty seconds in a minute."),
-    (["how many planets are in the solar system", "how many planets are there"],
-     "There are eight planets in the solar system."),
-    (["what is the largest planet", "biggest planet"], "The largest planet is Jupiter."),
-    (["what is the closest planet to the sun"], "The closest planet to the sun is Mercury."),
-    (["what is the largest ocean", "biggest ocean"], "The largest ocean is the Pacific Ocean."),
-    (["what is the tallest mountain", "highest mountain"], "The tallest mountain is Mount Everest."),
-    (["what is the longest river", "longest river in the world"], "The longest river is the Nile."),
-    (["what is water made of", "what is water"], "Water is made of hydrogen and oxygen."),
-    (["what is the chemical symbol for water"], "The chemical symbol for water is H2O."),
-    (["what gas do plants produce", "what do plants produce"], "Plants produce oxygen."),
-    (["what do bees make", "what do bees produce"], "Bees make honey."),
-    (["what is the fastest land animal"], "The fastest land animal is the cheetah."),
-    (["what is the largest animal", "biggest animal"], "The largest animal is the blue whale."),
-    (["how many legs does a spider have", "spider legs"], "A spider has eight legs."),
-    (["how many legs does an insect have"], "An insect has six legs."),
-    (["what is the freezing point of water"], "Water freezes at zero degrees celsius."),
-    (["what is the boiling point of water"], "Water boils at one hundred degrees celsius."),
-    (["how many continents are there", "number of continents"], "There are seven continents."),
-    (["what is the opposite of hot"], "The opposite of hot is cold."),
-    (["what is the opposite of up"], "The opposite of up is down."),
-    (["what is the opposite of big"], "The opposite of big is small."),
-    (["what is the opposite of fast"], "The opposite of fast is slow."),
-    (["what is the first day of the week"], "The first day of the week is Sunday."),
-    (["what shape has three sides", "shape with three sides"], "A triangle has three sides."),
-    (["what shape has four sides", "shape with four sides"], "A square has four sides."),
-    (["what language is spoken in france"], "The language spoken in France is French."),
-    (["what language is spoken in japan"], "The language spoken in Japan is Japanese."),
-    (["what is the currency of the united states", "currency of the usa"],
-     "The currency of the United States is the dollar."),
-    (["what is the speed of light"], "The speed of light is about three hundred thousand kilometers per second."),
-    (["who wrote romeo and juliet"], "Romeo and Juliet was written by William Shakespeare."),
-    (["what is the smallest prime number"], "The smallest prime number is two."),
-]
+def elements():
+    for name, sym, num in ELEMENTS:
+        fact(f"The chemical symbol for {name} is {sym}.",
+             "{lead} the chemical symbol for {n}{q}",
+             {"lead": WHAT, "n": [name], "q": Q})
+        fact(f"The chemical symbol for {name} is {sym}.",
+             "{lead} {n}'s symbol{q}", {"lead": WHAT, "n": [name], "q": Q})
 
 
-def expand(groups):
-    pairs = []
-    for questions, answer in groups:
-        for q in questions:
-            pairs.append((q, answer))
-    return pairs
+# ----------------------------------------------------------------------------
+# General knowledge, science, geography, etc. (explicit paraphrase lists)
+# ----------------------------------------------------------------------------
+def general():
+    simple("The sky is blue.", ["what color is the sky?", "what colour is the sky?",
+                                 "what color is the sky", "tell me the color of the sky"])
+    simple("Grass is green.", ["what color is grass?", "what colour is grass?", "what color is grass"])
+    simple("The sun is yellow.", ["what color is the sun?", "what color is the sun"])
+    simple("Snow is white.", ["what color is snow?", "what color is snow"])
+    simple("There are seven days in a week.",
+           ["how many days are in a week?", "how many days in a week", "days in a week",
+            "how many days does a week have?"])
+    simple("There are twelve months in a year.",
+           ["how many months are in a year?", "months in a year", "how many months in a year"])
+    simple("There are three hundred and sixty five days in a year.",
+           ["how many days are in a year?", "days in a year", "how many days in a year"])
+    simple("There are twenty four hours in a day.",
+           ["how many hours are in a day?", "hours in a day", "how many hours in a day"])
+    simple("There are sixty minutes in an hour.",
+           ["how many minutes are in an hour?", "minutes in an hour"])
+    simple("There are sixty seconds in a minute.",
+           ["how many seconds are in a minute?", "seconds in a minute"])
+    simple("There are eight planets in the solar system.",
+           ["how many planets are there?", "how many planets are in the solar system?",
+            "number of planets", "how many planets are in our solar system"])
+    simple("The largest planet is Jupiter.",
+           ["what is the largest planet?", "what is the biggest planet?", "biggest planet"])
+    simple("The smallest planet is Mercury.",
+           ["what is the smallest planet?", "smallest planet"])
+    simple("The closest planet to the sun is Mercury.",
+           ["what is the closest planet to the sun?", "closest planet to the sun"])
+    simple("The largest ocean is the Pacific Ocean.",
+           ["what is the largest ocean?", "biggest ocean", "what is the biggest ocean?"])
+    simple("The tallest mountain is Mount Everest.",
+           ["what is the tallest mountain?", "highest mountain", "what is the highest mountain?",
+            "what is the tallest mountain in the world?", "what's the tallest mountain"])
+    simple("The longest river is the Nile.",
+           ["what is the longest river?", "longest river in the world", "what is the longest river in the world?"])
+    simple("The largest desert is the Sahara.",
+           ["what is the largest desert?", "biggest desert"])
+    simple("The largest country by area is Russia.",
+           ["what is the largest country?", "biggest country", "what is the biggest country in the world?"])
+    simple("Water is made of hydrogen and oxygen.",
+           ["what is water made of?", "what is water made from?", "what are the elements in water?"])
+    simple("The chemical symbol for water is H2O.",
+           ["what is the chemical symbol for water?", "chemical formula for water"])
+    simple("Plants produce oxygen.",
+           ["what gas do plants produce?", "what do plants produce?", "what do plants give off?"])
+    simple("Plants make food through photosynthesis.",
+           ["how do plants make food?", "what is the process plants use to make food?"])
+    simple("Bees make honey.", ["what do bees make?", "what do bees produce?"])
+    simple("The fastest land animal is the cheetah.",
+           ["what is the fastest land animal?", "fastest animal on land", "what is the fastest animal?"])
+    simple("The largest animal is the blue whale.",
+           ["what is the largest animal?", "biggest animal", "what is the biggest animal in the world?"])
+    simple("A spider has eight legs.", ["how many legs does a spider have?", "spider legs"])
+    simple("An insect has six legs.", ["how many legs does an insect have?", "insect legs"])
+    simple("Water freezes at zero degrees celsius.",
+           ["what is the freezing point of water?", "at what temperature does water freeze?"])
+    simple("Water boils at one hundred degrees celsius.",
+           ["what is the boiling point of water?", "at what temperature does water boil?"])
+    simple("There are seven continents.",
+           ["how many continents are there?", "number of continents", "how many continents are there in the world?"])
+    simple("The speed of light is about three hundred thousand kilometers per second.",
+           ["what is the speed of light?", "how fast is light?"])
+    simple("Sound travels slower than light.", ["what travels faster, sound or light?"])
+    simple("The human body has two hundred and six bones.",
+           ["how many bones are in the human body?", "how many bones does a human have?", "number of bones in the body"])
+    simple("The human heart has four chambers.",
+           ["how many chambers does the heart have?", "how many chambers are in the human heart?"])
+    simple("The largest organ in the human body is the skin.",
+           ["what is the largest organ?", "what is the biggest organ in the body?"])
+    simple("Humans breathe in oxygen and breathe out carbon dioxide.",
+           ["what do humans breathe?", "what gas do humans breathe out?"])
+    simple("The powerhouse of the cell is the mitochondria.",
+           ["what is the powerhouse of the cell?", "what part of the cell makes energy?"])
+    simple("DNA carries genetic information.", ["what does dna do?", "what is dna for?"])
+    simple("World War Two ended in 1945.",
+           ["when did world war two end?", "when did ww2 end?", "what year did world war 2 end?"])
+    simple("The first man landed on the moon in 1969.",
+           ["when did humans land on the moon?", "what year did we land on the moon?",
+            "when was the moon landing?"])
+    simple("Romeo and Juliet was written by William Shakespeare.",
+           ["who wrote romeo and juliet?", "who is the author of romeo and juliet?"])
+    simple("Hamlet was written by William Shakespeare.",
+           ["who wrote hamlet?", "who is the author of hamlet?"])
+    simple("The theory of relativity was developed by Albert Einstein.",
+           ["who developed the theory of relativity?", "who came up with relativity?"])
+    simple("The telephone was invented by Alexander Graham Bell.",
+           ["who invented the telephone?", "who is the inventor of the telephone?"])
+    simple("The light bulb was invented by Thomas Edison.",
+           ["who invented the light bulb?", "who made the light bulb?"])
+    simple("A triangle has three sides.", ["how many sides does a triangle have?", "what shape has three sides?"])
+    simple("A square has four sides.", ["how many sides does a square have?", "what shape has four sides?"])
+    simple("A pentagon has five sides.", ["how many sides does a pentagon have?", "what shape has five sides?"])
+    simple("A hexagon has six sides.", ["how many sides does a hexagon have?", "what shape has six sides?"])
+    simple("The first day of the week is Sunday.", ["what is the first day of the week?"])
+    simple("The smallest prime number is two.", ["what is the smallest prime number?"])
+    simple("The value of pi is about 3.14.", ["what is pi?", "what is the value of pi?"])
+    # opposites
+    for a, b in [("hot", "cold"), ("up", "down"), ("big", "small"), ("fast", "slow"),
+                 ("day", "night"), ("left", "right"), ("happy", "sad"), ("open", "closed"),
+                 ("black", "white"), ("wet", "dry")]:
+        simple(f"The opposite of {a} is {b}.",
+               [f"what is the opposite of {a}?", f"opposite of {a}", f"what's the opposite of {a}?"])
+
+
+def small_talk_and_meta():
+    simple("Hello! Ask me a question.",
+           ["hello", "hi", "hey", "hi there", "hello there", "hey there", "yo", "greetings"])
+    simple("Hello! How can I help?", ["good morning", "good afternoon", "good evening"])
+    simple("I'm just a small program, but I'm running fine. What would you like to ask?",
+           ["how are you", "how are you doing", "how's it going", "how do you feel"])
+    simple("You're welcome!", ["thanks", "thank you", "thanks a lot", "thank you so much", "cheers"])
+    simple("Goodbye!", ["bye", "goodbye", "see you", "see you later", "farewell"])
+    simple("Glad that helped. Ask me something else!", ["ok", "okay", "cool", "nice", "great"])
+    simple("I am a tiny GPT language model, built from scratch in PyTorch.",
+           ["what is your name?", "what's your name?", "who are you?", "what are you?",
+            "what are you exactly?", "tell me about yourself"])
+    simple("I was built from scratch as an educational project.",
+           ["who made you?", "who created you?", "who built you?", "who is your creator?"])
+    simple("I predict one word at a time using a small transformer neural network.",
+           ["how do you work?", "how were you trained?", "how do you generate text?"])
+    simple("No. I am a very small model trained on a small dataset, so I only know a few things.",
+           ["are you chatgpt?", "are you gpt?", "are you a real ai?", "are you smart?", "are you human?"])
+    simple("I can do arithmetic and answer general knowledge questions about geography, science, and history.",
+           ["what can you do?", "what do you know?", "help", "what can i ask?", "what can i ask you?"])
+    simple("I am tiny, with only a few million parameters.",
+           ["how many parameters do you have?", "how big are you?"])
 
 
 def main():
-    pairs = []
-    pairs += arithmetic_pairs()
-    pairs += expand(SMALL_TALK)
-    pairs += expand(META)
-    pairs += expand(FACTS)
+    arithmetic()
+    countries()
+    presidents()
+    planets()
+    elements()
+    general()
+    small_talk_and_meta()
 
-    # Deduplicate while preserving order.
-    seen = set()
+    # Deduplicate, keeping the first answer seen for a given question.
+    seen_q = {}
     unique = []
     for q, a in pairs:
-        key = (q, a)
-        if key not in seen:
-            seen.add(key)
-            unique.append((q, a))
+        if q in seen_q:
+            continue
+        seen_q[q] = a
+        unique.append((q, a))
 
     os.makedirs("data", exist_ok=True)
     out_path = "data/chat.jsonl"
@@ -181,9 +384,10 @@ def main():
         for q, a in unique:
             f.write(json.dumps({"q": q, "a": a}, ensure_ascii=False) + "\n")
 
+    n_arith = sum(1 for _, a in unique if "equals" in a)
     print(f"Wrote {len(unique)} unique (question, answer) pairs to {out_path}")
-    n_arith = len(arithmetic_pairs())
-    print(f"  arithmetic: {n_arith} | small talk + meta + facts: {len(unique) - n_arith}")
+    print(f"  arithmetic: {n_arith} | knowledge + small talk: {len(unique) - n_arith}")
+    print(f"  distinct answers: {len(set(a for _, a in unique))}")
 
 
 if __name__ == "__main__":

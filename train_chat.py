@@ -40,21 +40,21 @@ def parse_args():
 
     # architecture
     p.add_argument("--block_size", type=int, default=48)
-    p.add_argument("--n_layer", type=int, default=4)
-    p.add_argument("--n_head", type=int, default=4)
-    p.add_argument("--n_embd", type=int, default=192)
+    p.add_argument("--n_layer", type=int, default=6)
+    p.add_argument("--n_head", type=int, default=8)
+    p.add_argument("--n_embd", type=int, default=256)
     p.add_argument("--dropout", type=float, default=0.1)
 
     # optimization
     p.add_argument("--batch_size", type=int, default=64)
-    p.add_argument("--max_steps", type=int, default=5000)
-    p.add_argument("--warmup_steps", type=int, default=100)
+    p.add_argument("--max_steps", type=int, default=12000)
+    p.add_argument("--warmup_steps", type=int, default=200)
     p.add_argument("--lr", type=float, default=5e-4)
     p.add_argument("--min_lr", type=float, default=1e-5)
     p.add_argument("--weight_decay", type=float, default=0.1)
     p.add_argument("--grad_clip", type=float, default=1.0)
 
-    p.add_argument("--oversample_facts", type=int, default=8,
+    p.add_argument("--oversample_facts", type=int, default=2,
                    help="repeat non-arithmetic examples this many times to balance the data")
     p.add_argument("--eval_interval", type=int, default=500)
     p.add_argument("--seed", type=int, default=1337)
