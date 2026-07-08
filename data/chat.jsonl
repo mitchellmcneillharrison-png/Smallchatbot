@@ -11780,6 +11780,33 @@
 {"q": "how many bowling pins are there?", "a": "Bowling has ten pins."}
 {"q": "what is a perfect score in bowling?", "a": "A perfect game in bowling is a score of three hundred."}
 {"q": "what is a perfect game in bowling?", "a": "A perfect game in bowling is a score of three hundred."}
+{"q": "what is the super bowl?", "a": "The Super Bowl is the championship game of American football's NFL."}
+{"q": "what's the super bowl?", "a": "The Super Bowl is the championship game of American football's NFL."}
+{"q": "tell me about the super bowl", "a": "The Super Bowl is the championship game of American football's NFL."}
+{"q": "what is the superbowl?", "a": "The Super Bowl is the championship game of American football's NFL."}
+{"q": "what is the world series?", "a": "The World Series is the championship of Major League Baseball."}
+{"q": "what's the world series?", "a": "The World Series is the championship of Major League Baseball."}
+{"q": "tell me about the world series", "a": "The World Series is the championship of Major League Baseball."}
+{"q": "what is the stanley cup?", "a": "The Stanley Cup is the championship trophy of the NHL in ice hockey."}
+{"q": "what's the stanley cup?", "a": "The Stanley Cup is the championship trophy of the NHL in ice hockey."}
+{"q": "what is the nba finals?", "a": "The NBA Finals is the championship series of basketball's NBA."}
+{"q": "what are the nba finals?", "a": "The NBA Finals is the championship series of basketball's NBA."}
+{"q": "what is the world cup?", "a": "The World Cup is the biggest tournament in soccer, held every four years."}
+{"q": "what's the world cup?", "a": "The World Cup is the biggest tournament in soccer, held every four years."}
+{"q": "tell me about the world cup", "a": "The World Cup is the biggest tournament in soccer, held every four years."}
+{"q": "what is the nba?", "a": "The NBA is the top professional basketball league in North America."}
+{"q": "what's the nba?", "a": "The NBA is the top professional basketball league in North America."}
+{"q": "what is the nfl?", "a": "The NFL is the top professional american football league."}
+{"q": "what's the nfl?", "a": "The NFL is the top professional american football league."}
+{"q": "what is mlb?", "a": "MLB, or Major League Baseball, is the top professional baseball league."}
+{"q": "what is major league baseball?", "a": "MLB, or Major League Baseball, is the top professional baseball league."}
+{"q": "what is the nhl?", "a": "The NHL is the top professional ice hockey league in North America."}
+{"q": "what's the nhl?", "a": "The NHL is the top professional ice hockey league in North America."}
+{"q": "what is the premier league?", "a": "The Premier League is the top soccer league in England."}
+{"q": "what's the premier league?", "a": "The Premier League is the top soccer league in England."}
+{"q": "what are the olympics?", "a": "The Olympics is a global sporting event held every four years."}
+{"q": "what is the olympics?", "a": "The Olympics is a global sporting event held every four years."}
+{"q": "tell me about the olympics", "a": "The Olympics is a global sporting event held every four years."}
 {"q": "hello", "a": "Hello! Ask me a question."}
 {"q": "hi", "a": "Hello! Ask me a question."}
 {"q": "hey", "a": "Hello! Ask me a question."}

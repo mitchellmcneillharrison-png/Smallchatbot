@@ -544,6 +544,30 @@ def sports():
            ["how many pins are in bowling?", "how many bowling pins are there?"])
     simple("A perfect game in bowling is a score of three hundred.",
            ["what is a perfect score in bowling?", "what is a perfect game in bowling?"])
+    # what IS <event/league> -- reverse definitions for natural questions
+    simple("The Super Bowl is the championship game of American football's NFL.",
+           ["what is the super bowl?", "what's the super bowl?", "tell me about the super bowl",
+            "what is the superbowl?"])
+    simple("The World Series is the championship of Major League Baseball.",
+           ["what is the world series?", "what's the world series?", "tell me about the world series"])
+    simple("The Stanley Cup is the championship trophy of the NHL in ice hockey.",
+           ["what is the stanley cup?", "what's the stanley cup?"])
+    simple("The NBA Finals is the championship series of basketball's NBA.",
+           ["what is the nba finals?", "what are the nba finals?"])
+    simple("The World Cup is the biggest tournament in soccer, held every four years.",
+           ["what is the world cup?", "what's the world cup?", "tell me about the world cup"])
+    simple("The NBA is the top professional basketball league in North America.",
+           ["what is the nba?", "what's the nba?"])
+    simple("The NFL is the top professional american football league.",
+           ["what is the nfl?", "what's the nfl?"])
+    simple("MLB, or Major League Baseball, is the top professional baseball league.",
+           ["what is mlb?", "what is major league baseball?"])
+    simple("The NHL is the top professional ice hockey league in North America.",
+           ["what is the nhl?", "what's the nhl?"])
+    simple("The Premier League is the top soccer league in England.",
+           ["what is the premier league?", "what's the premier league?"])
+    simple("The Olympics is a global sporting event held every four years.",
+           ["what are the olympics?", "what is the olympics?", "tell me about the olympics"])
 
 
 def main():
