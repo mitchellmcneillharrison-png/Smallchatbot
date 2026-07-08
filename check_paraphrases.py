@@ -39,6 +39,17 @@ PROBES = [
     (["what currency does france use", "tell me the currency of france"], "euro"),
     (["what language do people speak in brazil", "brazil's language"], "portuguese"),
     (["what is the opposite of hot", "give me the opposite of hot"], "cold"),
+    # sports
+    (["how many players are on a soccer team", "how many players are in soccer",
+      "number of players on a soccer team"], "eleven"),
+    (["what is the soccer championship called", "what do they call the soccer championship",
+      "name the soccer championship"], "world cup"),
+    (["how many points is a touchdown", "how much is a touchdown worth"], "six"),
+    (["how many innings are in baseball", "how many innings in a baseball game"], "nine"),
+    (["what sport is played at wimbledon", "which sport is wimbledon"], "tennis"),
+    (["how many holes are in golf", "how many holes in a round of golf"], "eighteen"),
+    (["what is the basketball championship called", "name the basketball championship"], "nba"),
+    (["how often are the olympics held", "how often do the olympics happen"], "four years"),
 ]
 
 
