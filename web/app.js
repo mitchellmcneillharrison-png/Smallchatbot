@@ -23,7 +23,9 @@ async function loadModel() {
     tok = new WordTokenizer(model.tokenizer);
 
     const c = model.config;
-    const nParams = Object.values(model.weights).reduce((s, t) => s + t.data.length, 0);
+    const nParams = Object.values(model.weights).reduce(
+      (s, t) => s + t.shape.reduce((a, b) => a * b, 1), 0
+    );
     const badges = [
       `<b>${(nParams / 1e6).toFixed(1)}M</b> params`,
       `<b>${c.n_layer}</b> layers`,
