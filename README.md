@@ -28,10 +28,12 @@ The repo has two things you can train with the **same** hand-built model:
 > **Honest expectations for the chatbot:** it is *tiny* and trained *only* on the
 > dataset in `build_chat_data.py` (arithmetic over small numbers; world capitals,
 > currencies and languages; US presidents; planets; chemical elements; science,
-> geography, and history facts). It answers those questions and rewordings of
-> them, but it has no general knowledge or reasoning — ask anything outside its
-> training world and it will confidently make something up. It demonstrates the
-> *architecture and training recipe*, not intelligence.
+> geography, and history facts; and a deep sports layer — soccer, American
+> football, baseball, basketball, hockey, tennis, golf, and more). It answers
+> those questions and rewordings of them, but it has no general knowledge or
+> reasoning — ask anything outside its training world and it will confidently
+> make something up. It demonstrates the *architecture and training recipe*, not
+> intelligence.
 
 ## Architecture
 
