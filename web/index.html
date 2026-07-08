@@ -3,14 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Tiny Chatbot — a GPT built from scratch</title>
+    <title>Tiny Sports Bot — a GPT built from scratch</title>
     <link
       rel="icon"
       href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>"
     />
     <meta
       name="description"
-      content="A tiny question-answering chatbot built from scratch in PyTorch and ported to JavaScript — trained on a small dataset and running entirely in your browser."
+      content="A tiny sports question-answering chatbot built from scratch in PyTorch and ported to JavaScript — athletes, teams, leagues, and rules, running entirely in your browser."
     />
     <style>
       :root {
@@ -87,10 +87,10 @@
   <body>
     <div class="wrap">
       <header>
-        <h1>Tiny Chatbot <span class="dim">— a GPT built from scratch</span></h1>
+        <h1>Tiny Sports Bot <span class="dim">— a GPT built from scratch</span></h1>
         <p>
           A ~5M-parameter decoder-only Transformer, hand-written in PyTorch and re-implemented in
-          plain JavaScript. Trained on thousands of question/answer pairs — and it runs
+          plain JavaScript. Trained on thousands of sports question/answer pairs — and it runs
           <b>entirely in your browser</b>, no server.
         </p>
       </header>
@@ -102,12 +102,11 @@
       <div class="note">
         <span>⚠️</span>
         <span>
-          <b>This bot only knows what it was trained on:</b> arithmetic (small numbers), greetings,
-          facts about itself, a general-knowledge set (world capitals, currencies and languages, US
-          presidents, planets, chemical elements, science, geography, history), and a deep
-          <b>sports</b> layer (soccer, American football, baseball, basketball, hockey, tennis,
-          golf, and more). It's trained on many <i>wordings</i> of each fact, so rephrasings usually
-          work. Ask outside that world and it will confidently make something up. It's a demo of the
+          <b>This is a sports bot.</b> It knows hundreds of <b>athletes</b>, 100+ <b>teams</b>
+          (full NBA & NFL plus MLB, NHL, and major soccer clubs), <b>leagues</b>, championships, and
+          the rules of many sports — plus a little basic knowledge (simple arithmetic, greetings).
+          It's trained on many <i>wordings</i> of each fact, so rephrasings usually work. Ask about
+          non-sports topics and it will confidently make something up. It's a demo of the
           <i>architecture</i>, not a real assistant.
         </span>
       </div>
@@ -117,12 +116,12 @@
       </div>
 
       <div class="suggestions" id="suggestions">
-        <button class="chip" type="button">what is the super bowl?</button>
+        <button class="chip" type="button">who is Cristiano Ronaldo?</button>
+        <button class="chip" type="button">what league do the Lakers play in?</button>
+        <button class="chip" type="button">what sport do the Yankees play?</button>
+        <button class="chip" type="button">what is the Super Bowl?</button>
         <button class="chip" type="button">how many players are on a soccer team?</button>
-        <button class="chip" type="button">what sport is played at wimbledon?</button>
-        <button class="chip" type="button">who was the 1st president of the USA?</button>
-        <button class="chip" type="button">how much is 7 times 8?</button>
-        <button class="chip" type="button">what's the capital of brazil?</button>
+        <button class="chip" type="button">who is Serena Williams?</button>
       </div>
 
       <div class="composer">

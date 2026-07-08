@@ -21,35 +21,30 @@ from src.utils import get_device
 
 # (list of reworded questions, keyword expected in the answer)
 PROBES = [
-    (["who was the first president of the usa",
-      "who was the 1st president of the united states",
-      "name the first president of america",
-      "tell me the 1st president of the united states of america"], "washington"),
-    (["what's the capital city of japan",
-      "tell me japan's capital",
-      "do you know the capital of japan"], "tokyo"),
-    (["how much is 7 plus 8", "add 7 and 8", "what's 7 + 8"], "15"),
-    (["what is 6 times 7", "multiply 6 and 7", "6 x 7"], "42"),
-    (["which planet is closest to the sun", "what is the nearest planet to the sun"], "mercury"),
-    (["what's the tallest mountain on earth", "name the highest mountain"], "everest"),
-    (["what is the chemical symbol for gold? just kidding, for oxygen",
-      "oxygen's symbol", "what is the symbol for oxygen"], "o"),
-    (["how many days does a week have", "number of days in a week"], "seven"),
-    (["who created you", "who is your maker", "who built you"], "scratch"),
-    (["what currency does france use", "tell me the currency of france"], "euro"),
-    (["what language do people speak in brazil", "brazil's language"], "portuguese"),
-    (["what is the opposite of hot", "give me the opposite of hot"], "cold"),
-    # sports
-    (["how many players are on a soccer team", "how many players are in soccer",
-      "number of players on a soccer team"], "eleven"),
-    (["what is the soccer championship called", "what do they call the soccer championship",
-      "name the soccer championship"], "world cup"),
+    # athletes (worded differently than training)
+    (["who is cristiano ronaldo", "who's cristiano ronaldo", "tell me about cristiano ronaldo"], "portuguese"),
+    (["who is lionel messi", "tell me about messi"], "messi"),
+    (["who is lebron james", "who's lebron james"], "basketball"),
+    (["who is serena williams", "tell me about serena williams"], "tennis"),
+    (["who is muhammad ali", "who was muhammad ali"], "boxer"),
+    (["what sport does lewis hamilton play", "what does lewis hamilton play"], "formula one"),
+    (["what sport does tiger woods play", "what does tiger woods play"], "golf"),
+    # teams
+    (["what league do the lakers play in", "which league are the lakers in",
+      "what league do the los angeles lakers play in"], "nba"),
+    (["what sport do the yankees play", "which sport do the new york yankees play"], "baseball"),
+    (["where are manchester united from", "what city are manchester united from",
+      "where do manchester united play"], "manchester"),
+    (["what league do real madrid play in", "which league are real madrid in"], "la liga"),
+    # leagues / rules
+    (["what is the super bowl", "what's the super bowl"], "nfl"),
+    (["what is the premier league", "what's the premier league"], "england"),
+    (["how many players are on a soccer team", "how many players are in soccer"], "eleven"),
     (["how many points is a touchdown", "how much is a touchdown worth"], "six"),
-    (["how many innings are in baseball", "how many innings in a baseball game"], "nine"),
     (["what sport is played at wimbledon", "which sport is wimbledon"], "tennis"),
-    (["how many holes are in golf", "how many holes in a round of golf"], "eighteen"),
-    (["what is the basketball championship called", "name the basketball championship"], "nba"),
-    (["how often are the olympics held", "how often do the olympics happen"], "four years"),
+    # basics retained
+    (["how much is 7 plus 8", "add 7 and 8", "what's 7 + 8"], "15"),
+    (["who created you", "who built you"], "scratch"),
 ]
 
 
