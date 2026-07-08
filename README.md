@@ -181,10 +181,12 @@ The `web/` directory is a zero-dependency static site that runs the **chatbot**
 model **entirely client-side** — no server, no API. `web/gpt.js` is a hand port
 of the PyTorch forward pass (`src/model/gpt.py`) to plain JavaScript over
 `Float32Array`, using an incremental KV cache so generation is fast;
-`web/tokenizer.js` is a matching port of the word-level tokenizer. The trained
-weights and vocabulary ship as `web/model.json`, quantized to float16 and
-base64-encoded to keep the download small (~14 MB for a ~5M-parameter model);
-`web/gpt.js` decodes it on load.
+`web/tokenizer.js` is a matching port of the word-level tokenizer. Weights are
+quantized to float16 and shipped as a raw binary blob (`web/model.bin`, ~10 MB
+for a ~5M-parameter model) addressed by a tiny JSON manifest (`web/model.json`
+with config, vocabulary, and per-tensor offsets). The browser fetches the blob
+as an `ArrayBuffer` with a progress bar and reads each weight as a typed-array
+view — no multi-megabyte `JSON.parse`, so the page becomes interactive quickly.
 
 > **What it is (and isn't):** the deployed demo is a ~5M-parameter chatbot that
 > genuinely answers questions **within its training world** (arithmetic over
@@ -231,8 +233,8 @@ site with no build step. Two ways to deploy:
   `vercel --prod`.
 
 Because everything runs in the browser, the deploy is just static files
-(`index.html`, `app.js`, `gpt.js`, `tokenizer.js`, `model.json`) — it works on
-Vercel's free tier with no environment variables or backend.
+(`index.html`, `app.js`, `gpt.js`, `tokenizer.js`, `model.json`, `model.bin`) —
+it works on Vercel's free tier with no environment variables or backend.
 
 ## Notes on scale
 
