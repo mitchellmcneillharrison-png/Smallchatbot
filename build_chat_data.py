@@ -35,7 +35,7 @@ RNG = random.Random(1234)  # deterministic dataset
 # Reusable slot vocabularies (the axes of paraphrase variation)
 # ----------------------------------------------------------------------------
 WHO = ["who was", "who is", "who's", "name", "tell me", "do you know", "can you tell me", "i want to know"]
-WHAT = ["what is", "what's", "tell me", "do you know", "can you tell me", "what's the"]
+WHAT = ["what is", "what's", "tell me", "do you know", "can you tell me", "name"]
 WHICH = ["what is", "which is", "what's", "tell me", "name", "do you know"]
 HOWMANY = ["how many", "tell me how many", "do you know how many"]
 Q = ["?", "?", "?", ""]  # mostly with a question mark
@@ -373,6 +373,179 @@ def small_talk_and_meta():
            ["how many parameters do you have?", "how big are you?"])
 
 
+# ----------------------------------------------------------------------------
+# Sports -- a deep, paraphrased knowledge base across many sports
+# ----------------------------------------------------------------------------
+# In this bot, "football" means American football (the user's framing); the
+# global game is "soccer". name -> dict of stable, objective facts.
+SPORTS = {
+    "soccer": {
+        "aka": ["soccer", "association football"],
+        "players": "eleven", "champ": "the World Cup", "league": "FIFA",
+        "gov": "FIFA", "score": "a goal", "field": "a pitch",
+        "duration": "ninety minutes", "halves": "two",
+    },
+    "basketball": {
+        "aka": ["basketball"],
+        "players": "five", "champ": "the NBA Finals", "league": "the NBA",
+        "gov": "FIBA", "score": "a basket", "field": "a court",
+        "duration": "forty eight minutes", "quarters": "four",
+    },
+    "american football": {
+        "aka": ["american football", "football"],
+        "players": "eleven", "champ": "the Super Bowl", "league": "the NFL",
+        "gov": "the NFL", "score": "a touchdown", "field": "a field",
+        "duration": "sixty minutes", "quarters": "four",
+    },
+    "baseball": {
+        "aka": ["baseball"],
+        "players": "nine", "champ": "the World Series", "league": "MLB",
+        "gov": "MLB", "score": "a run", "field": "a diamond", "innings": "nine",
+    },
+    "ice hockey": {
+        "aka": ["ice hockey", "hockey"],
+        "players": "six", "champ": "the Stanley Cup", "league": "the NHL",
+        "gov": "the NHL", "score": "a goal", "field": "a rink", "periods": "three",
+    },
+    "tennis": {
+        "aka": ["tennis"],
+        "players": "one", "champ": "a Grand Slam", "gov": "the ITF",
+        "score": "a point", "field": "a court",
+    },
+    "cricket": {
+        "aka": ["cricket"],
+        "players": "eleven", "gov": "the ICC", "score": "a run", "field": "a pitch",
+    },
+    "rugby": {
+        "aka": ["rugby", "rugby union"],
+        "players": "fifteen", "gov": "World Rugby", "score": "a try", "field": "a pitch",
+    },
+    "volleyball": {
+        "aka": ["volleyball"],
+        "players": "six", "gov": "the FIVB", "score": "a point", "field": "a court",
+    },
+    "golf": {
+        "aka": ["golf"],
+        "players": "one", "gov": "the PGA", "field": "a course",
+    },
+}
+
+
+def sports():
+    for name, d in SPORTS.items():
+        disp = name
+        aka = d["aka"]
+        if "players" in d:
+            fact(f"A {disp} team has {d['players']} players.",
+                 "{lead} players are {on} a {s} team{q}",
+                 {"lead": HOWMANY, "on": ["on", "in"], "s": aka, "q": Q})
+            fact(f"A {disp} team has {d['players']} players.",
+                 "{lead} players {play} {s}{q}",
+                 {"lead": HOWMANY, "play": ["play", "are in", "are on a team in"], "s": aka, "q": Q})
+        if "champ" in d:
+            fact(f"The {disp} championship is called {d['champ']}.",
+                 "{lead} the {s} championship called{q}",
+                 {"lead": ["what is", "what's"], "s": aka, "q": Q})
+            fact(f"The {disp} championship is called {d['champ']}.",
+                 "{lead} the {s} championship{q}",
+                 {"lead": ["what do they call", "name"], "s": aka, "q": Q})
+            simple(f"The {disp} championship is called {d['champ']}.",
+                   [f"what is the biggest {a} tournament?" for a in aka])
+        if "gov" in d:
+            fact(f"The governing body of {disp} is {d['gov']}.",
+                 "{lead} the governing body of {s}{q}",
+                 {"lead": ["what is", "what's", "name", "tell me"], "s": aka, "q": Q})
+        if "score" in d:
+            fact(f"In {disp} you score {d['score']}.",
+                 "{lead} do you score in {s}{q}",
+                 {"lead": ["what", "how"], "s": aka, "q": Q})
+        if "field" in d:
+            fact(f"{disp.capitalize()} is played on {d['field']}.",
+                 "{lead} is {s} played on{q}",
+                 {"lead": ["what", "where"], "s": aka, "q": Q})
+
+    # Reverse "which sport ..." questions and other stable facts.
+    simple("A touchdown is worth six points.",
+           ["how many points is a touchdown?", "how much is a touchdown worth?",
+            "what is a touchdown worth?", "points for a touchdown"])
+    simple("A field goal in american football is worth three points.",
+           ["how many points is a field goal?", "what is a field goal worth in football?"])
+    simple("A basket, or field goal, in basketball is worth two points.",
+           ["how many points is a basket?", "how much is a field goal worth in basketball?"])
+    simple("A three pointer in basketball is worth three points.",
+           ["how many points is a three pointer?", "what is a three pointer worth?"])
+    simple("A free throw in basketball is worth one point.",
+           ["how many points is a free throw?", "what is a free throw worth?"])
+    simple("A try in rugby is worth five points.",
+           ["how many points is a try?", "what is a try worth in rugby?"])
+    simple("Baseball has nine innings.",
+           ["how many innings are in baseball?", "how many innings in a baseball game?",
+            "number of innings in baseball"])
+    simple("A baseball batter is out after three strikes.",
+           ["how many strikes before you are out?", "how many strikes is an out?"])
+    simple("A basketball hoop is ten feet high.",
+           ["how high is a basketball hoop?", "how tall is a basketball hoop?"])
+    simple("A game of golf has eighteen holes.",
+           ["how many holes are in golf?", "how many holes in a round of golf?", "holes in golf"])
+    simple("A hole in one is when you sink the ball in a single shot in golf.",
+           ["what is a hole in one?", "what does hole in one mean?"])
+    simple("A hat trick is scoring three goals in one game.",
+           ["what is a hat trick?", "what does a hat trick mean?", "how many goals is a hat trick?"])
+    simple("A marathon is about twenty six miles long.",
+           ["how long is a marathon?", "how many miles is a marathon?", "marathon distance"])
+    simple("The Olympics are held every four years.",
+           ["how often are the olympics held?", "how often are the olympics?", "how often do the olympics happen?"])
+    simple("There are five rings on the Olympic flag.",
+           ["how many rings are on the olympic flag?", "how many olympic rings are there?"])
+    simple("The first modern Olympic Games were held in Athens in 1896.",
+           ["where were the first modern olympics held?", "when were the first modern olympics?"])
+    simple("Wimbledon is a tennis tournament.",
+           ["what sport is played at wimbledon?", "what is wimbledon?", "which sport is wimbledon?"])
+    simple("The Masters is a golf tournament.",
+           ["what sport is the masters?", "what is the masters?"])
+    simple("The Tour de France is a cycling race.",
+           ["what sport is the tour de france?", "what is the tour de france?"])
+    simple("The sport played at Wimbledon on grass courts is tennis.",
+           ["what sport is played on grass at wimbledon?"])
+    simple("Tennis is the sport where a score of zero is called love.",
+           ["in which sport is zero called love?", "what sport uses the term love?",
+            "what does love mean in tennis?"])
+    simple("In tennis, love means a score of zero.",
+           ["what is love in tennis?", "what does love mean in tennis?"])
+    simple("The sport that uses a shuttlecock is badminton.",
+           ["what sport uses a shuttlecock?", "which sport has a shuttlecock?"])
+    simple("The sport played on ice with a puck is ice hockey.",
+           ["what sport uses a puck?", "which sport is played with a puck?"])
+    simple("The sport where you score a home run is baseball.",
+           ["in which sport do you score a home run?", "what sport has a home run?"])
+    simple("The sport where you score a touchdown is american football.",
+           ["in which sport do you score a touchdown?", "what sport has a touchdown?"])
+    simple("The sport where you score a slam dunk is basketball.",
+           ["in which sport is there a slam dunk?", "what sport has a slam dunk?"])
+    simple("Soccer is the most popular sport in the world.",
+           ["what is the most popular sport in the world?", "what is the most popular sport?"])
+    simple("The soccer World Cup is held every four years.",
+           ["how often is the world cup?", "how often is the soccer world cup held?"])
+    simple("Boxing takes place in a ring.",
+           ["where does boxing take place?", "what does boxing happen in?"])
+    simple("A soccer match is ninety minutes long.",
+           ["how long is a soccer game?", "how long is a soccer match?", "how many minutes in soccer?"])
+    simple("A soccer match has two halves.",
+           ["how many halves are in soccer?", "how many halves in a soccer match?"])
+    simple("A basketball game has four quarters.",
+           ["how many quarters are in basketball?", "how many quarters in a basketball game?"])
+    simple("An american football game has four quarters.",
+           ["how many quarters are in american football?", "how many quarters in a football game?"])
+    simple("An ice hockey game has three periods.",
+           ["how many periods are in hockey?", "how many periods in an ice hockey game?"])
+    simple("The four tennis Grand Slams are the Australian Open, the French Open, Wimbledon, and the US Open.",
+           ["what are the tennis grand slams?", "name the four grand slams", "what are the four majors in tennis?"])
+    simple("Bowling has ten pins.",
+           ["how many pins are in bowling?", "how many bowling pins are there?"])
+    simple("A perfect game in bowling is a score of three hundred.",
+           ["what is a perfect score in bowling?", "what is a perfect game in bowling?"])
+
+
 def main():
     arithmetic()
     countries()
@@ -380,6 +553,7 @@ def main():
     planets()
     elements()
     general()
+    sports()
     small_talk_and_meta()
 
     # Deduplicate, keeping the first answer seen for a given question.
