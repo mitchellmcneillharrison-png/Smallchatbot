@@ -646,6 +646,53 @@ def sports():
             "who holds the 100m record?"])
 
 
+# Famous athletes: name -> (nationality, role, sport). Kept to stable, well-known
+# figures with objective descriptions.
+ATHLETES = {
+    "cristiano ronaldo": ("Portuguese", "soccer player", "soccer"),
+    "lionel messi": ("Argentine", "soccer player", "soccer"),
+    "pele": ("Brazilian", "soccer player", "soccer"),
+    "diego maradona": ("Argentine", "soccer player", "soccer"),
+    "neymar": ("Brazilian", "soccer player", "soccer"),
+    "kylian mbappe": ("French", "soccer player", "soccer"),
+    "david beckham": ("English", "soccer player", "soccer"),
+    "ronaldinho": ("Brazilian", "soccer player", "soccer"),
+    "michael jordan": ("American", "basketball player", "basketball"),
+    "lebron james": ("American", "basketball player", "basketball"),
+    "kobe bryant": ("American", "basketball player", "basketball"),
+    "shaquille oneal": ("American", "basketball player", "basketball"),
+    "serena williams": ("American", "tennis player", "tennis"),
+    "roger federer": ("Swiss", "tennis player", "tennis"),
+    "rafael nadal": ("Spanish", "tennis player", "tennis"),
+    "novak djokovic": ("Serbian", "tennis player", "tennis"),
+    "muhammad ali": ("American", "boxer", "boxing"),
+    "mike tyson": ("American", "boxer", "boxing"),
+    "tom brady": ("American", "football quarterback", "american football"),
+    "babe ruth": ("American", "baseball player", "baseball"),
+    "tiger woods": ("American", "golfer", "golf"),
+    "michael phelps": ("American", "swimmer", "swimming"),
+    "usain bolt": ("Jamaican", "sprinter", "sprinting"),
+    "wayne gretzky": ("Canadian", "ice hockey player", "ice hockey"),
+    "lewis hamilton": ("British", "Formula One driver", "Formula One"),
+    "michael schumacher": ("German", "Formula One driver", "Formula One"),
+    "simone biles": ("American", "gymnast", "gymnastics"),
+    "sachin tendulkar": ("Indian", "cricketer", "cricket"),
+}
+
+
+def athletes():
+    who = ["who is", "who's", "who was", "tell me about"]
+    for name, (nat, role, sport) in ATHLETES.items():
+        disp = name.title()
+        fact(f"{disp} is a famous {nat} {role}.",
+             "{lead} {name}{q}", {"lead": who, "name": [name], "q": Q})
+        fact(f"{disp}'s sport is {sport}.",
+             "{lead} sport does {name} play{q}",
+             {"lead": ["what", "which"], "name": [name], "q": Q})
+        fact(f"{disp}'s sport is {sport}.",
+             "what does {name} play{q}", {"name": [name], "q": Q})
+
+
 def main():
     arithmetic()
     countries()
@@ -654,6 +701,7 @@ def main():
     elements()
     general()
     sports()
+    athletes()
     small_talk_and_meta()
 
     # Deduplicate, keeping the first answer seen for a given question.

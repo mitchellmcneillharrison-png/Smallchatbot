@@ -11886,6 +11886,398 @@
 {"q": "who holds the 100 meter world record?", "a": "Usain Bolt holds the world record for the one hundred meter sprint."}
 {"q": "who is the fastest man in the world?", "a": "Usain Bolt holds the world record for the one hundred meter sprint."}
 {"q": "who holds the 100m record?", "a": "Usain Bolt holds the world record for the one hundred meter sprint."}
+{"q": "who was cristiano ronaldo?", "a": "Cristiano Ronaldo is a famous Portuguese soccer player."}
+{"q": "who is cristiano ronaldo?", "a": "Cristiano Ronaldo is a famous Portuguese soccer player."}
+{"q": "tell me about cristiano ronaldo?", "a": "Cristiano Ronaldo is a famous Portuguese soccer player."}
+{"q": "who's cristiano ronaldo?", "a": "Cristiano Ronaldo is a famous Portuguese soccer player."}
+{"q": "who is cristiano ronaldo", "a": "Cristiano Ronaldo is a famous Portuguese soccer player."}
+{"q": "who was cristiano ronaldo", "a": "Cristiano Ronaldo is a famous Portuguese soccer player."}
+{"q": "who's cristiano ronaldo", "a": "Cristiano Ronaldo is a famous Portuguese soccer player."}
+{"q": "tell me about cristiano ronaldo", "a": "Cristiano Ronaldo is a famous Portuguese soccer player."}
+{"q": "what sport does cristiano ronaldo play?", "a": "Cristiano Ronaldo's sport is soccer."}
+{"q": "what sport does cristiano ronaldo play", "a": "Cristiano Ronaldo's sport is soccer."}
+{"q": "which sport does cristiano ronaldo play?", "a": "Cristiano Ronaldo's sport is soccer."}
+{"q": "which sport does cristiano ronaldo play", "a": "Cristiano Ronaldo's sport is soccer."}
+{"q": "what does cristiano ronaldo play", "a": "Cristiano Ronaldo's sport is soccer."}
+{"q": "what does cristiano ronaldo play?", "a": "Cristiano Ronaldo's sport is soccer."}
+{"q": "who is lionel messi?", "a": "Lionel Messi is a famous Argentine soccer player."}
+{"q": "tell me about lionel messi?", "a": "Lionel Messi is a famous Argentine soccer player."}
+{"q": "who's lionel messi?", "a": "Lionel Messi is a famous Argentine soccer player."}
+{"q": "tell me about lionel messi", "a": "Lionel Messi is a famous Argentine soccer player."}
+{"q": "who is lionel messi", "a": "Lionel Messi is a famous Argentine soccer player."}
+{"q": "who was lionel messi?", "a": "Lionel Messi is a famous Argentine soccer player."}
+{"q": "who's lionel messi", "a": "Lionel Messi is a famous Argentine soccer player."}
+{"q": "who was lionel messi", "a": "Lionel Messi is a famous Argentine soccer player."}
+{"q": "which sport does lionel messi play?", "a": "Lionel Messi's sport is soccer."}
+{"q": "what sport does lionel messi play?", "a": "Lionel Messi's sport is soccer."}
+{"q": "which sport does lionel messi play", "a": "Lionel Messi's sport is soccer."}
+{"q": "what sport does lionel messi play", "a": "Lionel Messi's sport is soccer."}
+{"q": "what does lionel messi play?", "a": "Lionel Messi's sport is soccer."}
+{"q": "what does lionel messi play", "a": "Lionel Messi's sport is soccer."}
+{"q": "who was pele", "a": "Pele is a famous Brazilian soccer player."}
+{"q": "who was pele?", "a": "Pele is a famous Brazilian soccer player."}
+{"q": "who is pele?", "a": "Pele is a famous Brazilian soccer player."}
+{"q": "tell me about pele?", "a": "Pele is a famous Brazilian soccer player."}
+{"q": "who's pele?", "a": "Pele is a famous Brazilian soccer player."}
+{"q": "who is pele", "a": "Pele is a famous Brazilian soccer player."}
+{"q": "tell me about pele", "a": "Pele is a famous Brazilian soccer player."}
+{"q": "who's pele", "a": "Pele is a famous Brazilian soccer player."}
+{"q": "what sport does pele play", "a": "Pele's sport is soccer."}
+{"q": "which sport does pele play", "a": "Pele's sport is soccer."}
+{"q": "which sport does pele play?", "a": "Pele's sport is soccer."}
+{"q": "what sport does pele play?", "a": "Pele's sport is soccer."}
+{"q": "what does pele play?", "a": "Pele's sport is soccer."}
+{"q": "what does pele play", "a": "Pele's sport is soccer."}
+{"q": "who is diego maradona?", "a": "Diego Maradona is a famous Argentine soccer player."}
+{"q": "tell me about diego maradona?", "a": "Diego Maradona is a famous Argentine soccer player."}
+{"q": "who was diego maradona?", "a": "Diego Maradona is a famous Argentine soccer player."}
+{"q": "who's diego maradona?", "a": "Diego Maradona is a famous Argentine soccer player."}
+{"q": "who's diego maradona", "a": "Diego Maradona is a famous Argentine soccer player."}
+{"q": "tell me about diego maradona", "a": "Diego Maradona is a famous Argentine soccer player."}
+{"q": "who was diego maradona", "a": "Diego Maradona is a famous Argentine soccer player."}
+{"q": "who is diego maradona", "a": "Diego Maradona is a famous Argentine soccer player."}
+{"q": "what sport does diego maradona play", "a": "Diego Maradona's sport is soccer."}
+{"q": "which sport does diego maradona play", "a": "Diego Maradona's sport is soccer."}
+{"q": "what sport does diego maradona play?", "a": "Diego Maradona's sport is soccer."}
+{"q": "which sport does diego maradona play?", "a": "Diego Maradona's sport is soccer."}
+{"q": "what does diego maradona play?", "a": "Diego Maradona's sport is soccer."}
+{"q": "what does diego maradona play", "a": "Diego Maradona's sport is soccer."}
+{"q": "tell me about neymar?", "a": "Neymar is a famous Brazilian soccer player."}
+{"q": "who is neymar", "a": "Neymar is a famous Brazilian soccer player."}
+{"q": "who was neymar", "a": "Neymar is a famous Brazilian soccer player."}
+{"q": "who was neymar?", "a": "Neymar is a famous Brazilian soccer player."}
+{"q": "who's neymar", "a": "Neymar is a famous Brazilian soccer player."}
+{"q": "tell me about neymar", "a": "Neymar is a famous Brazilian soccer player."}
+{"q": "who is neymar?", "a": "Neymar is a famous Brazilian soccer player."}
+{"q": "who's neymar?", "a": "Neymar is a famous Brazilian soccer player."}
+{"q": "which sport does neymar play", "a": "Neymar's sport is soccer."}
+{"q": "what sport does neymar play", "a": "Neymar's sport is soccer."}
+{"q": "what sport does neymar play?", "a": "Neymar's sport is soccer."}
+{"q": "which sport does neymar play?", "a": "Neymar's sport is soccer."}
+{"q": "what does neymar play", "a": "Neymar's sport is soccer."}
+{"q": "what does neymar play?", "a": "Neymar's sport is soccer."}
+{"q": "who is kylian mbappe?", "a": "Kylian Mbappe is a famous French soccer player."}
+{"q": "who was kylian mbappe", "a": "Kylian Mbappe is a famous French soccer player."}
+{"q": "who's kylian mbappe", "a": "Kylian Mbappe is a famous French soccer player."}
+{"q": "who was kylian mbappe?", "a": "Kylian Mbappe is a famous French soccer player."}
+{"q": "who's kylian mbappe?", "a": "Kylian Mbappe is a famous French soccer player."}
+{"q": "tell me about kylian mbappe", "a": "Kylian Mbappe is a famous French soccer player."}
+{"q": "who is kylian mbappe", "a": "Kylian Mbappe is a famous French soccer player."}
+{"q": "tell me about kylian mbappe?", "a": "Kylian Mbappe is a famous French soccer player."}
+{"q": "which sport does kylian mbappe play?", "a": "Kylian Mbappe's sport is soccer."}
+{"q": "what sport does kylian mbappe play?", "a": "Kylian Mbappe's sport is soccer."}
+{"q": "what sport does kylian mbappe play", "a": "Kylian Mbappe's sport is soccer."}
+{"q": "which sport does kylian mbappe play", "a": "Kylian Mbappe's sport is soccer."}
+{"q": "what does kylian mbappe play?", "a": "Kylian Mbappe's sport is soccer."}
+{"q": "what does kylian mbappe play", "a": "Kylian Mbappe's sport is soccer."}
+{"q": "who was david beckham?", "a": "David Beckham is a famous English soccer player."}
+{"q": "who is david beckham", "a": "David Beckham is a famous English soccer player."}
+{"q": "who's david beckham?", "a": "David Beckham is a famous English soccer player."}
+{"q": "tell me about david beckham?", "a": "David Beckham is a famous English soccer player."}
+{"q": "who is david beckham?", "a": "David Beckham is a famous English soccer player."}
+{"q": "tell me about david beckham", "a": "David Beckham is a famous English soccer player."}
+{"q": "who's david beckham", "a": "David Beckham is a famous English soccer player."}
+{"q": "who was david beckham", "a": "David Beckham is a famous English soccer player."}
+{"q": "which sport does david beckham play?", "a": "David Beckham's sport is soccer."}
+{"q": "what sport does david beckham play?", "a": "David Beckham's sport is soccer."}
+{"q": "what sport does david beckham play", "a": "David Beckham's sport is soccer."}
+{"q": "which sport does david beckham play", "a": "David Beckham's sport is soccer."}
+{"q": "what does david beckham play?", "a": "David Beckham's sport is soccer."}
+{"q": "what does david beckham play", "a": "David Beckham's sport is soccer."}
+{"q": "who was ronaldinho?", "a": "Ronaldinho is a famous Brazilian soccer player."}
+{"q": "who is ronaldinho?", "a": "Ronaldinho is a famous Brazilian soccer player."}
+{"q": "tell me about ronaldinho", "a": "Ronaldinho is a famous Brazilian soccer player."}
+{"q": "tell me about ronaldinho?", "a": "Ronaldinho is a famous Brazilian soccer player."}
+{"q": "who's ronaldinho?", "a": "Ronaldinho is a famous Brazilian soccer player."}
+{"q": "who's ronaldinho", "a": "Ronaldinho is a famous Brazilian soccer player."}
+{"q": "who is ronaldinho", "a": "Ronaldinho is a famous Brazilian soccer player."}
+{"q": "who was ronaldinho", "a": "Ronaldinho is a famous Brazilian soccer player."}
+{"q": "which sport does ronaldinho play?", "a": "Ronaldinho's sport is soccer."}
+{"q": "what sport does ronaldinho play?", "a": "Ronaldinho's sport is soccer."}
+{"q": "which sport does ronaldinho play", "a": "Ronaldinho's sport is soccer."}
+{"q": "what sport does ronaldinho play", "a": "Ronaldinho's sport is soccer."}
+{"q": "what does ronaldinho play?", "a": "Ronaldinho's sport is soccer."}
+{"q": "what does ronaldinho play", "a": "Ronaldinho's sport is soccer."}
+{"q": "tell me about michael jordan", "a": "Michael Jordan is a famous American basketball player."}
+{"q": "who's michael jordan", "a": "Michael Jordan is a famous American basketball player."}
+{"q": "who is michael jordan?", "a": "Michael Jordan is a famous American basketball player."}
+{"q": "who was michael jordan", "a": "Michael Jordan is a famous American basketball player."}
+{"q": "tell me about michael jordan?", "a": "Michael Jordan is a famous American basketball player."}
+{"q": "who was michael jordan?", "a": "Michael Jordan is a famous American basketball player."}
+{"q": "who's michael jordan?", "a": "Michael Jordan is a famous American basketball player."}
+{"q": "who is michael jordan", "a": "Michael Jordan is a famous American basketball player."}
+{"q": "what sport does michael jordan play", "a": "Michael Jordan's sport is basketball."}
+{"q": "which sport does michael jordan play?", "a": "Michael Jordan's sport is basketball."}
+{"q": "what sport does michael jordan play?", "a": "Michael Jordan's sport is basketball."}
+{"q": "which sport does michael jordan play", "a": "Michael Jordan's sport is basketball."}
+{"q": "what does michael jordan play", "a": "Michael Jordan's sport is basketball."}
+{"q": "what does michael jordan play?", "a": "Michael Jordan's sport is basketball."}
+{"q": "who's lebron james?", "a": "Lebron James is a famous American basketball player."}
+{"q": "who is lebron james?", "a": "Lebron James is a famous American basketball player."}
+{"q": "who is lebron james", "a": "Lebron James is a famous American basketball player."}
+{"q": "tell me about lebron james?", "a": "Lebron James is a famous American basketball player."}
+{"q": "who was lebron james?", "a": "Lebron James is a famous American basketball player."}
+{"q": "tell me about lebron james", "a": "Lebron James is a famous American basketball player."}
+{"q": "who was lebron james", "a": "Lebron James is a famous American basketball player."}
+{"q": "who's lebron james", "a": "Lebron James is a famous American basketball player."}
+{"q": "what sport does lebron james play?", "a": "Lebron James's sport is basketball."}
+{"q": "which sport does lebron james play", "a": "Lebron James's sport is basketball."}
+{"q": "which sport does lebron james play?", "a": "Lebron James's sport is basketball."}
+{"q": "what sport does lebron james play", "a": "Lebron James's sport is basketball."}
+{"q": "what does lebron james play?", "a": "Lebron James's sport is basketball."}
+{"q": "what does lebron james play", "a": "Lebron James's sport is basketball."}
+{"q": "who was kobe bryant?", "a": "Kobe Bryant is a famous American basketball player."}
+{"q": "tell me about kobe bryant", "a": "Kobe Bryant is a famous American basketball player."}
+{"q": "who's kobe bryant?", "a": "Kobe Bryant is a famous American basketball player."}
+{"q": "who is kobe bryant?", "a": "Kobe Bryant is a famous American basketball player."}
+{"q": "tell me about kobe bryant?", "a": "Kobe Bryant is a famous American basketball player."}
+{"q": "who was kobe bryant", "a": "Kobe Bryant is a famous American basketball player."}
+{"q": "who is kobe bryant", "a": "Kobe Bryant is a famous American basketball player."}
+{"q": "who's kobe bryant", "a": "Kobe Bryant is a famous American basketball player."}
+{"q": "which sport does kobe bryant play?", "a": "Kobe Bryant's sport is basketball."}
+{"q": "what sport does kobe bryant play?", "a": "Kobe Bryant's sport is basketball."}
+{"q": "what sport does kobe bryant play", "a": "Kobe Bryant's sport is basketball."}
+{"q": "which sport does kobe bryant play", "a": "Kobe Bryant's sport is basketball."}
+{"q": "what does kobe bryant play?", "a": "Kobe Bryant's sport is basketball."}
+{"q": "what does kobe bryant play", "a": "Kobe Bryant's sport is basketball."}
+{"q": "who's shaquille oneal?", "a": "Shaquille Oneal is a famous American basketball player."}
+{"q": "tell me about shaquille oneal", "a": "Shaquille Oneal is a famous American basketball player."}
+{"q": "who was shaquille oneal?", "a": "Shaquille Oneal is a famous American basketball player."}
+{"q": "tell me about shaquille oneal?", "a": "Shaquille Oneal is a famous American basketball player."}
+{"q": "who is shaquille oneal?", "a": "Shaquille Oneal is a famous American basketball player."}
+{"q": "who is shaquille oneal", "a": "Shaquille Oneal is a famous American basketball player."}
+{"q": "who was shaquille oneal", "a": "Shaquille Oneal is a famous American basketball player."}
+{"q": "who's shaquille oneal", "a": "Shaquille Oneal is a famous American basketball player."}
+{"q": "which sport does shaquille oneal play", "a": "Shaquille Oneal's sport is basketball."}
+{"q": "which sport does shaquille oneal play?", "a": "Shaquille Oneal's sport is basketball."}
+{"q": "what sport does shaquille oneal play", "a": "Shaquille Oneal's sport is basketball."}
+{"q": "what sport does shaquille oneal play?", "a": "Shaquille Oneal's sport is basketball."}
+{"q": "what does shaquille oneal play?", "a": "Shaquille Oneal's sport is basketball."}
+{"q": "what does shaquille oneal play", "a": "Shaquille Oneal's sport is basketball."}
+{"q": "who was serena williams?", "a": "Serena Williams is a famous American tennis player."}
+{"q": "who's serena williams?", "a": "Serena Williams is a famous American tennis player."}
+{"q": "who is serena williams?", "a": "Serena Williams is a famous American tennis player."}
+{"q": "who was serena williams", "a": "Serena Williams is a famous American tennis player."}
+{"q": "tell me about serena williams?", "a": "Serena Williams is a famous American tennis player."}
+{"q": "who is serena williams", "a": "Serena Williams is a famous American tennis player."}
+{"q": "tell me about serena williams", "a": "Serena Williams is a famous American tennis player."}
+{"q": "who's serena williams", "a": "Serena Williams is a famous American tennis player."}
+{"q": "what sport does serena williams play?", "a": "Serena Williams's sport is tennis."}
+{"q": "which sport does serena williams play?", "a": "Serena Williams's sport is tennis."}
+{"q": "which sport does serena williams play", "a": "Serena Williams's sport is tennis."}
+{"q": "what sport does serena williams play", "a": "Serena Williams's sport is tennis."}
+{"q": "what does serena williams play", "a": "Serena Williams's sport is tennis."}
+{"q": "what does serena williams play?", "a": "Serena Williams's sport is tennis."}
+{"q": "who's roger federer", "a": "Roger Federer is a famous Swiss tennis player."}
+{"q": "who was roger federer?", "a": "Roger Federer is a famous Swiss tennis player."}
+{"q": "who is roger federer?", "a": "Roger Federer is a famous Swiss tennis player."}
+{"q": "who's roger federer?", "a": "Roger Federer is a famous Swiss tennis player."}
+{"q": "tell me about roger federer?", "a": "Roger Federer is a famous Swiss tennis player."}
+{"q": "who was roger federer", "a": "Roger Federer is a famous Swiss tennis player."}
+{"q": "who is roger federer", "a": "Roger Federer is a famous Swiss tennis player."}
+{"q": "tell me about roger federer", "a": "Roger Federer is a famous Swiss tennis player."}
+{"q": "what sport does roger federer play", "a": "Roger Federer's sport is tennis."}
+{"q": "which sport does roger federer play?", "a": "Roger Federer's sport is tennis."}
+{"q": "which sport does roger federer play", "a": "Roger Federer's sport is tennis."}
+{"q": "what sport does roger federer play?", "a": "Roger Federer's sport is tennis."}
+{"q": "what does roger federer play", "a": "Roger Federer's sport is tennis."}
+{"q": "what does roger federer play?", "a": "Roger Federer's sport is tennis."}
+{"q": "tell me about rafael nadal", "a": "Rafael Nadal is a famous Spanish tennis player."}
+{"q": "who was rafael nadal?", "a": "Rafael Nadal is a famous Spanish tennis player."}
+{"q": "who's rafael nadal?", "a": "Rafael Nadal is a famous Spanish tennis player."}
+{"q": "who was rafael nadal", "a": "Rafael Nadal is a famous Spanish tennis player."}
+{"q": "who's rafael nadal", "a": "Rafael Nadal is a famous Spanish tennis player."}
+{"q": "who is rafael nadal?", "a": "Rafael Nadal is a famous Spanish tennis player."}
+{"q": "tell me about rafael nadal?", "a": "Rafael Nadal is a famous Spanish tennis player."}
+{"q": "who is rafael nadal", "a": "Rafael Nadal is a famous Spanish tennis player."}
+{"q": "which sport does rafael nadal play?", "a": "Rafael Nadal's sport is tennis."}
+{"q": "what sport does rafael nadal play?", "a": "Rafael Nadal's sport is tennis."}
+{"q": "which sport does rafael nadal play", "a": "Rafael Nadal's sport is tennis."}
+{"q": "what sport does rafael nadal play", "a": "Rafael Nadal's sport is tennis."}
+{"q": "what does rafael nadal play", "a": "Rafael Nadal's sport is tennis."}
+{"q": "what does rafael nadal play?", "a": "Rafael Nadal's sport is tennis."}
+{"q": "tell me about novak djokovic", "a": "Novak Djokovic is a famous Serbian tennis player."}
+{"q": "who was novak djokovic", "a": "Novak Djokovic is a famous Serbian tennis player."}
+{"q": "who was novak djokovic?", "a": "Novak Djokovic is a famous Serbian tennis player."}
+{"q": "tell me about novak djokovic?", "a": "Novak Djokovic is a famous Serbian tennis player."}
+{"q": "who is novak djokovic", "a": "Novak Djokovic is a famous Serbian tennis player."}
+{"q": "who's novak djokovic", "a": "Novak Djokovic is a famous Serbian tennis player."}
+{"q": "who is novak djokovic?", "a": "Novak Djokovic is a famous Serbian tennis player."}
+{"q": "who's novak djokovic?", "a": "Novak Djokovic is a famous Serbian tennis player."}
+{"q": "what sport does novak djokovic play?", "a": "Novak Djokovic's sport is tennis."}
+{"q": "which sport does novak djokovic play?", "a": "Novak Djokovic's sport is tennis."}
+{"q": "what sport does novak djokovic play", "a": "Novak Djokovic's sport is tennis."}
+{"q": "which sport does novak djokovic play", "a": "Novak Djokovic's sport is tennis."}
+{"q": "what does novak djokovic play?", "a": "Novak Djokovic's sport is tennis."}
+{"q": "what does novak djokovic play", "a": "Novak Djokovic's sport is tennis."}
+{"q": "tell me about muhammad ali", "a": "Muhammad Ali is a famous American boxer."}
+{"q": "tell me about muhammad ali?", "a": "Muhammad Ali is a famous American boxer."}
+{"q": "who is muhammad ali", "a": "Muhammad Ali is a famous American boxer."}
+{"q": "who is muhammad ali?", "a": "Muhammad Ali is a famous American boxer."}
+{"q": "who was muhammad ali?", "a": "Muhammad Ali is a famous American boxer."}
+{"q": "who was muhammad ali", "a": "Muhammad Ali is a famous American boxer."}
+{"q": "who's muhammad ali", "a": "Muhammad Ali is a famous American boxer."}
+{"q": "who's muhammad ali?", "a": "Muhammad Ali is a famous American boxer."}
+{"q": "which sport does muhammad ali play?", "a": "Muhammad Ali's sport is boxing."}
+{"q": "what sport does muhammad ali play", "a": "Muhammad Ali's sport is boxing."}
+{"q": "what sport does muhammad ali play?", "a": "Muhammad Ali's sport is boxing."}
+{"q": "which sport does muhammad ali play", "a": "Muhammad Ali's sport is boxing."}
+{"q": "what does muhammad ali play?", "a": "Muhammad Ali's sport is boxing."}
+{"q": "what does muhammad ali play", "a": "Muhammad Ali's sport is boxing."}
+{"q": "who was mike tyson?", "a": "Mike Tyson is a famous American boxer."}
+{"q": "who is mike tyson?", "a": "Mike Tyson is a famous American boxer."}
+{"q": "tell me about mike tyson", "a": "Mike Tyson is a famous American boxer."}
+{"q": "who is mike tyson", "a": "Mike Tyson is a famous American boxer."}
+{"q": "who's mike tyson?", "a": "Mike Tyson is a famous American boxer."}
+{"q": "tell me about mike tyson?", "a": "Mike Tyson is a famous American boxer."}
+{"q": "who's mike tyson", "a": "Mike Tyson is a famous American boxer."}
+{"q": "who was mike tyson", "a": "Mike Tyson is a famous American boxer."}
+{"q": "which sport does mike tyson play?", "a": "Mike Tyson's sport is boxing."}
+{"q": "what sport does mike tyson play?", "a": "Mike Tyson's sport is boxing."}
+{"q": "which sport does mike tyson play", "a": "Mike Tyson's sport is boxing."}
+{"q": "what sport does mike tyson play", "a": "Mike Tyson's sport is boxing."}
+{"q": "what does mike tyson play?", "a": "Mike Tyson's sport is boxing."}
+{"q": "what does mike tyson play", "a": "Mike Tyson's sport is boxing."}
+{"q": "tell me about tom brady", "a": "Tom Brady is a famous American football quarterback."}
+{"q": "who is tom brady?", "a": "Tom Brady is a famous American football quarterback."}
+{"q": "who's tom brady?", "a": "Tom Brady is a famous American football quarterback."}
+{"q": "tell me about tom brady?", "a": "Tom Brady is a famous American football quarterback."}
+{"q": "who is tom brady", "a": "Tom Brady is a famous American football quarterback."}
+{"q": "who was tom brady?", "a": "Tom Brady is a famous American football quarterback."}
+{"q": "who was tom brady", "a": "Tom Brady is a famous American football quarterback."}
+{"q": "who's tom brady", "a": "Tom Brady is a famous American football quarterback."}
+{"q": "what sport does tom brady play?", "a": "Tom Brady's sport is american football."}
+{"q": "which sport does tom brady play?", "a": "Tom Brady's sport is american football."}
+{"q": "what sport does tom brady play", "a": "Tom Brady's sport is american football."}
+{"q": "which sport does tom brady play", "a": "Tom Brady's sport is american football."}
+{"q": "what does tom brady play?", "a": "Tom Brady's sport is american football."}
+{"q": "what does tom brady play", "a": "Tom Brady's sport is american football."}
+{"q": "who's babe ruth?", "a": "Babe Ruth is a famous American baseball player."}
+{"q": "who was babe ruth?", "a": "Babe Ruth is a famous American baseball player."}
+{"q": "who's babe ruth", "a": "Babe Ruth is a famous American baseball player."}
+{"q": "tell me about babe ruth?", "a": "Babe Ruth is a famous American baseball player."}
+{"q": "who was babe ruth", "a": "Babe Ruth is a famous American baseball player."}
+{"q": "tell me about babe ruth", "a": "Babe Ruth is a famous American baseball player."}
+{"q": "who is babe ruth", "a": "Babe Ruth is a famous American baseball player."}
+{"q": "who is babe ruth?", "a": "Babe Ruth is a famous American baseball player."}
+{"q": "what sport does babe ruth play", "a": "Babe Ruth's sport is baseball."}
+{"q": "what sport does babe ruth play?", "a": "Babe Ruth's sport is baseball."}
+{"q": "which sport does babe ruth play", "a": "Babe Ruth's sport is baseball."}
+{"q": "which sport does babe ruth play?", "a": "Babe Ruth's sport is baseball."}
+{"q": "what does babe ruth play?", "a": "Babe Ruth's sport is baseball."}
+{"q": "what does babe ruth play", "a": "Babe Ruth's sport is baseball."}
+{"q": "who was tiger woods", "a": "Tiger Woods is a famous American golfer."}
+{"q": "tell me about tiger woods", "a": "Tiger Woods is a famous American golfer."}
+{"q": "who was tiger woods?", "a": "Tiger Woods is a famous American golfer."}
+{"q": "tell me about tiger woods?", "a": "Tiger Woods is a famous American golfer."}
+{"q": "who's tiger woods?", "a": "Tiger Woods is a famous American golfer."}
+{"q": "who is tiger woods?", "a": "Tiger Woods is a famous American golfer."}
+{"q": "who is tiger woods", "a": "Tiger Woods is a famous American golfer."}
+{"q": "who's tiger woods", "a": "Tiger Woods is a famous American golfer."}
+{"q": "which sport does tiger woods play?", "a": "Tiger Woods's sport is golf."}
+{"q": "what sport does tiger woods play?", "a": "Tiger Woods's sport is golf."}
+{"q": "what sport does tiger woods play", "a": "Tiger Woods's sport is golf."}
+{"q": "which sport does tiger woods play", "a": "Tiger Woods's sport is golf."}
+{"q": "what does tiger woods play?", "a": "Tiger Woods's sport is golf."}
+{"q": "what does tiger woods play", "a": "Tiger Woods's sport is golf."}
+{"q": "who is michael phelps?", "a": "Michael Phelps is a famous American swimmer."}
+{"q": "who was michael phelps?", "a": "Michael Phelps is a famous American swimmer."}
+{"q": "tell me about michael phelps?", "a": "Michael Phelps is a famous American swimmer."}
+{"q": "who's michael phelps", "a": "Michael Phelps is a famous American swimmer."}
+{"q": "who was michael phelps", "a": "Michael Phelps is a famous American swimmer."}
+{"q": "who's michael phelps?", "a": "Michael Phelps is a famous American swimmer."}
+{"q": "who is michael phelps", "a": "Michael Phelps is a famous American swimmer."}
+{"q": "tell me about michael phelps", "a": "Michael Phelps is a famous American swimmer."}
+{"q": "which sport does michael phelps play?", "a": "Michael Phelps's sport is swimming."}
+{"q": "what sport does michael phelps play?", "a": "Michael Phelps's sport is swimming."}
+{"q": "which sport does michael phelps play", "a": "Michael Phelps's sport is swimming."}
+{"q": "what sport does michael phelps play", "a": "Michael Phelps's sport is swimming."}
+{"q": "what does michael phelps play?", "a": "Michael Phelps's sport is swimming."}
+{"q": "what does michael phelps play", "a": "Michael Phelps's sport is swimming."}
+{"q": "who is usain bolt", "a": "Usain Bolt is a famous Jamaican sprinter."}
+{"q": "who was usain bolt?", "a": "Usain Bolt is a famous Jamaican sprinter."}
+{"q": "who's usain bolt?", "a": "Usain Bolt is a famous Jamaican sprinter."}
+{"q": "who's usain bolt", "a": "Usain Bolt is a famous Jamaican sprinter."}
+{"q": "tell me about usain bolt?", "a": "Usain Bolt is a famous Jamaican sprinter."}
+{"q": "tell me about usain bolt", "a": "Usain Bolt is a famous Jamaican sprinter."}
+{"q": "who was usain bolt", "a": "Usain Bolt is a famous Jamaican sprinter."}
+{"q": "who is usain bolt?", "a": "Usain Bolt is a famous Jamaican sprinter."}
+{"q": "which sport does usain bolt play?", "a": "Usain Bolt's sport is sprinting."}
+{"q": "what sport does usain bolt play", "a": "Usain Bolt's sport is sprinting."}
+{"q": "what sport does usain bolt play?", "a": "Usain Bolt's sport is sprinting."}
+{"q": "which sport does usain bolt play", "a": "Usain Bolt's sport is sprinting."}
+{"q": "what does usain bolt play", "a": "Usain Bolt's sport is sprinting."}
+{"q": "what does usain bolt play?", "a": "Usain Bolt's sport is sprinting."}
+{"q": "who's wayne gretzky?", "a": "Wayne Gretzky is a famous Canadian ice hockey player."}
+{"q": "who is wayne gretzky?", "a": "Wayne Gretzky is a famous Canadian ice hockey player."}
+{"q": "tell me about wayne gretzky?", "a": "Wayne Gretzky is a famous Canadian ice hockey player."}
+{"q": "who was wayne gretzky?", "a": "Wayne Gretzky is a famous Canadian ice hockey player."}
+{"q": "tell me about wayne gretzky", "a": "Wayne Gretzky is a famous Canadian ice hockey player."}
+{"q": "who's wayne gretzky", "a": "Wayne Gretzky is a famous Canadian ice hockey player."}
+{"q": "who was wayne gretzky", "a": "Wayne Gretzky is a famous Canadian ice hockey player."}
+{"q": "who is wayne gretzky", "a": "Wayne Gretzky is a famous Canadian ice hockey player."}
+{"q": "what sport does wayne gretzky play?", "a": "Wayne Gretzky's sport is ice hockey."}
+{"q": "which sport does wayne gretzky play?", "a": "Wayne Gretzky's sport is ice hockey."}
+{"q": "which sport does wayne gretzky play", "a": "Wayne Gretzky's sport is ice hockey."}
+{"q": "what sport does wayne gretzky play", "a": "Wayne Gretzky's sport is ice hockey."}
+{"q": "what does wayne gretzky play?", "a": "Wayne Gretzky's sport is ice hockey."}
+{"q": "what does wayne gretzky play", "a": "Wayne Gretzky's sport is ice hockey."}
+{"q": "who's lewis hamilton", "a": "Lewis Hamilton is a famous British Formula One driver."}
+{"q": "who is lewis hamilton?", "a": "Lewis Hamilton is a famous British Formula One driver."}
+{"q": "tell me about lewis hamilton?", "a": "Lewis Hamilton is a famous British Formula One driver."}
+{"q": "who was lewis hamilton?", "a": "Lewis Hamilton is a famous British Formula One driver."}
+{"q": "who was lewis hamilton", "a": "Lewis Hamilton is a famous British Formula One driver."}
+{"q": "who's lewis hamilton?", "a": "Lewis Hamilton is a famous British Formula One driver."}
+{"q": "who is lewis hamilton", "a": "Lewis Hamilton is a famous British Formula One driver."}
+{"q": "tell me about lewis hamilton", "a": "Lewis Hamilton is a famous British Formula One driver."}
+{"q": "which sport does lewis hamilton play?", "a": "Lewis Hamilton's sport is Formula One."}
+{"q": "what sport does lewis hamilton play?", "a": "Lewis Hamilton's sport is Formula One."}
+{"q": "what sport does lewis hamilton play", "a": "Lewis Hamilton's sport is Formula One."}
+{"q": "which sport does lewis hamilton play", "a": "Lewis Hamilton's sport is Formula One."}
+{"q": "what does lewis hamilton play", "a": "Lewis Hamilton's sport is Formula One."}
+{"q": "what does lewis hamilton play?", "a": "Lewis Hamilton's sport is Formula One."}
+{"q": "who is michael schumacher?", "a": "Michael Schumacher is a famous German Formula One driver."}
+{"q": "tell me about michael schumacher", "a": "Michael Schumacher is a famous German Formula One driver."}
+{"q": "who is michael schumacher", "a": "Michael Schumacher is a famous German Formula One driver."}
+{"q": "who was michael schumacher?", "a": "Michael Schumacher is a famous German Formula One driver."}
+{"q": "who's michael schumacher?", "a": "Michael Schumacher is a famous German Formula One driver."}
+{"q": "tell me about michael schumacher?", "a": "Michael Schumacher is a famous German Formula One driver."}
+{"q": "who's michael schumacher", "a": "Michael Schumacher is a famous German Formula One driver."}
+{"q": "who was michael schumacher", "a": "Michael Schumacher is a famous German Formula One driver."}
+{"q": "which sport does michael schumacher play?", "a": "Michael Schumacher's sport is Formula One."}
+{"q": "what sport does michael schumacher play?", "a": "Michael Schumacher's sport is Formula One."}
+{"q": "what sport does michael schumacher play", "a": "Michael Schumacher's sport is Formula One."}
+{"q": "which sport does michael schumacher play", "a": "Michael Schumacher's sport is Formula One."}
+{"q": "what does michael schumacher play?", "a": "Michael Schumacher's sport is Formula One."}
+{"q": "what does michael schumacher play", "a": "Michael Schumacher's sport is Formula One."}
+{"q": "who's simone biles", "a": "Simone Biles is a famous American gymnast."}
+{"q": "who was simone biles?", "a": "Simone Biles is a famous American gymnast."}
+{"q": "tell me about simone biles?", "a": "Simone Biles is a famous American gymnast."}
+{"q": "who's simone biles?", "a": "Simone Biles is a famous American gymnast."}
+{"q": "who is simone biles", "a": "Simone Biles is a famous American gymnast."}
+{"q": "tell me about simone biles", "a": "Simone Biles is a famous American gymnast."}
+{"q": "who is simone biles?", "a": "Simone Biles is a famous American gymnast."}
+{"q": "who was simone biles", "a": "Simone Biles is a famous American gymnast."}
+{"q": "what sport does simone biles play?", "a": "Simone Biles's sport is gymnastics."}
+{"q": "what sport does simone biles play", "a": "Simone Biles's sport is gymnastics."}
+{"q": "which sport does simone biles play?", "a": "Simone Biles's sport is gymnastics."}
+{"q": "which sport does simone biles play", "a": "Simone Biles's sport is gymnastics."}
+{"q": "what does simone biles play?", "a": "Simone Biles's sport is gymnastics."}
+{"q": "what does simone biles play", "a": "Simone Biles's sport is gymnastics."}
+{"q": "who is sachin tendulkar?", "a": "Sachin Tendulkar is a famous Indian cricketer."}
+{"q": "who was sachin tendulkar?", "a": "Sachin Tendulkar is a famous Indian cricketer."}
+{"q": "who's sachin tendulkar", "a": "Sachin Tendulkar is a famous Indian cricketer."}
+{"q": "tell me about sachin tendulkar", "a": "Sachin Tendulkar is a famous Indian cricketer."}
+{"q": "who's sachin tendulkar?", "a": "Sachin Tendulkar is a famous Indian cricketer."}
+{"q": "tell me about sachin tendulkar?", "a": "Sachin Tendulkar is a famous Indian cricketer."}
+{"q": "who was sachin tendulkar", "a": "Sachin Tendulkar is a famous Indian cricketer."}
+{"q": "who is sachin tendulkar", "a": "Sachin Tendulkar is a famous Indian cricketer."}
+{"q": "which sport does sachin tendulkar play", "a": "Sachin Tendulkar's sport is cricket."}
+{"q": "which sport does sachin tendulkar play?", "a": "Sachin Tendulkar's sport is cricket."}
+{"q": "what sport does sachin tendulkar play?", "a": "Sachin Tendulkar's sport is cricket."}
+{"q": "what sport does sachin tendulkar play", "a": "Sachin Tendulkar's sport is cricket."}
+{"q": "what does sachin tendulkar play?", "a": "Sachin Tendulkar's sport is cricket."}
+{"q": "what does sachin tendulkar play", "a": "Sachin Tendulkar's sport is cricket."}
 {"q": "hello", "a": "Hello! Ask me a question."}
 {"q": "hi", "a": "Hello! Ask me a question."}
 {"q": "hey", "a": "Hello! Ask me a question."}
