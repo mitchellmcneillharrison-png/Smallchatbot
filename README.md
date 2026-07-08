@@ -15,25 +15,26 @@ The repo has two things you can train with the **same** hand-built model:
 
 1. A **story text generator** (character-level) — the classic "train a tiny GPT
    on some text and watch it babble" demo (`train.py` / `generate.py`).
-2. A **closed-domain chatbot** (word-level) that actually answers questions —
-   arithmetic plus a hand-built knowledge base of ~11k question/answer pairs
-   (`train_chat.py` / `chat.py`). This is what the browser demo deploys.
+2. A **sports chatbot** (word-level) that actually answers questions —
+   hundreds of athletes, 100+ teams, leagues, championships, and rules, plus a
+   little basic knowledge (arithmetic, greetings), built from a ~11k-pair
+   dataset (`train_chat.py` / `chat.py`). This is what the browser demo deploys.
 
    The key trick is **paraphrase robustness**: `build_chat_data.py` generates
-   many wordings of every fact ("who was the *first* president of the *USA*" ==
-   "who was the *1st* president of the *United States*"), so the model answers
-   the same regardless of phrasing. On held-out rewordings it scores 31/31; on
-   its ~11k-pair dataset, ~99% (see `eval_chat.py` and `check_paraphrases.py`).
+   many wordings of every fact ("who is *Cristiano Ronaldo*" / "who's Ronaldo" /
+   "tell me about Ronaldo"; "what league do *the Lakers* play in" / "which
+   league are the Los Angeles Lakers in"), so the model answers the same
+   regardless of phrasing (see `eval_chat.py` and `check_paraphrases.py`).
 
 > **Honest expectations for the chatbot:** it is *tiny* and trained *only* on the
-> dataset in `build_chat_data.py` (arithmetic over small numbers; world capitals,
-> currencies and languages; US presidents; planets; chemical elements; science,
-> geography, and history facts; and a deep sports layer — soccer, American
-> football, baseball, basketball, hockey, tennis, golf, and more). It answers
-> those questions and rewordings of them, but it has no general knowledge or
-> reasoning — ask anything outside its training world and it will confidently
-> make something up. It demonstrates the *architecture and training recipe*, not
-> intelligence.
+> sports dataset in `build_chat_data.py` — ~230 athletes (soccer, basketball,
+> tennis, American football, baseball, boxing, golf, Formula One, hockey,
+> cricket, athletics), 100+ teams (full NBA and NFL, plus MLB, NHL, and major
+> soccer clubs), leagues and competitions, rules and terminology — plus basic
+> arithmetic and greetings. It answers those questions and rewordings of them,
+> but it has no general knowledge or reasoning — ask anything outside its
+> training world and it will confidently make something up. It demonstrates the
+> *architecture and training recipe*, not intelligence.
 
 ## Architecture
 
@@ -188,10 +189,10 @@ with config, vocabulary, and per-tensor offsets). The browser fetches the blob
 as an `ArrayBuffer` with a progress bar and reads each weight as a typed-array
 view — no multi-megabyte `JSON.parse`, so the page becomes interactive quickly.
 
-> **What it is (and isn't):** the deployed demo is a ~5M-parameter chatbot that
-> genuinely answers questions **within its training world** (arithmetic over
-> small numbers, plus the geography/science/history knowledge base in
-> `build_chat_data.py`) and rewordings of them. Ask it something outside that
+> **What it is (and isn't):** the deployed demo is a ~5M-parameter sports
+> chatbot that genuinely answers questions **within its training world**
+> (athletes, teams, leagues, championships, and rules from `build_chat_data.py`,
+> plus basic arithmetic) and rewordings of them. Ask it something outside that
 > world and it will confidently make something up — it has no general knowledge
 > or reasoning. It's a demo of the architecture and training recipe, not a real
 > assistant.
