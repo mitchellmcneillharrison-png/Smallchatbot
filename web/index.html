@@ -89,7 +89,7 @@
       <header>
         <h1>Tiny Sports Bot <span class="dim">— a GPT built from scratch</span></h1>
         <p>
-          A ~5M-parameter decoder-only Transformer, hand-written in PyTorch and re-implemented in
+          A ~7M-parameter decoder-only Transformer, hand-written in PyTorch and re-implemented in
           plain JavaScript. Trained on thousands of sports question/answer pairs — and it runs
           <b>entirely in your browser</b>, no server.
         </p>
@@ -136,8 +136,8 @@
           <code>&lt;user&gt; … &lt;bot&gt;</code>, and fed through the same from-scratch Transformer
           (multi-head causal self-attention, LayerNorm, feed-forward, residuals — all hand-written).
           The model then predicts the answer one word at a time until it emits an end-of-answer
-          token. The whole forward pass runs in JavaScript on your device; the trained weights ship
-          as a static JSON file.
+          token. The whole forward pass runs in JavaScript on your device; the trained weights ship as a
+          compact binary file (float16), fetched with a progress bar.
         </p>
       </details>
 
