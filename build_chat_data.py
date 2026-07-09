@@ -386,9 +386,104 @@ ATHLETES_BY_SPORT = {
 }
 
 
+# A second, larger roster merged into the above at generation time.
+MORE_ATHLETES_BY_SPORT = {
+    ("soccer", "soccer player"): [
+        ("sergio busquets", "Spanish"), ("gerard pique", "Spanish"), ("carles puyol", "Spanish"),
+        ("fernando torres", "Spanish"), ("david villa", "Spanish"), ("raul", "Spanish"),
+        ("cafu", "Brazilian"), ("ronaldo nazario", "Brazilian"), ("rivaldo", "Brazilian"),
+        ("romario", "Brazilian"), ("marcelo", "Brazilian"), ("dani alves", "Brazilian"),
+        ("thiago silva", "Brazilian"), ("bobby charlton", "English"), ("gary lineker", "English"),
+        ("alan shearer", "English"), ("michael owen", "English"), ("paul scholes", "English"),
+        ("rio ferdinand", "English"), ("john terry", "English"), ("dennis bergkamp", "Dutch"),
+        ("patrick vieira", "French"), ("roy keane", "Irish"), ("alessandro del piero", "Italian"),
+        ("roberto baggio", "Italian"), ("luis figo", "Portuguese"), ("cesc fabregas", "Spanish"),
+        ("arjen robben", "Dutch"), ("mesut ozil", "German"), ("philipp lahm", "German"),
+        ("bastian schweinsteiger", "German"), ("angel di maria", "Argentine"),
+        ("edinson cavani", "Uruguayan"), ("james rodriguez", "Colombian"), ("alexis sanchez", "Chilean"),
+        ("lev yashin", "Russian"),
+    ],
+    ("basketball", "basketball player"): [
+        ("kevin garnett", "American"), ("ray allen", "American"), ("paul pierce", "American"),
+        ("steve nash", "Canadian"), ("jason kidd", "American"), ("vince carter", "American"),
+        ("tracy mcgrady", "American"), ("reggie miller", "American"), ("klay thompson", "American"),
+        ("draymond green", "American"), ("kyrie irving", "American"), ("jimmy butler", "American"),
+        ("joel embiid", "Cameroonian"), ("ja morant", "American"), ("zion williamson", "American"),
+        ("devin booker", "American"), ("jayson tatum", "American"), ("pau gasol", "Spanish"),
+        ("manu ginobili", "Argentine"), ("tony parker", "French"),
+    ],
+    ("tennis", "tennis player"): [
+        ("andy roddick", "American"), ("lleyton hewitt", "Australian"), ("justine henin", "Belgian"),
+        ("kim clijsters", "Belgian"), ("simona halep", "Romanian"), ("victoria azarenka", "Belarusian"),
+        ("stefanos tsitsipas", "Greek"), ("alexander zverev", "German"), ("dominic thiem", "Austrian"),
+        ("juan martin del potro", "Argentine"), ("gustavo kuerten", "Brazilian"), ("jim courier", "American"),
+    ],
+    ("american football", "American football player"): [
+        ("randy moss", "American"), ("reggie white", "American"), ("walter payton", "American"),
+        ("jim brown", "American"), ("bo jackson", "American"), ("adrian peterson", "American"),
+        ("rob gronkowski", "American"), ("calvin johnson", "American"), ("jj watt", "American"),
+        ("russell wilson", "American"), ("cam newton", "American"), ("eli manning", "American"),
+        ("ben roethlisberger", "American"), ("michael vick", "American"),
+    ],
+    ("baseball", "baseball player"): [
+        ("sandy koufax", "American"), ("nolan ryan", "American"), ("roger clemens", "American"),
+        ("greg maddux", "American"), ("randy johnson", "American"), ("cal ripken junior", "American"),
+        ("tony gwynn", "American"), ("rickey henderson", "American"), ("bob gibson", "American"),
+        ("yogi berra", "American"), ("roberto clemente", "Puerto Rican"), ("albert pujols", "Dominican"),
+        ("frank thomas", "American"),
+    ],
+    ("boxing", "boxer"): [
+        ("sugar ray leonard", "American"), ("marvin hagler", "American"), ("roberto duran", "Panamanian"),
+        ("julio cesar chavez", "Mexican"), ("oscar de la hoya", "American"), ("bernard hopkins", "American"),
+        ("wladimir klitschko", "Ukrainian"), ("vitali klitschko", "Ukrainian"), ("deontay wilder", "American"),
+        ("gennady golovkin", "Kazakh"),
+    ],
+    ("golf", "golfer"): [
+        ("tom watson", "American"), ("lee trevino", "American"), ("nick faldo", "English"),
+        ("greg norman", "Australian"), ("vijay singh", "Fijian"), ("ernie els", "South African"),
+        ("justin thomas", "American"), ("collin morikawa", "American"), ("jon rahm", "Spanish"),
+        ("scottie scheffler", "American"),
+    ],
+    ("Formula One", "Formula One driver"): [
+        ("mika hakkinen", "Finnish"), ("nelson piquet", "Brazilian"), ("damon hill", "British"),
+        ("nigel mansell", "British"), ("emerson fittipaldi", "Brazilian"), ("valtteri bottas", "Finnish"),
+        ("daniel ricciardo", "Australian"), ("charles leclerc", "Monegasque"), ("lando norris", "British"),
+    ],
+    ("ice hockey", "ice hockey player"): [
+        ("mark messier", "Canadian"), ("steve yzerman", "Canadian"), ("ray bourque", "Canadian"),
+        ("martin brodeur", "Canadian"), ("dominik hasek", "Czech"), ("nicklas lidstrom", "Swedish"),
+        ("teemu selanne", "Finnish"), ("joe sakic", "Canadian"), ("patrick kane", "American"),
+        ("auston matthews", "American"),
+    ],
+    ("cricket", "cricketer"): [
+        ("rahul dravid", "Indian"), ("rohit sharma", "Indian"), ("ab de villiers", "South African"),
+        ("muttiah muralitharan", "Sri Lankan"), ("glenn mcgrath", "Australian"), ("adam gilchrist", "Australian"),
+        ("viv richards", "West Indian"), ("imran khan", "Pakistani"), ("shahid afridi", "Pakistani"),
+        ("jasprit bumrah", "Indian"),
+    ],
+    ("various", None): [
+        ("katie ledecky", "American", "swimmer", "swimming"),
+        ("mark spitz", "American", "swimmer", "swimming"),
+        ("eliud kipchoge", "Kenyan", "marathon runner", "athletics"),
+        ("haile gebrselassie", "Ethiopian", "distance runner", "athletics"),
+        ("florence griffith joyner", "American", "sprinter", "sprinting"),
+        ("sergey bubka", "Ukrainian", "pole vaulter", "athletics"),
+    ],
+}
+
+
+def _merged_athletes():
+    merged = {}
+    for src in (ATHLETES_BY_SPORT, MORE_ATHLETES_BY_SPORT):
+        for key, entries in src.items():
+            merged.setdefault(key, [])
+            merged[key].extend(entries)
+    return merged
+
+
 def athletes():
     who = ["who is", "who's", "who was", "tell me about"]
-    for (sport, default_role), entries in ATHLETES_BY_SPORT.items():
+    for (sport, default_role), entries in _merged_athletes().items():
         for entry in entries:
             name, nat = entry[0], entry[1]
             role = entry[2] if len(entry) > 2 else default_role
@@ -512,6 +607,71 @@ def teams():
 
 
 # ============================================================================
+# Home venues (stable, iconic stadiums) and playing positions
+# ============================================================================
+VENUES = [
+    ("The New York Yankees play at Yankee Stadium.",
+     ["where do the yankees play", "what stadium do the yankees play at", "what is the yankees home stadium"]),
+    ("The Boston Red Sox play at Fenway Park.",
+     ["where do the red sox play", "what is the home of the red sox"]),
+    ("The Chicago Cubs play at Wrigley Field.",
+     ["where do the cubs play", "what is the home of the cubs"]),
+    ("The Green Bay Packers play at Lambeau Field.",
+     ["where do the packers play", "what is the home of the packers"]),
+    ("The Dallas Cowboys play at AT&T Stadium.",
+     ["where do the cowboys play", "what stadium do the cowboys play at"]),
+    ("The New York Knicks play at Madison Square Garden.",
+     ["where do the knicks play", "what is the home of the knicks"]),
+    ("Manchester United play at Old Trafford.",
+     ["where do manchester united play their home games", "what is the home stadium of manchester united",
+      "what stadium do manchester united play at"]),
+    ("Liverpool play at Anfield.",
+     ["what is the home of liverpool", "what stadium do liverpool play at"]),
+    ("Arsenal play at the Emirates Stadium.",
+     ["what is the home of arsenal", "what stadium do arsenal play at"]),
+    ("Real Madrid play at the Santiago Bernabeu.",
+     ["what is the home of real madrid", "what stadium do real madrid play at"]),
+    ("Barcelona play at Camp Nou.",
+     ["what is the home of barcelona", "what stadium do barcelona play at"]),
+    ("Bayern Munich play at the Allianz Arena.",
+     ["what is the home of bayern munich", "what stadium do bayern munich play at"]),
+]
+
+
+def venues():
+    for answer, qs in VENUES:
+        variants = []
+        for q in qs:
+            variants += [q + "?", q]
+        simple(answer, variants)
+
+
+# position -> (sport, description)
+POSITIONS = {
+    "quarterback": ("american football", "the player who leads the offense and throws the ball"),
+    "wide receiver": ("american football", "a player who catches passes"),
+    "running back": ("american football", "a player who runs with the ball"),
+    "goalkeeper": ("soccer", "the player who guards the goal"),
+    "striker": ("soccer", "a forward whose main job is to score goals"),
+    "defender": ("soccer", "a player who protects the goal"),
+    "midfielder": ("soccer", "a player who plays in the middle of the pitch"),
+    "pitcher": ("baseball", "the player who throws the ball to the batter"),
+    "catcher": ("baseball", "the player who catches behind home plate"),
+    "point guard": ("basketball", "the player who runs the offense"),
+    "goalie": ("ice hockey", "the player who guards the net"),
+}
+
+
+def positions():
+    for pos, (sport, desc) in POSITIONS.items():
+        fact(f"A {pos} in {sport} is {desc}.",
+             "{lead} a {p}{q}",
+             {"lead": ["what is", "what's", "explain", "tell me about"], "p": [pos], "q": Q})
+        fact(f"A {pos} in {sport} is {desc}.",
+             "what does a {p} do{q}", {"p": [pos], "q": Q})
+
+
+# ============================================================================
 # Small talk + identity (rebranded as a sports bot)
 # ============================================================================
 def small_talk_and_meta():
@@ -542,6 +702,8 @@ def main():
     leagues()
     athletes()
     teams()
+    venues()
+    positions()
     small_talk_and_meta()
 
     seen_q, unique = {}, []
