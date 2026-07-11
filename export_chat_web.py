@@ -48,35 +48,54 @@ def main():
     model.load_state_dict(ckpt["model_state_dict"])
     model.eval()
 
-    # Round every weight to float16-representable values IN PLACE, so the logits
-    # the model produces here match what the browser (which loads float16) will
-    # compute -- keeping web/verify.mjs's parity check honest.
-    with torch.no_grad():
-        for p in model.parameters():
-            p.data = p.data.to(torch.float16).float()
-
-    # Pack all weights into ONE flat float16 binary blob (model.bin) and record
-    # each tensor's shape + offset in a small JSON manifest. This is what makes
-    # the page load fast: the browser fetches the blob as an ArrayBuffer (no
-    # base64 inflation, no giant JSON.parse) and reads each weight as a typed-
-    # array view -- see web/gpt.js and web/app.js.
+    # Quantize every weight to per-row int8 and pack into ONE binary blob
+    # (model.bin): first an int8 section (the weights), then a float32 section
+    # (the per-row scales). A tiny JSON manifest records each tensor's shape and
+    # offsets. This is ~1 byte/param -- half the float16 size -- and the browser
+    # reads it as typed-array views (no giant JSON.parse), so the page loads
+    # fast. See web/gpt.js (dequantizeInt8), web/app.js, and web/verify.mjs.
+    #
+    # The model's own weights are replaced in place with the dequantized values
+    # first, so the self-check logits match exactly what the browser computes.
     import numpy as np
 
+    from src.utils import quantize_tensor_int8
+
     manifest = {}
-    chunks = []
-    offset = 0  # in float16 elements
+    int8_chunks, scale_chunks = [], []
+    offset = 0        # int8 element (== byte) offset
+    scale_offset = 0  # float32 scale index
+    deq_by_name = {}
     for name, tensor in model.state_dict().items():
         if name.endswith("causal_mask"):
             continue
-        flat = tensor.detach().cpu().to(torch.float16).contiguous().numpy().reshape(-1)
-        manifest[name] = {"shape": list(tensor.shape), "offset": offset, "n": int(flat.size)}
-        chunks.append(flat)
-        offset += flat.size
+        q, scales, nrows, deq = quantize_tensor_int8(tensor)
+        deq_by_name[name] = deq
+        manifest[name] = {"shape": list(tensor.shape), "offset": offset, "n": int(q.size),
+                          "srow": scale_offset, "nrows": int(nrows)}
+        int8_chunks.append(q.astype(np.int8))
+        scale_chunks.append(scales)
+        offset += q.size
+        scale_offset += nrows
 
-    blob = np.concatenate(chunks).astype("<f2").tobytes()  # little-endian float16
+    int8_blob = np.concatenate(int8_chunks).astype(np.int8).tobytes()
+    # pad the int8 section to a 4-byte boundary so the float32 scales that follow
+    # are aligned for a typed-array view.
+    pad = (-len(int8_blob)) % 4
+    int8_blob += b"\x00" * pad
+    scales_blob = np.concatenate(scale_chunks).astype("<f4").tobytes()
+    scales_byte_offset = len(int8_blob)
+
     bin_path = os.path.splitext(args.out)[0] + ".bin"
     with open(bin_path, "wb") as f:
-        f.write(blob)
+        f.write(int8_blob)
+        f.write(scales_blob)
+
+    # Replace weights with their dequantized values, then compute the self-check.
+    with torch.no_grad():
+        sd = model.state_dict()
+        for name, deq in deq_by_name.items():
+            sd[name].copy_(deq.to(sd[name].dtype))
 
     # self-check: fixed prompt -> final-position logits, for web/verify.mjs.
     check_ids = tokenizer.build_prompt("what is 1 plus 1?")[: config.block_size]
@@ -98,8 +117,11 @@ def main():
             },
             "special_list": SPECIAL_TOKENS,
         },
-        # weights live in the companion .bin file, addressed by this manifest.
+        # weights live in the companion .bin file (int8 + float32 scales),
+        # addressed by this manifest.
+        "quant": "int8",
         "weights_bin": os.path.basename(bin_path),
+        "scales_byte_offset": scales_byte_offset,
         "weights": manifest,
         "self_check": {"input_ids": check_ids, "last_logits": tensor_to_list(logits[0, -1, :])},
     }

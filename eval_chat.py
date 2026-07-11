@@ -19,7 +19,7 @@ import torch
 from src.chat_tokenizer import WordTokenizer
 from src.config import GPTConfig
 from src.model import GPT
-from src.utils import get_device
+from src.utils import get_device, quantize_model_int8_
 
 
 @torch.no_grad()
@@ -44,6 +44,8 @@ def main():
     p.add_argument("--data_path", type=str, default="data/chat.jsonl")
     p.add_argument("--sample", type=int, default=0, help="evaluate a random subset of this size (0 = all)")
     p.add_argument("--show_errors", type=int, default=10)
+    p.add_argument("--quantize", choices=["int8"], default=None,
+                   help="quantize the model before evaluating, to measure the accuracy cost")
     args = p.parse_args()
 
     device = get_device()
@@ -53,6 +55,9 @@ def main():
     model = GPT(config).to(device)
     model.load_state_dict(ckpt["model_state_dict"])
     model.eval()
+    if args.quantize == "int8":
+        quantize_model_int8_(model)
+        print("(evaluating int8-quantized weights)")
 
     pairs = [(json.loads(l)["q"], json.loads(l)["a"]) for l in open(args.data_path)]
     if args.sample and args.sample < len(pairs):

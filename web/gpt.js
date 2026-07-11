@@ -42,10 +42,25 @@ function decodeFloat16Base64(b64) {
 }
 
 // Inflate a Uint16Array of float16 bit patterns into a Float32Array. Used by
-// the binary-weights loader (app.js in the browser, verify.mjs in Node).
+// older float16 exports.
 export function inflateFloat16(u16) {
   const out = new Float32Array(u16.length);
   for (let i = 0; i < u16.length; i++) out[i] = halfBitsToFloat(u16[i]);
+  return out;
+}
+
+// Dequantize a per-row int8 weight back to Float32: element (r, c) = q * scale[r].
+// `q` is an Int8Array of length nrows*cols, `scales` a Float32Array of length
+// nrows. Mirrors quantize_tensor_int8() in src/utils.py.
+export function dequantizeInt8(q, scales, nrows) {
+  const n = q.length;
+  const cols = n / nrows;
+  const out = new Float32Array(n);
+  for (let r = 0; r < nrows; r++) {
+    const s = scales[r];
+    const base = r * cols;
+    for (let c = 0; c < cols; c++) out[base + c] = q[base + c] * s;
+  }
   return out;
 }
 

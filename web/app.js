@@ -2,7 +2,7 @@
 // renders a chat UI, and streams the model's answer word by word. All model
 // maths is in gpt.js; all tokenization is in tokenizer.js.
 
-import { TinyGPT, inflateFloat16 } from "./gpt.js";
+import { TinyGPT, inflateFloat16, dequantizeInt8 } from "./gpt.js";
 import { WordTokenizer } from "./tokenizer.js";
 
 const $ = (id) => document.getElementById(id);
@@ -58,14 +58,28 @@ async function loadModel() {
       setProgress(frac, t ? `Loading model… ${Math.round(frac * 100)}%` : `Loading model… ${(r / 1e6).toFixed(1)} MB`);
     });
 
-    // Decode: one big float16 blob -> a Float32Array per weight (fast).
+    // Decode the blob into a Float32Array per weight (fast, typed-array views).
     setProgress(1, "Preparing model…");
-    const u16 = new Uint16Array(buf);
     const weights = {};
     let nParams = 0;
-    for (const [name, w] of Object.entries(meta.weights)) {
-      weights[name] = inflateFloat16(u16.subarray(w.offset, w.offset + w.n));
-      nParams += w.n;
+    if (meta.quant === "int8") {
+      // Blob layout: [int8 weights][float32 per-row scales].
+      const int8 = new Int8Array(buf, 0, meta.scales_byte_offset);
+      const scales = new Float32Array(buf, meta.scales_byte_offset);
+      for (const [name, w] of Object.entries(meta.weights)) {
+        weights[name] = dequantizeInt8(
+          int8.subarray(w.offset, w.offset + w.n),
+          scales.subarray(w.srow, w.srow + w.nrows),
+          w.nrows
+        );
+        nParams += w.n;
+      }
+    } else {
+      const u16 = new Uint16Array(buf); // legacy float16 export
+      for (const [name, w] of Object.entries(meta.weights)) {
+        weights[name] = inflateFloat16(u16.subarray(w.offset, w.offset + w.n));
+        nParams += w.n;
+      }
     }
 
     gpt = new TinyGPT({ config: c, tokenizer: meta.tokenizer, weights, self_check: meta.self_check });

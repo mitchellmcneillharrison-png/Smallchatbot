@@ -8,22 +8,34 @@
 
 import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
-import { TinyGPT, inflateFloat16 } from "./gpt.js";
+import { TinyGPT, inflateFloat16, dequantizeInt8 } from "./gpt.js";
 
 const path = process.argv[2] || new URL("./model.json", import.meta.url).pathname;
 const model = JSON.parse(readFileSync(path, "utf-8"));
 
-// Weights ship in a companion float16 .bin (addressed by model.weights[name]
-// {offset, n}); load it and inflate each weight to a Float32Array, mirroring
-// the browser loader in app.js. Older exports inlined weights in the JSON, so
-// fall back to passing the model straight through.
+// Weights ship in a companion .bin, addressed by the manifest in
+// model.weights[name]. Reconstruct each weight to a Float32Array, mirroring the
+// browser loader in app.js. Supports int8 (weights + per-row scales) and legacy
+// float16; older exports inlined weights in the JSON (passed straight through).
 if (model.weights_bin) {
-  const binPath = join(dirname(path), model.weights_bin);
-  const buf = readFileSync(binPath);
-  const u16 = new Uint16Array(buf.buffer, buf.byteOffset, buf.byteLength >> 1);
+  const raw = readFileSync(join(dirname(path), model.weights_bin));
+  const ab = raw.buffer.slice(raw.byteOffset, raw.byteOffset + raw.byteLength); // aligned copy
   const weights = {};
-  for (const [name, w] of Object.entries(model.weights)) {
-    weights[name] = inflateFloat16(u16.subarray(w.offset, w.offset + w.n));
+  if (model.quant === "int8") {
+    const int8 = new Int8Array(ab, 0, model.scales_byte_offset);
+    const scales = new Float32Array(ab, model.scales_byte_offset);
+    for (const [name, w] of Object.entries(model.weights)) {
+      weights[name] = dequantizeInt8(
+        int8.subarray(w.offset, w.offset + w.n),
+        scales.subarray(w.srow, w.srow + w.nrows),
+        w.nrows
+      );
+    }
+  } else {
+    const u16 = new Uint16Array(ab);
+    for (const [name, w] of Object.entries(model.weights)) {
+      weights[name] = inflateFloat16(u16.subarray(w.offset, w.offset + w.n));
+    }
   }
   model.weights = weights;
 }
