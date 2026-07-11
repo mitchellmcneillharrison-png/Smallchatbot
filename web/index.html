@@ -137,7 +137,7 @@
           (multi-head causal self-attention, LayerNorm, feed-forward, residuals — all hand-written).
           The model then predicts the answer one word at a time until it emits an end-of-answer
           token. The whole forward pass runs in JavaScript on your device; the trained weights ship as a
-          compact binary file (float16), fetched with a progress bar.
+          compact binary file (int8-quantized), fetched with a progress bar.
         </p>
       </details>
 

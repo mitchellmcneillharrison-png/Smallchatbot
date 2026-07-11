@@ -184,8 +184,8 @@ model **entirely client-side** — no server, no API. `web/gpt.js` is a hand por
 of the PyTorch forward pass (`src/model/gpt.py`) to plain JavaScript over
 `Float32Array`, using an incremental KV cache so generation is fast;
 `web/tokenizer.js` is a matching port of the word-level tokenizer. Weights are
-quantized to float16 and shipped as a raw binary blob (`web/model.bin`, ~10 MB
-for a ~7M-parameter model, ~14 MB) addressed by a tiny JSON manifest (`web/model.json`
+quantized to per-row int8 and shipped as a raw binary blob (`web/model.bin`,
+~7 MB for a ~7M-parameter model) addressed by a tiny JSON manifest (`web/model.json`
 with config, vocabulary, and per-tensor offsets). The browser fetches the blob
 as an `ArrayBuffer` with a progress bar and reads each weight as a typed-array
 view — no multi-megabyte `JSON.parse`, so the page becomes interactive quickly.

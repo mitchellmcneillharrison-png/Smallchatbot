@@ -3,5 +3,11 @@
   "buildCommand": "echo 'static site — nothing to build'",
   "outputDirectory": "web",
   "framework": null,
-  "cleanUrls": true
+  "cleanUrls": true,
+  "headers": [
+    {
+      "source": "/model.bin",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }]
+    }
+  ]
 }
