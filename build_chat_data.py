@@ -472,9 +472,50 @@ MORE_ATHLETES_BY_SPORT = {
 }
 
 
+# A third roster: more legends and women athletes.
+MORE2_ATHLETES_BY_SPORT = {
+    ("soccer", "soccer player"): [
+        ("marta", "Brazilian"), ("mia hamm", "American"), ("megan rapinoe", "American"),
+        ("alex morgan", "American"), ("abby wambach", "American"), ("ferenc puskas", "Hungarian"),
+        ("eusebio", "Portuguese"), ("michel platini", "French"), ("lothar matthaus", "German"),
+        ("gerd muller", "German"), ("oliver kahn", "German"), ("george weah", "Liberian"),
+        ("hristo stoichkov", "Bulgarian"), ("gianluigi donnarumma", "Italian"),
+    ],
+    ("basketball", "basketball player"): [
+        ("diana taurasi", "American"), ("sue bird", "American"), ("candace parker", "American"),
+        ("lisa leslie", "American"), ("maya moore", "American"), ("breanna stewart", "American"),
+        ("dwight howard", "American"), ("blake griffin", "American"), ("derrick rose", "American"),
+        ("paul george", "American"), ("demar derozan", "American"),
+    ],
+    ("tennis", "tennis player"): [
+        ("billie jean king", "American"), ("margaret court", "Australian"), ("monica seles", "American"),
+        ("martina hingis", "Swiss"), ("mats wilander", "Swedish"), ("stefan edberg", "Swedish"),
+        ("goran ivanisevic", "Croatian"),
+    ],
+    ("boxing", "boxer"): [
+        ("joe louis", "American"), ("jack dempsey", "American"),
+    ],
+    ("golf", "golfer"): [
+        ("annika sorenstam", "Swedish"),
+    ],
+    ("cricket", "cricketer"): [
+        ("sunil gavaskar", "Indian"),
+    ],
+    ("various", None): [
+        ("michael johnson", "American", "sprinter", "sprinting"),
+        ("allyson felix", "American", "sprinter", "sprinting"),
+        ("wilma rudolph", "American", "sprinter", "sprinting"),
+        ("jackie joyner kersee", "American", "track and field athlete", "athletics"),
+        ("ian thorpe", "Australian", "swimmer", "swimming"),
+        ("caeleb dressel", "American", "swimmer", "swimming"),
+        ("mary lou retton", "American", "gymnast", "gymnastics"),
+    ],
+}
+
+
 def _merged_athletes():
     merged = {}
-    for src in (ATHLETES_BY_SPORT, MORE_ATHLETES_BY_SPORT):
+    for src in (ATHLETES_BY_SPORT, MORE_ATHLETES_BY_SPORT, MORE2_ATHLETES_BY_SPORT):
         for key, entries in src.items():
             merged.setdefault(key, [])
             merged[key].extend(entries)
@@ -590,6 +631,24 @@ def _soccer_clubs():
     return [(full, nick, league, "soccer", city) for full, nick, league, city in data]
 
 
+# Conference by full team name (NBA East/West, NFL AFC/NFC).
+NBA_EAST = {"Atlanta Hawks", "Boston Celtics", "Brooklyn Nets", "Charlotte Hornets", "Chicago Bulls",
+            "Cleveland Cavaliers", "Detroit Pistons", "Indiana Pacers", "Miami Heat", "Milwaukee Bucks",
+            "New York Knicks", "Orlando Magic", "Philadelphia 76ers", "Toronto Raptors", "Washington Wizards"}
+NFL_AFC = {"Buffalo Bills", "Miami Dolphins", "New England Patriots", "New York Jets", "Baltimore Ravens",
+           "Cincinnati Bengals", "Cleveland Browns", "Pittsburgh Steelers", "Houston Texans",
+           "Indianapolis Colts", "Jacksonville Jaguars", "Tennessee Titans", "Denver Broncos",
+           "Kansas City Chiefs", "Las Vegas Raiders", "Los Angeles Chargers"}
+
+
+def _conference(full, league):
+    if league == "the NBA":
+        return "Eastern Conference" if full in NBA_EAST else "Western Conference"
+    if league == "the NFL":
+        return "AFC" if full in NFL_AFC else "NFC"
+    return None
+
+
 def teams():
     all_teams = _nba() + _nfl() + _mlb() + _nhl() + _soccer_clubs()
     for full, nick, league, sport, city in all_teams:
@@ -604,6 +663,12 @@ def teams():
              "{lead} {t} {loc}{q}",
              {"lead": ["what city are", "where are", "where do"], "t": aka,
               "loc": ["from", "based", "play"], "q": Q}, cap=6)
+        conf = _conference(full, league)
+        if conf:
+            fact(f"{full} are in the {conf}.",
+                 "{lead} conference are {t} in{q}", {"lead": ["what", "which"], "t": aka, "q": Q}, cap=4)
+            fact(f"{full} are in the {conf}.",
+                 "{lead} conference do {t} play in{q}", {"lead": ["what", "which"], "t": aka, "q": Q}, cap=4)
 
 
 # ============================================================================
