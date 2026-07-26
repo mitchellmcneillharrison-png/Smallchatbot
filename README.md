@@ -174,8 +174,38 @@ python chat.py                                  # interactive REPL
 python chat.py --question "what is 7 plus 8?"   # single question
 ```
 
-Teach it new things by editing the `FACTS` list in `build_chat_data.py` and
+Teach it new things by editing the tables in `build_chat_data.py` and
 re-running both scripts.
+
+## Pretrain on a GPU (Google Colab)
+
+The chatbot memorizes a small hand-built dataset. To see *real* pretraining —
+a bigger model learning actual language from a large corpus — train on a GPU.
+The same `train.py` supports it: it auto-detects CUDA and has mixed precision
+(`--amp fp16` for Colab's T4, `--amp bf16` for Ampere+) and gradient
+accumulation (`--grad_accum`) for a large effective batch on a single GPU.
+
+Grab a corpus and train (locally or on a rented/Colab GPU):
+
+```bash
+python data/get_pretrain_data.py --dataset tinystories --max_mb 200
+python train.py --data_path data/pretrain.txt \
+  --block_size 256 --n_layer 8 --n_head 12 --n_embd 768 \
+  --batch_size 32 --grad_accum 4 --amp fp16 \
+  --lr 3e-4 --warmup_steps 300 --max_steps 20000 \
+  --eval_interval 1000 --sample_prompt "Once upon a time"
+```
+
+That's a ~57M-parameter model (bump `--n_layer 12` for ~85M) trained on
+[TinyStories](https://huggingface.co/datasets/roneneldan/TinyStories) — a corpus
+designed so small models learn coherent English. On a free Colab T4 it goes
+from gibberish to readable little stories in a couple of hours; `--sample_prompt`
+prints a sample at every eval so you can watch it happen, and checkpoints are
+saved so you can `--resume`.
+
+**One-click:** open [`notebooks/pretrain_colab.ipynb`](notebooks/pretrain_colab.ipynb)
+in Colab (Runtime → change to a T4 GPU) and run the cells — it clones the repo,
+installs deps, downloads the corpus, trains, and generates.
 
 ## Run it in the browser (Vercel demo)
 

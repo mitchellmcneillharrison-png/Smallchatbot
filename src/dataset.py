@@ -25,7 +25,9 @@ class CharDataset(Dataset):
         return max(0, len(self.data) - self.block_size)
 
     def __getitem__(self, idx):
-        chunk = self.data[idx: idx + self.block_size + 1]
+        # Convert to int64 here: the data may be stored as int16 to save memory,
+        # but embedding lookups and cross-entropy need long indices.
+        chunk = self.data[idx: idx + self.block_size + 1].long()
         x = chunk[:-1]
         y = chunk[1:]
         return x, y

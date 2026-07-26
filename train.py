@@ -47,10 +47,16 @@ def parse_args():
     p.add_argument("--min_lr", type=float, default=1e-5)
     p.add_argument("--weight_decay", type=float, default=0.1)
     p.add_argument("--grad_clip", type=float, default=1.0)
+    p.add_argument("--grad_accum", type=int, default=1,
+                   help="accumulate gradients over this many micro-batches (bigger effective batch)")
+    p.add_argument("--amp", type=str, default="none", choices=["none", "fp16", "bf16"],
+                   help="mixed-precision on GPU: fp16 (Colab T4) or bf16 (Ampere+). Ignored on CPU.")
 
     # logging / evaluation
     p.add_argument("--eval_interval", type=int, default=200)
     p.add_argument("--eval_iters", type=int, default=50)
+    p.add_argument("--sample_prompt", type=str, default=None,
+                   help="if set, generate a sample from this prompt at every eval (watch coherence emerge)")
     p.add_argument("--seed", type=int, default=1337)
     return p.parse_args()
 
@@ -93,7 +99,10 @@ def main():
         text = f.read()
 
     tokenizer = CharTokenizer.from_text(text)
-    data = torch.tensor(tokenizer.encode(text), dtype=torch.long)
+    # Store the corpus as int16 (char ids are tiny) instead of int64 -- 4x less
+    # RAM, which matters for the large corpora used in real pretraining. The
+    # dataset converts each slice back to long on the fly.
+    data = torch.tensor(tokenizer.encode(text), dtype=torch.int16)
 
     n = int(0.9 * len(data))
     train_data, val_data = data[:n], data[n:]
@@ -121,6 +130,18 @@ def main():
     optimizer = torch.optim.AdamW(
         model.parameters(), lr=args.lr, weight_decay=args.weight_decay, betas=(0.9, 0.95)
     )
+
+    # ---- mixed precision -------------------------------------------------
+    # On a GPU, running matmuls in fp16/bf16 is ~2-4x faster and uses less
+    # memory. fp16 needs a GradScaler to avoid gradient underflow; bf16 doesn't.
+    # On CPU this all reduces to a no-op so the same code runs anywhere.
+    use_amp = args.amp != "none" and device.type == "cuda"
+    amp_dtype = torch.bfloat16 if args.amp == "bf16" else torch.float16
+    use_scaler = use_amp and amp_dtype == torch.float16
+    scaler = torch.amp.GradScaler("cuda", enabled=use_scaler)
+    if use_amp:
+        print(f"Mixed precision: {args.amp} | grad accumulation: {args.grad_accum} "
+              f"(effective batch {args.batch_size * args.grad_accum})")
 
     start_step = 0
     if args.resume:
@@ -150,20 +171,31 @@ def main():
         for group in optimizer.param_groups:
             group["lr"] = lr
 
-        x, y = next(train_iter)
-        x, y = x.to(device), y.to(device)
-
-        logits, loss = model(x, y)
         optimizer.zero_grad(set_to_none=True)
-        loss.backward()
+        # Gradient accumulation: sum grads over several micro-batches before a
+        # single optimizer step, giving a large effective batch on one GPU.
+        for _ in range(args.grad_accum):
+            x, y = next(train_iter)
+            x, y = x.to(device), y.to(device)
+            with torch.autocast(device_type=device.type, dtype=amp_dtype, enabled=use_amp):
+                logits, loss = model(x, y)
+                loss = loss / args.grad_accum
+            scaler.scale(loss).backward()
+
+        scaler.unscale_(optimizer)
         torch.nn.utils.clip_grad_norm_(model.parameters(), args.grad_clip)
-        optimizer.step()
+        scaler.step(optimizer)
+        scaler.update()
 
         if step % args.eval_interval == 0 or step == args.max_steps - 1:
             losses = estimate_loss(model, loaders, args.eval_iters, device)
             print(
                 f"step {step:6d} | lr {lr:.2e} | train loss {losses['train']:.4f} | val loss {losses['val']:.4f}"
             )
+            if args.sample_prompt is not None:
+                ids = torch.tensor([tokenizer.encode(args.sample_prompt)], dtype=torch.long, device=device)
+                out = model.generate(ids, max_new_tokens=200, temperature=0.8, top_k=50)
+                print("  sample:", repr(tokenizer.decode(out[0].tolist())))
             ckpt_path = os.path.join(args.out_dir, "ckpt.pt")
             save_checkpoint(step, ckpt_path)
 
